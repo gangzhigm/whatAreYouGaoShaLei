@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload="start()">
+    <canvas id="glcanvas" width="640" height="640"></canvas>
+</body>
+<script>
+    function initWebGL(canvas) {
+        window.gl = null; // 创建全局变量
+        try {
+            // 尝试获取标准上下文，如果失败，回退到试验性上下文
+            gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        } catch (e) {
+            throw '创建失败。';
+        }
+        if (!gl) { // 如果没有GL上下文，马上放弃
+            alert("WebGL初始化失败，可能是因为您的浏览器不支持。");
+            gl = null;
+        }
+        return gl;
+    }
+
+    var gl; // WebGL的全局变量
+    function start() {
+        var canvas = document.getElementById("glcanvas");
+        // 初始化 WebGL 上下文
+        gl = initWebGL(canvas);
+        // 只有在 WebGL 可用的时候才继续
+        if (gl) {
+            // 设置清除颜色为黑色，不透明
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            // 清除颜色和深度缓存
+            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+        }
+    }
+
+
+
+
+    // 顶点着色器程序
+    var VSHADER_SOURCE =
+        'void main() {\n' +
+        '  gl_Position = vec4(0.0, 0.0, 0.0, 1.0);\n' + // 设置顶点位置
+        '  gl_PointSize = 10.0;\n' + // 设置点的大小
+        '}\n';
+    // 片元着色器程序
+    var FSHADER_SOURCE =
+        'void main() {\n' +
+        '  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);\n' + // 设置点的颜色，此处为白色
+        '}\n';
+
+    function createShader(gl, type, sourceCode) {
+        // 编译着色器类型：顶点着色器及片元着色器。
+        var shader = gl.createShader(type);
+        gl.shaderSource(shader, sourceCode);
+        gl.compileShader(shader);
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            var info = gl.getShaderInfoLog(shader);
+            console.log("无法编译 WebGL 程序。 \n\n" + info);
+            gl.deleteShader(shader);
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    function createProgram(gl, vshader, fshader) {
+        // 创建着色器对象
+        var vertexShader = createShader(gl, gl.VERTEX_SHADER, vshader);
+        var fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fshader);
+        if (!vertexShader || !fragmentShader) {
+            return null;
+        }
+
+        // 创建编程对象
+        var program = gl.createProgram();
+        if (!program) {
+            return null;
+        }
+
+        // 赋值已创建的着色器对象
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+
+        // 连接编程对象
+        gl.linkProgram(program);
+
+        // 检查链接结果
+        var linked = gl.getProgramParameter(program, gl.LINK_STATUS);
+        if (!linked) {
+            var error = gl.getProgramInfoLog(program);
+            console.log('链接程序失败：' + error);
+            gl.deleteProgram(program);
+            gl.deleteShader(fragmentShader);
+            gl.deleteShader(vertexShader);
+            return null;
+        }
+        return program;
+    }
+
+    function initShaders(gl, vshader, fshader) {
+        var program = createProgram(gl, vshader, fshader);
+        if (!program) {
+            console.log('创建程序失败。');
+            return false;
+        }
+
+        gl.useProgram(program);
+        gl.program = program;
+
+        return true;
+    }
+
+    // 绘制一个点
+    gl.drawArrays(gl.POINTS, 0, 1);
+</script>
+
+</html>

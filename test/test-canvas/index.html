@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="circle"></div>
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+ctx.beginPath();
+ctx.arc(70, 80, 10, 0, 2 * Math.PI, false);
+ctx.fill();
+ctx.addHitRegion({id: "circle"});
+
+
+canvas.addEventListener("mousemove", function(event){
+  if(event.region) {
+    alert("hit region: " + event.region);
+  }
+});
+</script>
+</body>
+</html>

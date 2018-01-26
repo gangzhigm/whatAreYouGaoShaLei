@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/pixi.js/5.0.0-alpha/pixi.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 通过自动选择的方式创建画布（800x450）
+        // 并设置背景为黑色
+        // 然后将其添加到文档中
+        var renderer = PIXI.autoDetectRenderer(800, 450, {
+            backgroundColor: 0x000000
+        });
+        document.body.appendChild(renderer.view);
+
+        // 创建舞台 Container
+        // 之后的对象都存在于舞台之上
+        var stage = new PIXI.Container();
+
+
+
+        // 创建背景精灵
+        var background = new PIXI.Sprite.fromImage('../assets/img/BackDrop_01.png');
+        // 设置和画布同样的尺寸
+        background.width = renderer.width;
+        background.height = renderer.height;
+
+        // 将背景精灵放置于舞台之上
+        stage.addChild(background);
+    </script>
+</body>
+
+</html>
