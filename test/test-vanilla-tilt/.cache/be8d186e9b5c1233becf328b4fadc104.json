@@ -1,1 +1,0 @@
-{"dependencies":[{"name":"vanilla-tilt","loc":{"line":1,"column":20}}],"generated":{"js":"\"use strict\";\n\nvar _vanillaTilt = require(\"vanilla-tilt\");\n\nvar _vanillaTilt2 = _interopRequireDefault(_vanillaTilt);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }"},"hash":"fb42b6b88af77aaeab92fa54e0d58869"}
