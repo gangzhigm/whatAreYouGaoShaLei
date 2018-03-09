@@ -1,1 +1,0 @@
-import vanilla from 'vanilla-tilt';
