@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #main {
+            width: 100%;
+
+            height: 100%;
+        }
+    </style>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="./lib/echarts.js"></script>
+    <script src="./lib/echartsGL.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+</body>
+<!-- 数据生成 -->
+<script>
+    function makeGaussian(amplitude, x0, y0, sigmaX, sigmaY) {
+        return function (amplitude, x0, y0, sigmaX, sigmaY, x, y) {
+            var exponent = -(
+                (Math.pow(x - x0, 2) / (2 * Math.pow(sigmaX, 2))) +
+                (Math.pow(y - y0, 2) / (2 * Math.pow(sigmaY, 2)))
+            );
+            return amplitude * Math.pow(Math.E, exponent);
+        }.bind(null, amplitude, x0, y0, sigmaX, sigmaY);
+    }
+    // 创建一个高斯分布函数
+    var gaussian = makeGaussian(50, 0, 0, 20, 20);
+
+    var data = [];
+    for (var i = 0; i < 1000; i++) {
+        // x, y 随机分布
+        var x = Math.random() * 100 - 50;
+        var y = Math.random() * 100 - 50;
+        var z = gaussian(x, y);
+        data.push([x, y, z]);
+    }
+</script>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        xAxis3D: {},
+        yAxis3D: {},
+        zAxis3D: {
+            max: 100
+        },
+        series: {
+            type: 'flowGL',
+            particleDensity: 128,
+            particleType: 'point',
+            particleSpeed: 1,
+            particleTrail: 2,
+            supersampling: 1,
+            gridWidth: 'auto',
+            gridHeight: 'auto',
+            data: [
+                // 每个数据项包含四个值，表示位置的 lng, lat 以及相应维度上的速度 sLng, sLat.
+                // 如果是直角坐标系上的话则是表示位置的 x, y 以及相应维度上的速度 sx, sy
+                [0, 0, 1, 1],
+                [1, 0, 1, 1],
+                [0, 1, 1, 1],
+                [1, 1, 1, 1]
+            ]
+        }
+        // grid3D: {},
+        // xAxis3D: {},
+        // yAxis3D: {},
+        // zAxis3D: {
+        //     max: 100
+        // },
+        // series: [{
+        //     type: 'scatter3D',
+        //     data: data
+        // }]
+        // globe: {
+        //     globeRadius: 20,// default: 100
+        //     globeOuterRadius:100,// default: 150
+        //     environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, 
+        //                                                     [
+        //                                                         {
+        //                                                             offset: 0,
+        //                                                             color: '#00aaff' // 天空颜色
+        //                                                         }, 
+        //                                                         {
+        //                                                             offset: 0.7,
+        //                                                             color: '#998866' // 地面颜色
+        //                                                         }, 
+        //                                                         {
+        //                                                             offset: 1,
+        //                                                             color: '#998866' // 地面颜色
+        //                                                         }
+        //                                                     ], false
+        //     ),
+        //     baseTexture: './img/echar.jpg'
+        // }
+    }
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+</html>
