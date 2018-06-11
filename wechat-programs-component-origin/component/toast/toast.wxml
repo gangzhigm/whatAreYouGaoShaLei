@@ -1,2 +1,0 @@
- <!--toast 组件  -->
- <view class='toast' animation="{{animationData}}">{{innerText}}</view> 

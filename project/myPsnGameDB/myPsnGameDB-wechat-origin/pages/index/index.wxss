@@ -1,0 +1,78 @@
+/* *index.wxss* */
+
+page {
+  background: #fff;
+  width: 100vw;
+}
+
+.ps3 {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  background: #f8cd28;
+}
+
+.ps4 {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  background: #fc1a86;
+}
+
+.psv {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  background: #43bef7;
+}
+
+.psv, .ps3, .ps4 {
+  position: relative;
+}
+
+text.title {
+  font-size: 10vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+swiper.gamelist{
+  height: 100%;
+}
+swiper-item.gamelist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+view.gameitem {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+text.gameitem {
+  color: #fff;
+  font-size: 5vw;
+  text-shadow: 0 0 5px #c2c2c2;
+  overflow: hidden; /*自动隐藏文字*/
+  text-overflow: ellipsis; /*文字隐藏后添加省略号*/
+  white-space: nowrap; /*强制不换行*/
+}
+
+.gamebox {
+  height: 30vh;
+  background: #c2c2c2
+}
+
+.bigBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

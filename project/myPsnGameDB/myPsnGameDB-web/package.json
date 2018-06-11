@@ -1,0 +1,24 @@
+{
+  "name": "myPsnGameDB",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gangzhigm/myPsnGameDB.git",
+  "author": "gangzhigm <864853934@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html -p 3000",
+    "build": "parcel watch index.html"
+  },
+  "dependencies": {
+    "autoprefixer": "^7.2.4",
+    "babel-preset-env": "^1.6.1",
+    "less": "^2.7.3",
+    "parcel-bundler": "^1.4.1",
+    "parcel-plugin-vue": "^1.5.0",
+    "particles.js": "^2.0.0",
+    "postcss-modules": "^1.1.0",
+    "posthtml-img-autosize": "^0.1.1",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1"
+  }
+}

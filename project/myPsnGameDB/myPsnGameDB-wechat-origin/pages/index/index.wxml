@@ -1,0 +1,52 @@
+<!-- index.wxml原生 -->
+<view class='bigBox'>
+<rich-text nodes="{{nodesPlaystation}}" bindtap="tap"></rich-text>
+  <swiper bindchange="intervalChange" indicator-dots autoplay class='topSwiper' circular class='gamebox'>
+    <swiper-item>
+      <swiper autoplay vertical circular class='gamelist'>
+        <swiper-item>
+          <view class='psv'>
+            <text class='title'>this is psv</text>
+          </view>
+        </swiper-item>
+        <swiper-item wx:for="{{psvList}}" wx:key="index" class='gamelist'>
+          <view class='gameitem' style='background: #43bef7'>
+            <text class='gameitem'>{{item.name}}</text>
+          </view>
+        </swiper-item>
+      </swiper>
+    </swiper-item>
+ 
+    <swiper-item>
+      <swiper autoplay vertical circular class='gamelist'>
+        <swiper-item>
+          <view class='ps3'>
+            <text class='title'>this is ps3</text>
+          </view>
+        </swiper-item>
+        <swiper-item wx:for="{{ps3List}}" wx:key="index" class='gamelist'>
+          <view class='gameitem' style='background: #f8cd28'>
+            <text class='gameitem'>{{item.name}}</text>
+          </view>
+        </swiper-item>
+      </swiper>
+    </swiper-item>
+
+    <swiper-item>
+      <swiper autoplay vertical circular class='gamelist'>
+        <swiper-item>
+          <view class='ps4'>
+            <text class='title'>this is ps4</text>
+          </view>
+        </swiper-item>
+        <swiper-item wx:for="{{ps4List}}" wx:key="ps4" class='gamelist'>
+          <view class='gameitem' style='background: #fc1a86'>
+            <text class='gameitem'>{{item.name}}</text>
+          </view>
+        </swiper-item>
+      </swiper>
+    </swiper-item>
+  </swiper>
+
+<view animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx"></view>
+</view>

@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",//动画所在页面
+    "pages/content/contetn",
+    "pages/tst/tst"//TST招聘页面
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF9C4",
+    "navigationBarTitleText": "what?!",
+    "navigationBarTextStyle": "black"
+  }
+}
