@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@types/koa": "^2.13.5",
+    "typescript": "^4.9.4"
+  },
+  "name": "whatareyougaoshalei",
+  "description": "- Animation\r > 动画\r - CSS-matrix3d\r > CSS矩阵变换\r - Trylt\r > 练习\r - project\r     - badbox\r     > 样式盒\r     - myPsnGameDB\r     > psn游戏数据库",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gangzhigm/whatAreYouGaoShaLei.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gangzhigm/whatAreYouGaoShaLei/issues"
+  },
+  "homepage": "https://github.com/gangzhigm/whatAreYouGaoShaLei#readme"
+}

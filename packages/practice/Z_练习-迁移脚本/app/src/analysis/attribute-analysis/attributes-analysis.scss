@@ -1,0 +1,274 @@
+@import "../../common/scss/base/variables";
+@import "../../common/scss/base/mixin";
+
+$table-height: 48px;
+$padding-left: 40px;
+
+.attribute-analysis {
+    $page-top-height: $toolbar-height;
+    display: flex;
+    flex-direction: column;
+    
+    .attribute-analysis-content {
+        flex: 1;
+        overflow: auto;
+        padding-bottom: 1em;
+    }
+    
+    .slider-menu {
+        position: relative;
+        z-index: $index-container;
+        cursor: pointer;
+        background-color: white;
+        
+        &:hover {
+            @include box-shadow(3px 0 8px rgba(#8b9daf, 0.16));
+            .pull-down {
+                height: 16px;
+                line-height: 16px;
+                padding: 0;
+                .down-arrow {
+                    height: 16px;
+                }
+            }
+        }
+        
+        &.active {
+            .pull-down {
+                height: 16px;
+                line-height: 16px;
+                padding: 0;
+                .down-arrow {
+                    height: 16px;
+                }
+            }
+        }
+        // 设置条件 展开收起
+        .slider-menu-btn {
+            width: 100%;
+            height: $toolbar-height;
+            line-height: $toolbar-height;
+            border: 1px solid $border-color;
+            color: $green;
+            cursor: pointer;
+            background-color: $title-bg;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        
+        .slider-menu-btn-tip {
+            display: inline-block;
+            color: $color-title;
+            vertical-align: top;
+            width: calc(100% - 130px);
+        }
+        
+        .slider-menu-box {
+            padding-top: $input-field-height - 2;
+            border: 1px solid $border-color;
+            .tag {
+                position: absolute;
+                width: auto;
+                height: 24px;
+                line-height: 24px;
+                text-align: center;
+                color: #fff;
+                margin-top: -12px;
+                padding: 0 8px;
+                z-index: 1;
+                background-color: #798491;
+                border-radius: 0 4px 4px 0;
+            }
+        }
+        .menu-item {
+            padding: 27px 0;
+            border-top: 1px solid #d6dbe4;
+            &.filter-item {
+                padding-left: $padding-left;
+                color: $color-title;
+            }
+            &.group-control {
+                .by-fields-groups {
+                    padding-left: $padding-left - 20px;
+                }
+                .add-ops-item {
+                    padding: 0;
+                    line-height: $input-field-height;
+                    background-color: inherit;
+                    border: none;
+                    cursor: pointer;
+                    color: $green;
+                    margin-left: $padding-left;
+                    
+                    &:hover {
+                        color: $light-green;
+                    }
+                }
+            }
+            &.ops-group {
+                position: relative;
+                padding-left: 0;
+                .add-condition-action {
+                    display: inline-block;
+                    border: none;
+                    color: $green;
+                    line-height: $input-field-height;
+                    cursor: pointer;
+                    margin-left: $padding-left;
+                    
+                    &:hover {
+                        color: $light-green;
+                    }
+                }
+                
+            }
+        }
+        // 向下按钮
+        .pull-down {
+            position: absolute;
+            left: 48.5%;
+            width: 3%;
+            height: 10px;
+            line-height: 10px;
+            background-color: $green;
+            text-align: center;
+            border: none;
+            border-radius: 0 0 4px 4px;
+            cursor: pointer;
+            @include transition(all .3s ease);
+            //向下箭头
+            .down-arrow {
+                width: 1em;
+                height: .8em;
+                fill: #fff;
+                @include transition(all .3s ease);
+            }
+            .turn-on {
+                transform: rotate(180deg) scale(1, 0.5);
+            }
+            .turn-off {
+                transform: rotate(0deg) scale(1, 0.5);
+            }
+        }
+    }
+    
+    .page-box {
+        @include clearfix();
+        line-height: 65px;
+        
+        .pages-text {
+            float: left;
+        }
+        .pages-box {
+            float: right;
+        }
+    }
+    
+    .table-wrap {
+        @include box-shadow(0 3px 8px rgba(#8b9daf, .16));
+    
+        table {
+            display: flex;
+            flex-wrap: nowrap;
+            border-spacing: 0;
+            border: 1px solid $border-color;
+            margin-top: 8px;
+            
+            thead {
+                display: inline-block;
+                tr {
+                    display: block;
+                    th {
+                        position: relative;
+                        @include ellipsis();
+                        width: 100%;
+                        min-width: 40px;
+                        display: block;
+                        box-sizing: border-box;
+                        padding: 0 13px;
+                        height: $table-height;
+                        line-height: $table-height;
+                        border-bottom: 1px solid $border-color;
+                        border-right: 1px solid $border-color;
+                        user-select: none;
+                        text-align: left;
+                        background-color: #fff;
+                        &:first-child {
+                            cursor: pointer;
+                        }
+                        
+                        .sort-box {
+                            position: absolute;
+                            right: 0;
+                            top: 14px;
+                            width: 20px;
+                            height: 20px;
+                            i {
+                                display: block;
+                                position: absolute;
+                                border: 5px solid transparent;
+                                border-bottom-color: #d0d0d0;
+                                left: 5px;
+                                &.top-i {
+                                    top: -1px;
+                                }
+                                &.checked {
+                                    border-bottom-color: black;
+                                }
+                                &.bottom-i {
+                                    transform: rotate(180deg);
+                                    top: 11px;
+                                }
+                            }
+                            
+                        }
+                        &:nth-child(odd) {
+                            background-color: $title-bg;
+                        }
+                        &:nth-child(1) {
+                            border-bottom: 1px solid $border-color;
+                        }
+                        &.max {
+                            max-width: 20em;
+                        }
+                    }
+                }
+            }
+            tbody {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                tr {
+                    width: 100%;
+                    td {
+                        display: block;
+                        width: 100%;
+                        min-width: 40px;
+                        box-sizing: border-box;
+                        height: $table-height;
+                        padding: 10px 13px;
+                        border-bottom: 1px solid $border-color;
+                        border-right: 1px solid $border-color;
+                        text-align: left;
+                        line-height: $table-height - 20px;
+                        @include ellipsis;
+                        background-color: #fff;
+                        
+                        &:nth-child(odd) {
+                            background-color: $title-bg;
+                        }
+                        &.max {
+                            width: 20em;
+                        }
+                        p.router-p {
+                            cursor: pointer;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

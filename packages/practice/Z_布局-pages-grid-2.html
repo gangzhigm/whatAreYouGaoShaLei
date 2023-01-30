@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    min-height: 100vh;
+    background-color: #222;
+}
+.container {
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-rows: minmax(100px, auto);
+    grid-auto-flow: dense; /* 控制自动放置的项目如何插入网格中 */
+    /* row 通过填充每一行来放置项目 */
+    /* column 通过填充每一列来放置项目 */
+    /* dense 放置项目以填充网格中的任何孔 */
+    /* row dense 通过填充每一行来放置项目，并填充网格中的任何孔 */
+    /* column dense 通过填充每一列来放置项目，并填充网格中的任何孔 */
+    margin: 40px;
+    grid-gap: 10px;
+}
+.container .box {
+    background-color: #333;
+    padding: 20px;
+    display: gird;
+    font-size: 20px;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    transition: 0.5s;
+}
+.container .box:hover {
+    /* hover效果 */
+    background-color: #2c1ee9;
+}
+.container .box img {
+    position: relative;
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.container .box:nth-child(1) {
+    background-color: #e91e1e;
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.container .box:nth-child(2) {
+    background-color: #e6e91e;
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.container .box:nth-child(4) {
+    background-color: #1ee940;
+    grid-column: span 3;
+    grid-row: span 1;
+}
+.container .box:nth-child(5) {
+    background-color: #1e8ee9;
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+@media (max-width: 991px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        grid-template-rows: minmax(auto, auto);
+    }
+    /* 与上方条件联动，重置box的grid设置 */
+    .container .box {
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fcc%2Fa2%2F2e%2Fcca22e5c77e7fdd386751b11acc368f8.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645780163&t=1afff1b2c3ba4c7262ecd9fd23d20db0" alt="">
+                <p>Who strives not when he should strive, who, though young and strong, is given to idleness, who is loose in his purpose and thoughts, and who is lazy-that idler never finds the way to wisdom.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fcc%2Fa2%2F2e%2Fcca22e5c77e7fdd386751b11acc368f8.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645780163&t=1afff1b2c3ba4c7262ecd9fd23d20db0" alt="">
+                <p>Happy indeed we are without hate among the hateful.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fcc%2Fa2%2F2e%2Fcca22e5c77e7fdd386751b11acc368f8.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645780163&t=1afff1b2c3ba4c7262ecd9fd23d20db0" alt="">
+                <p>Without learning, men grow as cows do increasing only in flesh not wisdom.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fcc%2Fa2%2F2e%2Fcca22e5c77e7fdd386751b11acc368f8.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645780163&t=1afff1b2c3ba4c7262ecd9fd23d20db0" alt="">
+                <p>Be fond of sleep, fond of company, indolent, lazy and irritable-this is a cause of one’s downfall.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fcc%2Fa2%2F2e%2Fcca22e5c77e7fdd386751b11acc368f8.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645780163&t=1afff1b2c3ba4c7262ecd9fd23d20db0" alt="">
+                <p>One is one’s own refuge, who else could be the refuges？</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fcc%2Fa2%2F2e%2Fcca22e5c77e7fdd386751b11acc368f8.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645780163&t=1afff1b2c3ba4c7262ecd9fd23d20db0" alt="">
+                <p>Cordial friendship has a supreme taste.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fcc%2Fa2%2F2e%2Fcca22e5c77e7fdd386751b11acc368f8.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645780163&t=1afff1b2c3ba4c7262ecd9fd23d20db0" alt="">
+                <p>Deed divides beings into lower and higher ones.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

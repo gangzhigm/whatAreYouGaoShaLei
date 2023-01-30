@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script src="./samesite.js"></script>
+    <script>
+      const List_Length = 'qweasdzxcrtyfghvbn';
+      // const List_Dom_List = [];
+
+      [...List_Length].forEach(element => {
+        const btn = document.createElement('button');
+        btn.id = element;
+        btn.innerText = element;
+        document.body.appendChild(btn);
+        // List_Dom_List.push(btn);
+      });
+
+    </script>
+  </body>
+</html>

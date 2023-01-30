@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <hr>
+    <h2>File_System_Access_API</h2>
+    <button onclick="getFile()">Get_File</button>
+    <button onclick="getDire()">Get_Dire</button>
+    <div>
+        <input type="text" id="CreateFileInput">
+        <button onclick="createFile()">Create_File</button>
+    </div>
+    <div>
+        <input type="text" id="CreateDireInput">
+        <button onclick="createDire()">Create_Dire</button>
+    </div>
+    <div>
+        <input type="text" id="WriteFileInput">
+        <button onclick="writeFile()">Write_File</button>
+    </div>
+    <p>File Info: <span id="FileInfo">null</span></p>
+    <p>Dire Info: <span id="DireInfo">null</span></p>
+    <hr>
+
+    <script>
+
+
+
+
+
+
+        let fileHandle;
+        const pickerOpts = {
+            // types: [
+            //     {
+            //     description: 'Images',
+            //     accept: {
+            //         'image/*': ['.png', '.gif', '.jpeg', '.jpg']
+            //     }
+            //     },
+            // ],
+            // excludeAcceptAllOption: true,
+            // multiple: false
+        };
+        async function getFile(){
+            // open file picker
+            [fileHandle] = await window.showOpenFilePicker(pickerOpts);
+            let data = `${fileHandle.name} : [ `; 
+            const file = await fileHandle.getFile();
+            const read = new FileReader();
+            read.readAsText(file);
+            read.onload = (e) => {
+                const fileData = e.target.result;
+                data += `${fileData} ]`;
+                const Ele = document.querySelector("#FileInfo");
+                Ele.innerText = data;
+            }
+        }
+
+
+        async function getDire(){
+            const dirHandle = await window.showDirectoryPicker();
+            const Ele = document.querySelector("#DireInfo");
+            let data = `${dirHandle.name}: [`
+            // 打印文件名，和类型
+            for await (const it of dirHandle.values()) {
+                data += `${it.name}, `
+                console.info('[[ %s ]] is %s', it.name, it.kind, it.handle);
+            }
+            data += `]`
+            Ele.innerText = data;
+        }
+
+
+        async function createFile(){
+            const Eleinput = document.getElementById("CreateFileInput");
+            const dirHandle = await window.showDirectoryPicker();
+            dirHandle.getFileHandle(`${Eleinput.value}`,{create:true});
+        }
+
+
+        async function createDire(){
+            const Eleinput = document.getElementById("CreateDireInput");
+            const dirHandle = await window.showDirectoryPicker();
+            dirHandle.getDirectoryHandle(`${Eleinput.value}`,{create:true});
+        }
+
+
+        async function writeFile(){
+            const Eleinput = document.getElementById("WriteFileInput");
+
+            // open file picker
+            const newHandle = await window.showSaveFilePicker();
+            // create a FileSystemWritableFileStream to write to
+            const writableStream = await newHandle.createWritable();
+
+            // just pass in the data (no options)
+            await writableStream.write(Eleinput.value);
+
+            // writes the data to the stream from the determined position
+            // writableStream.write({ type: "write", position, data });
+
+            // updates the current file cursor offset to the position specified
+            // writableStream.write({ type: "seek", position });
+
+            // resizes the file to be size bytes long
+            // writableStream.write({ type: "truncate", size });
+
+            // close the file and write the contents to disk.
+            await writableStream.close();
+        }
+
+
+        // 以下函数将单个条目与条目数组进行比较，并返回 删除了所有匹配条目的新数组。
+        // function removeMatches(fileEntry, entriesArr) {
+        // let newArr = entriesArr.filter((entry) => !fileEntry.isSameEntry(entry))
+        //     return newArr;
+        // }
+
+        // 如果用户已授予读取或读写权限，则以下异步函数返回 true 对文件句柄的权限。如果没有，则请求许可。
+        // fileHandle is a FileSystemFileHandle
+        // withWrite is a boolean set to true if write
+        // async function verifyPermission(fileHandle, withWrite) {
+        //   const opts = {};
+        //   if (withWrite) {
+        //     opts.mode = 'readwrite';
+        //   }
+        //   // Check if we already have permission, if so, return true.
+        //   if (await fileHandle.queryPermission(opts) === 'granted') {
+        //     return true;
+        //   }
+        //   // Request permission to the file, if the user grants permission, return true.
+        //   if (await fileHandle.requestPermission(opts) === 'granted') {
+        //     return true;
+        //   }
+        //   // The user did not grant permission, return false.
+        //   return false;
+        // }
+        // fileSystemHandlePermissionDescriptor{
+        // mode: ['read''readwrite']
+        // }
+        // queryPermission(fileSystemHandlePermissionDescriptor)
+
+        // 以下异步函数请求权限（如果尚未授予权限）。
+        // fileHandle is a FileSystemFileHandle
+        // // withWrite is a boolean set to true if write
+
+        // async function verifyPermission(fileHandle, withWrite) {
+        // const opts = {};
+        // if (withWrite) {
+        //     opts.mode = 'readwrite';
+        // }
+
+        // // Check if we already have permission, if so, return true.
+        // if (await fileHandle.queryPermission(opts) === 'granted') {
+        //     return true;
+        // }
+
+        // // Request permission to the file, if the user grants permission, return true.
+        // if (await fileHandle.requestPermission(opts) === 'granted') {
+        //     return true;
+        // }
+
+        // // The user did not grant permission, return false.
+        // return false;
+        // }
+
+
+
+
+        // 遍历整个目录
+        // const scanDir = async (root, hDir) => {
+        //     for await (const [name, handle] of hDir) {
+        //       const path = await root.resolve(handle);
+
+        //       if (handle instanceof FileSystemDirectoryHandle) {
+        //         l("./%s/", path.join("/"));
+        //         scanDir(root, handle);
+        //       } else l("./%s", path.join("/"));
+        //     }
+        // };
+        // scanDir(hDir, hDir);
+        
+        // 删除目录中指定的文件
+        // await hDir.removeEntry('newFile.txt');
+
+        // 在目录中递归删除子目录
+        // await hDir.removeEntry("Debug", { recursive: true });
+
+        // isSameEntry
+        // 如果是同一文件或目录则返回true
+        // const hDir = await window.showDirectoryPicker();
+        // const hFile = await hDir.getFileHandle("3.txt");
+
+        // console.log( await hFile.isSameEntry(hFile)  ); // true
+        // console.log( await hDir.isSameEntry(hDir)  );   // true
+
+        // console.log( await hFile.isSameEntry(hDir)  ); // false
+        // console.log( await hDir.isSameEntry(hFile)  ); // false
+
+
+        // 获取文件在目录中的路径
+        // const hDir = await window.showDirectoryPicker();
+        // const hFile = await hDir.getFileHandle("3.txt");
+        // console.log( await hDir.resolve(hFile) ) // ["3.txt"]
+
+    </script>
+</body>
+</html>

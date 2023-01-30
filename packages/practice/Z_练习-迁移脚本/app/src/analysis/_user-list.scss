@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+@import "../common/scss/base/variables";
+@import "../common/scss/base/mixin";
+
+.user-wrapper {
+    .table-wrap {
+        td {
+            min-width: 200px;
+        }
+        
+        tbody tr:hover {
+            background-color: $select-bg;
+            cursor: pointer;
+        }
+    }
+    
+    .inline-user-group-form {
+        position: absolute;
+        top: $toolbar-height;
+        right: -$toolbar-height;
+        width: 300px;
+        border: 1px solid $border-color;
+        background-color: white;
+        border-radius: 4px;
+        z-index: $index-menu;
+        line-height: $input-field-height;
+        color: $color-content;
+        cursor: default;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            right: 46px;
+            top: -6px;
+            width: 10px;
+            height: 10px;
+            z-index: -1;
+            border-top-left-radius: 4px;
+            transform: rotate(45deg);
+            border-top: 1px solid $border-color;
+            border-left: 1px solid $border-color;
+            background-color: $content-bg;
+        }
+        
+        .mark-title {
+            padding: 0 1em;
+            background-color: $content-bg;
+        }
+        
+        .inline-form-content {
+            padding: 16px;
+        }
+        
+        .save-box {
+            margin-top: 16px;
+        }
+    }
+    
+    $height-taken: $header-height + $toolbar-height + $page-head-height + $input-field-height + 16 * 2;
+    
+    .query-filter-condition {
+        margin-top: 16px;
+        padding: 0;
+        
+        &:hover {
+            background-color: transparent;
+        }
+        
+        + .table-user-list {
+            max-height: calc(100vh - #{$height-taken + $input-field-height + 16px * 2});
+        }
+    }
+    
+    .table-user-list {
+        padding: 0;
+        overflow: auto;
+        max-height: calc(100vh - #{$height-taken + 16px});
+        margin-top: 16px;
+    }
+    
+    .data-empty {
+        color: $green;
+        text-align: center;
+        font-size: 30px;
+        line-height: 420px;
+    }
+}

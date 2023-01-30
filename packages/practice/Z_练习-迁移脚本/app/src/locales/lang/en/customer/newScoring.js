@@ -1,0 +1,201 @@
+/**
+ * 联系人评分
+ * 多语言
+ * 🇨🇳中文翻译
+ */
+export default {
+    __name__: 'newScoring',
+    /***** 已建模型列表-start *****/
+    newScoring: 'Score engine',
+    editComputationalModel: 'Edit computational model',
+    activatedOrUpperLimit: 'Activated/Upper limit',
+    createScoringModel: 'Create Computational Model',
+    searchByModelName: 'Search by model name',
+    modelName: 'Model name',
+    status: 'Status',
+    active: 'Active',//状态的启用
+    inactive: 'Inactive',//状态的停用
+    draft: 'Draft',
+    scoringProcess: 'Calculation progress',
+    updatedBy: 'Updated by',
+    updatedAt: 'Updated at',
+    actions: 'Actions',
+    scoringProcessHover: 'Scoring time is affected by the number of contacts in the scoring range and the scoring channel,'
+        + ' and can take from a few minutes to several hours',
+    allStatus: 'all',
+    activate: 'Activate',//操作按钮的启用
+    deactivate: 'Deactivate',//操作按钮的停用
+    edit: 'Edit',
+    delete: 'Delete',
+    copy: 'Copy',
+    details: 'Details',
+    report: 'Report',
+    inQueue: 'InQueue',
+    processing: 'Processing',
+    deactivateScoringModel: 'Deactivate scoring model',
+    deactivateScoringContent: 'Stop scoring, contacts keep last score',
+    deactivatedSuccessfully: 'Deactivated successfully',
+    deleteScoringModel: 'Delete scoring model',
+    deleteScoringNote: 'Note: The delete operation will clear the score data of all scored contacts and all associated'
+        + ' conditions and journey trigger conditions will be disabled! Be sure to confirm that you want to clear these'
+        + ' data before performing this operation',
+    confirmToDeleteThisModel: 'Confirm to delete this model',
+    deletedSuccessfully: 'Deleted successfully',
+    enterUpTo100Characters: 'Enter up to 100 characters',
+    scoringRange: 'Scoring range',
+    allContacts: 'All contacts',
+    howToWork: 'How to work',
+    howToWorkContent: 'Scoring once a day in the morning for all contacts in the scoring range, and the time required'
+        + ' for scoring depends on the number of contacts, contacts that are no longer scored will retain their last score',
+    newContactsFront: 'New contacts, created in the past ',
+    newContactsAfter: 'days',
+    newContactsHover: 'Refers to new contacts created in the past [N] days since the day (not included) of scoring ',
+    dataRequired: 'this field is required',
+    modelNamesCannotBeDuplicated: 'model names cannot be duplicated',
+    activatedSuccessfully: 'Activated successfully',
+    scoredDate: 'Calculation at',
+    operationFailed:'Operation failed',
+    type: 'Types',
+    scoreMatrix: 'Scoring matrix',
+    noModelDisplayA: 'Empowering platform data, providing a full channel, multi-dimensional to achieve a full range of data mining.',
+    noModelDisplayB: 'Provide multiple computational models including user ratings to deepen the understanding and insight of users.',
+    computing: 'Scoring model is being calculated, please try again later',
+    actionError: 'Operation failed',
+    /***** 已建模型列表-end *****/
+
+
+    /***** 新建模型-start *****/
+    createComputeModel: 'Create Computational Model',
+    selectComputeModel: 'Select the computational model type',
+    userMatrixModel: 'Contact Scoring Matrix Model',
+    moreModel: 'More types, coming soon',
+    selectDesignModel: 'Select design patterns',
+    quickModel: 'Convenience mode',
+    expertModel: 'Expert mode',
+    importSysPresetModel: 'Create from system template model',
+    companyUserModel: 'Enterprise client template model',
+    individualUserModel: 'Consumer template model',
+    baseConfig: 'Basic configuration',
+    /***** 新建模型-end *****/
+
+
+    /***** 编辑模型-start *****/
+    accounts: 'Official Accounts',
+    absoluteDate: 'Absolute time',
+    add: 'Add',
+    addCondition: 'Add a condition',
+    addFive: 'Add up to 5 rules',
+    addRule: 'Add a rule',
+    addScoringFactor: 'Create Scoring Factor',
+    agent: 'Agent message',
+    any: 'Any',
+    assigned: 'Assigned',
+    AttrTitle:'Property dimension',
+    audience: 'Audience',
+    broadcast: 'Enterprise broadcast',
+    conditions: 'Conditions',
+    configTitle:'Configuration',
+    customer: 'Customer service message',
+    dateTip: 'Events older than 1 year will not be scored',
+    delScoringFactor: 'Delete scoring factor',
+    each: 'Each',
+    email: 'Email',
+    eventRules: 'A contact is scored once for each event triggered within the time range until the score reaches the upper limit.',
+    EventTitle:'event dimension',
+    expectedTip: 'Calculation based on the latest saved settings',
+    factorCannotBeCopied:'Factor cannot be copied',
+    fieldAvailable: 'Field no longer available',
+    form: 'Form',
+    fullScore: 'Total points',
+    levelModelAttrTitle:'Property dimension grade',
+    levelModelEventTitle:'event dimension grade',
+    levelModelTitle:'Matrix Grade',
+    tipLevel:'If the score is less than 0, it is regarded as the lowest grade.',
+    list: 'list',
+    mark:'Notes',
+    mms: 'Mms',
+    only: 'can only be scored once',
+    per: 'point/per',
+    pleaseResetRules:'please reset rules',
+    points: 'points',
+    qrcode: 'QR code',
+    relativeDate: 'Relative time',
+    ruleCount: 'Rules',
+    rulesDesc: 'If a contact meets the criteria of more than one rule, the highest scoring rule is used to score points.',
+    saveAvailable: 'The scoring factor is no longer valid and cannot be saved',
+    saveFactorFirst: 'Please save the factor first',
+    score:'Score',
+    scoreCeil:'Score limit',
+    scoreLimt: 'Score limit',
+    scoreRange: 'Score range',
+    scoreRules: 'Scoring rules',
+    scoreUpperLimit: 'Score limit',
+    scoringEmpty: 'There are no current scoring rules',
+    scoringFactorEdit: 'Modify scoring factor',
+    scoringName: 'Factor name',
+    singleScore: 'Delete scoring factor?',
+    sms: 'Sms',
+    tag: 'Tag',
+    tempalte: 'Template message',
+    theFullScoreShallNotBeGreaterThan100: 'The full score shall not be greater than 100',
+    wecom: 'Channel QR code',
+    past: 'in the past',
+    dateTipNext: 'Refers to the past<span>&nbsp;<span/>',
+    dateTipLast: '<span>&nbsp;<span/>days from the day of each rating (not included)',
+    now:'now',
+    fieldRequired: 'this field is required',
+    deductionLimt :'Deduction limit',
+    addFifty: 'Add up to 50',
+    addThree: 'Add up to 3 conditions',
+    factorTemplate: 'Scoring factor template',
+    noFactor: 'Drag and drop the property field in the left panel to move it here and add it as a scoring factor',
+    scoringCriteria: 'Scoring Criteria',
+    searchKeyword: 'search keyword',
+    /***** 编辑模型-end *****/
+
+
+    /***** 便捷模式-start *****/
+    point: 'point',
+    eventPoint: 'point/per',
+    upLimit: 'Score limit',
+    eq: 'eq',
+    exists: 'exists',
+    gt: 'more than',
+    lt: 'less than',
+    range: 'range',
+    createModel: 'Generate model',
+    recent: 'in the past',
+    days: 'days',
+    daysAfter: ',event object is ',
+    attrStandard: 'Property dimension scoring criteria (1/3)',
+    eventStandard: 'Event dimension scoring criteria (2/3)',
+    scoreLevel: 'Scoring grade (3/3)',
+    attrTips: 'Property dimensions are explicit property data about the contact, such as job title or industry, used to determine who the contact is and how well the contact matches the enterprise\'s product.',
+    eventTips: 'The event dimension is used to determine the contact\'s online behavior and implicit level of interest',
+    attr: 'Field',
+    event: 'Event',
+    scoreRule: 'Rules',
+    preStep: 'Prev step',
+    nextStep: 'Next step',
+    /***** 便捷模式-end *****/
+
+
+    /***** 专家模式-start *****/
+    
+    /***** 专家模式-end *****/
+
+
+    /***** 评分报告及其他关联-start *****/
+    modelReports: 'Model Reports',
+    lastComputationalResult: 'Last computational result',
+    attributeDimension: 'Property dimension',
+    eventDimension: 'event dimension',
+    totalRows: 'Total rows',
+    totalColumns: 'Total columns',
+    saveAsSegment: 'Save as segment',
+    dataSources: 'Source',
+    selectPlaceHolder: 'Score model name',
+    modalContent: 'The actual number of contacts in the segment is subject to some errors due to data permissions and date intervals',
+    
+    /***** 评分报告及其他关联-end *****/
+};

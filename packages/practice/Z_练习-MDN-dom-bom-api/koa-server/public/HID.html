@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <h2>webUsb</h2>
+    <button onclick="asd()">Get_BatteryInfo</button>
+    <p>value: <span id="Battery_value">null</span></p>
+    <hr>
+
+    <script>
+        // 该事件将允许应用程序检测在 Joy-Con Right 设备上按下了哪个按钮
+        // https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice
+        // device.addEventListener("inputreport", (event) => {
+        // const { data, device, reportId } = event;
+
+        // // Handle only the Joy-Con Right device and a specific report ID.
+        // if (device.productId !== 0x2007 && reportId !== 0x3f) return;
+
+        // const value = data.getUint8(0);
+        // if (value === 0) return;
+
+        // const someButtons = { 1: "A", 2: "X", 4: "B", 8: "Y" };
+        // console.log(`User pressed button ${someButtons[value]}.`);
+        // });
+        // 在以下示例中用于使设备闪烁
+        // const reportId = 1;
+        // for (let i = 0; i < 10; i++) {
+        // // Turn off
+        // await device.sendFeatureReport(reportId, Uint32Array.from([0, 0]));
+        // await waitFor(100);
+        // // Turn on
+        // await device.sendFeatureReport(reportId, Uint32Array.from([512, 0]));
+        // await waitFor(100);
+        // }
+        async function asd (){
+            // const device = await navigator.hid.requestDevice({filters: []})
+            // console.info(device);
+            let devices = await navigator.hid.getDevices();
+            devices.forEach((device) => {
+                console.log(`HID: ${device.productName}`);
+            });
+            // navigator.hid.addEventListener('connect', ({device}) => {
+            // console.log(`HID connected: ${device.productName}`);
+            // });
+            // navigator.hid.addEventListener('disconnect', (event) => {
+            //     console.log(`HID disconnected: ${event.device.productName}`);
+            //     console.dir(event)
+            // });
+        }
+    </script>
+</body>
+</html>

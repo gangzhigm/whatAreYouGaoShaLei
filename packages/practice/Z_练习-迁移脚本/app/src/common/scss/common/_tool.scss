@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+@import "../base/variables";
+@import "../base/mixin";
+
+// utilities
+.disabled-text {
+    color: $disabled;
+}
+
+.light-content-text {
+    color: $color-light-content;
+}
+
+.content-text {
+    color: $color-content;
+}
+
+.title-text {
+    color: $color-title;
+}
+
+.theme-text {
+    color: $green;
+}
+
+.red-text {
+    color: $red;
+}
+
+.orange-text {
+    color: $orange;
+}
+
+.blue-text {
+    color: $blue;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.tac {
+    text-align: center;
+}
+
+.tar {
+    text-align: right;
+}
+
+.tdu {
+    text-decoration: underline;
+}
+
+// vue transition: fade
+.fade-enter-active,
+.fade-leave-active {
+    @include transition(opacity .3s ease)
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0
+}
+
+// vue transition: drop
+.drop-enter-active {
+    @include transform(translateY(0));
+    opacity: 1;
+    @include transition();
+}
+
+.drop-leave-active {
+    @include transform(translateY(-10px));
+    opacity: 0;
+    @include transition(all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0));
+}
+
+.drop-enter {
+    @include transform(translateY(-10px));
+    opacity: .5;
+}
+
+// transition group links
+.links-enter-active,
+.links-leave-active {
+    @include transform-origin(right top);
+    @include transition();
+}
+
+.links-enter,
+.links-leave-active {
+    @include transform(scale(0) translate(5px, -5px));
+    opacity: 0;
+}
+
+.links-move {
+    @include transition();
+}
+
+// transition group cards
+.cards-move,
+.cards-enter-active {
+    @include transition(all 0.3s ease);
+}
+
+.cards-enter {
+    @include transform(scale(0.8));
+    opacity: 0.3;
+}
+
+// transition group list
+.list-enter-active,
+.list-leave-active {
+    @include transition();
+}
+
+.list-enter,
+.list-leave-active {
+    @include transform(scale(0));
+    opacity: 0;
+}
+
+.list-move {
+    @include transition();
+}
+
+
+// vue transition: pop
+.pop-enter-active {
+    @include transform(translateY(0));
+    opacity: 1;
+    @include transition(all .1s ease);
+}
+
+.pop-leave-active {
+    @include transform(translateY(8px));
+    opacity: 0;
+    @include transition(all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0));
+}
+
+.pop-enter {
+    @include transform(translateY(8px));
+    opacity: .5;
+}
+
+
+// transition: slide-left
+.slide-left-enter-active,
+.slide-left-leave-active {
+    @include transition()
+}
+
+.slide-left-enter,
+.slide-left-leave-to {
+    @include transform(translateX(-100%));
+    opacity: 0.5;
+}
+
+// transition: slide-right
+.slide-right-enter-active,
+.slide-right-leave-active {
+    @include transition()
+}
+
+.slide-right-enter,
+.slide-right-leave-to {
+    @include transform(translateX(100%));
+    opacity: 0.5;
+}

@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+@import "../base/variables";
+@import "../base/mixin";
+
+.form-field {
+    line-height: $input-field-height;
+    text-align: left;
+    
+    + .form-field {
+        margin-top: 1em;
+    }
+    
+    &.flex {
+        display: flex;
+        
+        > .input,
+        > .selector,
+        > .textarea,
+        > .field-group {
+            flex: 1;
+        }
+    }
+    
+    &:not(.flex) {
+        > .input {
+            width: $form-field-width;
+            max-width: 30em;
+            box-sizing: border-box;
+        }
+        > .lg {
+            width: $form-input-width;
+            max-width: 30em;
+            box-sizing: border-box;
+        }
+
+        > .select-field {
+            width: $form-field-width;
+        }
+        
+        > .textarea {
+            width: $form-field-width;
+        }
+
+
+    }
+
+    .label {
+        display: inline-block;
+        width: $form-label-width;
+        vertical-align: top;
+        margin-right: $label-offset;
+        color: $color-content;
+        text-align: right;
+        
+        &.placeholder {
+            height: $input-field-height;
+        }
+    }
+
+    .batch-content-label {
+        width: $form-batch-label-width;
+        margin-right: $label-offset;
+        color: $color-content;
+        text-align: right;
+    }
+    
+    .field-group {
+        //margin-left: $form-label-width + $label-offset;
+    }
+}
+
+// 公用输入框类名
+.input {
+    padding: ($input-field-height - 16px - 2px)/2 8px;
+    border: 1px solid $form-border;
+    @include border-radius(4px);
+    font-size: 12px;
+    line-height: 16px;
+    vertical-align: middle;
+    
+    &.full-width {
+        @include box-sizing();
+        width: 100%;
+    }
+    
+    &.overlap-left {
+        margin-left: -1px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        
+        &:hover,
+        &:focus,
+        &.active {
+            z-index: 1;
+        }
+    }
+    
+    &.overlap-right {
+        margin-right: -1px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        
+        &:hover,
+        &:focus,
+        &.active {
+            z-index: 1;
+        }
+    }
+    
+    &:not(.error) {
+        &:hover {
+            border-color: $light-theme;
+        }
+        
+        &:focus {
+            border-color: $theme;
+            @include box-shadow(0 0 4px rgba(#2ecbb5, .35))
+        }
+    }
+    
+    &.error {
+        border-color: $light-red;
+        background-color: rgba($light-red, .2);
+        
+        &:hover {
+            border-color: $red;
+        }
+        
+        &:focus {
+            border-color: $dark-red;
+            @include box-shadow(0 0 4px rgba($red, .35))
+        }
+    }
+    
+    &.tiny {
+        width: 2em;
+    }
+    
+    &.sm {
+        width: 5em;
+    }
+    
+    &.lg {
+        width: 20em;
+    }
+    
+    &.xl {
+        width: 40em;
+    }
+    &.hg {
+        width: $form-input-width;
+    }
+}
+
+// 公用textarea类名
+.textarea {
+    @include box-sizing();
+    padding: ($input-field-height - 16px - 2px)/2 8px;
+    border: 1px solid $form-border;
+    @include border-radius(4px);
+    line-height: 16px;
+    resize: vertical;
+    min-height: 5 * 16px + $input-field-height - 16px;
+    max-height: 20 * 16px + $input-field-height - 16px; // 255个中文字符正好能够放得开，不含空格
+    vertical-align: middle;
+    word-break: break-all;
+    
+    &.full-width {
+        width: 100%;
+    }
+    
+    &:not(.full-width) {
+        width: 70%;
+    }
+    
+    &:not(.error) {
+        &:hover {
+            border-color: $light-theme;
+        }
+        
+        &:focus {
+            border-color: $theme;
+            @include box-shadow(0 0 4px rgba(#2ecbb5, .35))
+        }
+    }
+    
+    &.error {
+        border-color: $light-red;
+        background-color: rgba($light-red, .2);
+        
+        &:hover {
+            border-color: $red;
+        }
+        
+        &:focus {
+            border-color: $dark-red;
+            @include box-shadow(0 0 4px rgba($red, .35))
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "readmemarker",
+  "version": "1.0.2",
+  "description": "自动生成readme文档",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "testWithCoverage": "conCurrently \"jest --coverage\" \"node ./test/coverage.js\"",
+    "lint": "conCurrently \"prettier --config ./prettier.config.js --write ./src/*.ts\" \"eslint src --ext .ts\"",
+    "serve": "tsc",
+    "start": "conCurrently \"yarn lint\" \"yarn serve\""
+  },
+  "repository": "https://gitee.com/yolanda624/readme_-make.git",
+  "bin": {
+    "readme-write": "./dist/index.js"
+  },
+  "keywords": [],
+  "author": "gangzhigm",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-alloy": "^3.6.0",
+    "express": "^4.17.1",
+    "jest": "^25.3.0",
+    "open": "^7.0.3",
+    "prettier": "^2.0.4",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3",
+    "wait-on": "^4.0.2"
+  }
+}

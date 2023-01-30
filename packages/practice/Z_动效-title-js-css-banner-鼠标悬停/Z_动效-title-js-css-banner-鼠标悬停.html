@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #333;
+        }
+        .main{
+            background: #fff;
+            width: 80vw;
+            height: 420px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+
+        .video-other-box{
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 60%;
+            padding:10px;
+            box-sizing: border-box;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all 0.5s ease-in-out;
+            transform: translate( -100%, 0);
+        }
+
+
+        .video{
+            width: 100%;
+            height: 100%;
+            background: #000;
+            object-fit: cover;
+            object-position: center center;
+            user-select: none;
+            position: relative;
+        }
+        .video-out-box::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .video-out-box{
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            right: 0;
+            position: absolute;
+            transform: translate(0, -50%);
+            transition: all 0.5s ease-out;
+            /* border:none; */
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .video-in-box{
+            transition: all 0.5s linear;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transform: translate(0,0);
+            align-items: center;
+            opacity: 1;
+            padding: 10px;
+            color: #fff;
+            filter: drop-shadow(0  1px 4px rgb(82, 175, 0));
+        }
+
+
+        .main:hover .video-out-box{
+            width: 40%;
+            height: 100%;
+            border: 10px solid transparent;
+        }
+
+        .main:hover .video-out-box .video-in-box{
+            opacity: 0;
+            transform: translate(-100%,0);
+        }
+
+        .main:hover .video-other-box{
+            opacity: 1;
+            transform: translate(0,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="video-other-box">
+            <h1>123124</h1>
+            <h3>123124</h3>
+        </div>
+        <div class="video-out-box">
+            <video class="video" autoplay muted loop src="./banner.mp4">
+            </video>
+            <div class="video-in-box">
+                <h1>123124</h1>
+                <h3>123124</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

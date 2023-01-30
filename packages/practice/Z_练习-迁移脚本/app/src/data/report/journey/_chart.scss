@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+$page-status-height: 50px;
+$chart-gutter: 16px;
+$chart-meta-height: $input-field-height + 30px;
+
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .chart {
+        flex-grow: 1;
+        width: 100%;
+        margin-bottom: $chart-gutter;
+        vertical-align: top;
+        @include border-radius(3px);
+        background-color: white;
+        line-height: 14px;
+        
+        &.half {
+            width: -webkit-calc(50% - #{$chart-gutter / 2});
+            width: calc(50% - #{$chart-gutter / 2});
+        }
+        
+        &.one-third {
+            width: -webkit-calc((100% - #{$chart-gutter * 2}) / 3);
+            width: calc((100% - #{$chart-gutter * 2}) / 3);
+        }
+        
+        &.two-thirds {
+            width: -webkit-calc((100% - #{$chart-gutter * 2}) * 2 / 3 + #{$chart-gutter});
+            width: calc((100% - #{$chart-gutter * 2}) * 2 / 3 + #{$chart-gutter});
+        }
+        
+        &.left-margin {
+            margin-left: $chart-gutter;
+        }
+        
+        &.right-margin {
+            margin-right: $chart-gutter;
+        }
+        
+        .chart-head {
+            padding: ($chart-meta-height - $input-field-height)/2 $chart-gutter;
+            border-bottom: 1px solid #e1e1e1;
+            @include ellipsis();
+            
+            @at-root .chart-summary-number {
+                float: right;
+                text-align: right;
+                
+                + .chart-summary-number {
+                    margin-right: $chart-gutter;
+                    padding-right: $chart-gutter;
+                    position: relative;
+                    
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 100%;
+                        border-right: 1px solid #e1e1e1;
+                    }
+                }
+                
+                .number {
+                    display: block;
+                    font-size: 18px;
+                    line-height: 30px;
+                }
+            }
+            
+            h5 {
+                line-height: 30px;
+            }
+            
+            .icon-help {
+                cursor: pointer;
+                margin-left: 5px;
+            }
+    
+            .detail-link {
+                color: $theme;
+                cursor: pointer;
+                font-size: 12px;
+        
+                &:hover {
+                    color: $light-theme;
+                    text-decoration: underline;
+                }
+            }
+        }
+        
+        .chart-body {
+            &.xl {
+                height: 580px;
+            }
+            
+            &.lg {
+                height: 352px;
+            }
+            
+            &.md {
+                height: 284px;
+            }
+            
+            &.sm {
+                height: 122px;
+            }
+            
+            &.empty {
+                text-align: center;
+                color: $color-light-content;
+                font-style: italic;
+                
+                &:before {
+                    content: url("./empty-chart.png");
+                    display: block;
+                    padding: 35px 0 15px;
+                }
+                
+                &:after {
+                    content: attr(no-data);
+                }
+            }
+            
+            @at-root .charts-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                .chart-cell {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    
+                    .icon-sms,
+                    .icon-mail {
+                        display: inline-block;
+                        flex-shrink: 0;
+                        width: 84px;
+                        height: 84px;
+                        font-size: 42px;
+                        line-height: 84px;
+                        vertical-align: top;
+                        text-align: center;
+                        margin: 19px 10px 19px 0;
+                        color: white;
+                        @include border-radius(100%);
+                        @include linear-gradient(to bottom, $green, $purple);
+                    }
+                    
+                    .icon-click {
+                        display: inline-block;
+                        flex-shrink: 0;
+                        width: 80px;
+                        height: 80px;
+                        font-size: 42px;
+                        line-height: 80px;
+                        vertical-align: top;
+                        text-align: center;
+                        margin: 19px 10px 19px 0;
+                        color: $purple;
+                        @include border-radius(100%);
+                        border: 2px solid currentColor;
+                    }
+                    
+                    .tiny-chart {
+                        display: inline-block;
+                        flex-shrink: 0;
+                        vertical-align: top;
+                        width: 84px;
+                        height: 84px;
+                        margin: 19px 10px 19px 0;
+                    }
+                    
+                    .small-chart {
+                        display: inline-block;
+                        flex-shrink: 0;
+                        width: 100%;
+                        max-width: 450px;
+                        min-width: 250px;
+                        height: 130px;
+                    }
+                    
+                    .medium-chart {
+                        display: inline-block;
+                        flex-shrink: 0;
+                        vertical-align: top;
+                        width: 100%;
+                        max-width: 540px;
+                        min-width: 250px;
+                        height: 230px;
+                    }
+                    
+                    .large-chart {
+                        display: inline-block;
+                        flex-shrink: 0;
+                        vertical-align: top;
+                        width: 100%;
+                        height: 310px;
+                    }
+                    
+                    h3 {
+                        color: $purple;
+                        
+                        span {
+                            display: block;
+                            margin-top: .2em;
+                            font-weight: normal;
+                            font-size: 12px;
+                            -ms-word-break: break-word;
+                            word-break: break-word;
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        .table {
+            @include box-sizing();
+            padding: 16px 18px 46px;
+            max-height: 100%;
+            overflow: auto;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+$step-width: 800px;
+.step {
+    width: $step-width;
+    margin: auto;
+    @include user-select(none);
+    .title {
+        width: $step-width - 18px;
+        height: 48px;
+        line-height: 48px;
+        border: none;
+        border-top: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        color: #262626;
+        padding-left: 16px;
+    }
+    .sub-content {
+        border: 1px solid $border-color;
+        background-color: #ffffff;
+        padding: 16px;
+    }
+    .shell {
+        text-align: center;
+        margin: 40px 0;
+    }
+    .msg-name {
+        color: $green;
+        text-align: center;
+    }
+    .msg-fail-name {
+        color: $red;
+        text-align: center;
+    }
+    .msg-text {
+        text-align: center;
+        margin: 24px 0 0 0;
+        .download-fail {
+            color: $green;
+            border: none;
+        }
+    }
+}

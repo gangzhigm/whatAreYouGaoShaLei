@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <h2>Battery</h2>
+    <button onclick="get_BatteryInfo()">Get_BatteryInfo</button>
+    <p>value: <span id="Battery_value">null</span></p>
+    <hr>
+
+    <script>
+        function get_BatteryInfo(){
+            document.getElementById("Battery_value").innerText = "";
+            setTimeout(()=>{
+                navigator.getBattery().then((BatteryStatus)=>{
+                    const data = `
+                        是否正在充电: charging: ${BatteryStatus.charging}, 
+                        充电完成时间: chargingTime: ${BatteryStatus.chargingTime}, 
+                        电池耗尽时间: dischargingTime: ${BatteryStatus.dischargingTime}, 
+                        电量指数（归一化）: level: ${BatteryStatus.level}, 
+                    `;
+                    document.getElementById("Battery_value").innerText = data
+                })    
+            }, 2000)
+        }
+        navigator.getBattery().then((BatteryStatus)=>{
+            const data = `
+                是否正在充电: charging: ${BatteryStatus.charging}, 
+                充电完成时间: chargingTime: ${BatteryStatus.chargingTime}, 
+                电池耗尽时间: dischargingTime: ${BatteryStatus.dischargingTime}, 
+                电量指数（归一化）: level: ${BatteryStatus.level}, 
+            `;
+            document.getElementById("Battery_value").innerText = data
+            BatteryStatus.chargingchange = function(charging){ console.info(`是否正在充电发生改变: charging: ${charging}`) };
+            BatteryStatus.chargingtimechange = function(chargingTime){ console.info(`充电完成时间发生改变: chargingTime: ${chargingTime}`) };
+            BatteryStatus.dischargingtimechange = function(dischargingTime){ console.info(`电池耗尽时间发生改变: dischargingTime: ${dischargingTime}`) };
+            BatteryStatus.levelchange = function(levelchange){ console.info(`电量指数发生改变: levelchange: ${levelchange}`) };
+        })
+    </script>
+</body>
+</html>

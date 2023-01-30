@@ -1,0 +1,57 @@
+@import "../../common/scss/base/variables";
+@import "../../common/scss/base/mixin";
+
+.event-analysis {
+    $page-top-height: 37px;
+    display: flex;
+    flex-direction: column;
+    
+    .event-analysis-content {
+        flex: 1;
+        overflow: auto;
+        padding-bottom: 1em;
+    }
+    
+    .table-wrap {
+        .search{
+            padding-bottom: 8px;
+            line-height: $input-field-height;
+            @include clearfix();
+            
+            .select-type {
+                margin-left: 10px;
+            }
+            
+            .table-operate {
+                float: right;
+                font-size: 0;
+                
+                .icon {
+                    cursor: pointer;
+                    display: inline-block;
+                    font-size: 18px;
+                    width: $input-field-height - 2px;
+                    line-height: $input-field-height - 2px;
+                    vertical-align: top;
+                    background-color: #fff;
+                    border: 1px solid $border-color;
+                    text-align: center;
+                    
+                    &.active {
+                        background-color: $light-green;
+                        color: white;
+                    }
+                    
+                    &:first-child {
+                        border-radius: 4px 0 0 4px;
+                        border-right: none;
+                    }
+                    
+                    &:last-child {
+                        border-radius: 0 4px 4px 0;
+                    }
+                }
+            }
+        }
+    }
+}

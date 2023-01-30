@@ -1,0 +1,1 @@
+git log --pretty={"commit":"%h","author":"%an","summary":"%s","date":"%cd"} --since=2022-6-1

@@ -1,0 +1,622 @@
+@charset "UTF-8";
+
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+@import "../journey-variables";
+
+.journey-calendar {
+    $journey-task-bg: #f5f5f5;
+    $panel-height: 64px;
+
+    float: left;
+    height: calc(100vh - #{$header-height + $toolbar-height + $page-head-height + 6px + 1px});
+    width: calc(100vw - #{$slim-panel-width});
+    padding: 0 6px 6px;
+    background-color: $journey-task-bg;
+    @include box-sizing();
+
+    &.full-width {
+        width: 100%;
+    }
+
+    // journey 任务列表
+    .journey-tasks {
+
+        // 试图切换、月/周切换、创建任务入口
+        @at-root .tasks-panel {
+            padding: ($panel-height - $input-field-height)/2 8px;
+            text-align: center;
+            @include clearfix();
+
+            .icon-menu {
+                font-size: 16px;
+            }
+
+            .view-switch {
+                display: inline-table;
+                table-layout: fixed;
+                margin-left: 16px;
+                line-height: $input-field-height - 2px;
+                overflow: hidden;
+                border-radius: 4px;
+                border: 1px solid $border-color;
+                @include user-select(none);
+
+                span {
+                    display: table-cell;
+                    padding: 0 2em;
+                    background-color: white;
+                    cursor: pointer;
+
+                    &.active {
+                        background-color: $theme;
+                        color: white;
+                        @include box-shadow(0 3px 3px rgba(black, .07));
+                    }
+                }
+            }
+
+            [class*="icon-arrow"] {
+                display: inline-block;
+                vertical-align: top;
+                height: $input-field-height;
+                cursor: pointer;
+                color: $color-light-content;
+                background-color: transparent;
+                border: none;
+
+                &[disabled] {
+                    color: $color-light-content;
+                    cursor: not-allowed;
+                }
+
+                &:not([disabled]):hover {
+                    color: $color-content;
+                }
+            }
+
+            h5 {
+                display: inline-block;
+                line-height: $input-field-height;
+                vertical-align: top;
+                margin: 0 1em;
+            }
+        }
+
+        // 旅程的一个任务
+        @at-root .journey-task {
+            $default-task-border: #f5f5f5;
+
+            position: relative;
+            margin-bottom: 10px;
+            border-left: 3px solid $default-task-border;
+            border-right: 3px solid $default-task-border;
+            border-bottom: 3px solid $default-task-border;
+            -ms-word-break: break-all;
+            word-break: break-all;
+            background-color: white;
+            @include transition();
+
+            // 发送中的任务
+            &.sending {
+                $sending-task-border: $theme;
+                border-color: $sending-task-border;
+
+                .time-tag {
+                    color: rgba(white, .6);
+                    background-color: $sending-task-border;
+                }
+
+                &:after {
+                    content: attr(data-sending-text);
+                    color: white;
+                    background-color: $sending-task-border;
+                }
+            }
+
+            // 校验异常
+            &.in-validate {
+                //border-color: $light-red;
+                //
+                //&:before {
+                //    font-family: "icon", $font;
+                //    content: '\e61a';
+                //    position: absolute;
+                //    left: 5px;
+                //    top: 5px;
+                //    color: $red;
+                //}
+                //
+                //.task-content {
+                //    border-color: $red;
+                //}
+                //
+                //.time-tag {
+                //    background-color: $light-red;
+                //}
+            }
+
+            &:after {
+                display: block;
+                line-height: 19px;
+                text-align: center;
+            }
+
+            &:not(.sending):after {
+                content: attr(data-status);
+                color: $color-light-content;
+                background-color: $default-task-border;
+            }
+
+            &:hover {
+                @include box-shadow(0 3px 3px rgba(black, .07));
+
+                .task-meta .task-actions {
+                    @include transform(scale(1));
+                    opacity: 1;
+                }
+
+                .task-meta p {
+                    opacity: 0;
+                }
+            }
+
+            .time-tag {
+                height: 20px;
+                line-height: 20px;
+                text-align: right;
+                padding-right: 5px;
+                color: $color-light-content;
+                background-color: $default-task-border;
+
+                &:before {
+                    color: rgba($color-light-content, .6);
+                    margin-right: 5px;
+                }
+            }
+
+            .task-content {
+                overflow: hidden;
+                border: 1px solid #dcdcdc;
+            }
+
+            .task-material-preview {
+                position: relative;
+                height: 128px - 10px;
+                padding: 5px;
+                overflow: hidden;
+
+                // 邮件素材的预览图
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+
+                // 短信素材的文本
+                p {
+                    padding: 12px;
+                    line-height: 21px;
+                    color: $color-light-content;
+                }
+
+                .need-for-material {
+                    padding: 0;
+                    text-align: center;
+                    font-style: italic;
+                    line-height: 128px - 10px;
+                }
+            }
+
+            .task-meta {
+                position: relative;
+                white-space: nowrap;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -21px;
+                    left: 0;
+                    right: 0;
+                    height: 21px;
+                    @include linear-gradient(to top, rgba($color-content, .6), rgba(#000, .0))
+                }
+
+                // journey详情文字
+                .task-name {
+                    padding: 0 6px;
+                    @include transition();
+                    will-change: opacity;
+                    @include ellipsis();
+                    line-height: 28px;
+                }
+
+                .task-send-count {
+                    padding: 0 6px;
+                    @include transition();
+                    will-change: opacity;
+                    @include ellipsis();
+                    height: 30px;
+                    line-height: 30px;
+                    border-top: 1px solid #dcdcdc;
+                    color: $color-light-content;
+
+                    span {
+                        color: $color-content;
+                        font-weight: bold;
+                    }
+                }
+
+                .icon {
+                    margin-right: 5px;
+                    font-size: 18px;
+                    vertical-align: middle;
+                }
+
+                .icon-sms:before {
+                    color: $theme;
+                }
+
+                .icon-mms:before {
+                    color: $orange;
+                }
+
+                .icon-mail:before {
+                    color: $purple;
+                }
+
+                .icon-wechat:before {
+                    color: $wechat;
+                }
+
+                .task-actions {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    background-color: white;
+                    text-align: center;
+                    @include transform(scale(0));
+                    @include transition();
+                    opacity: 0;
+                    will-change: transform;
+
+                    &:after {
+                        content: '';
+                        display: inline-block;
+                        height: 100%;
+                        vertical-align: middle;
+                    }
+
+                    .icon-pencil,
+                    .icon-delete,
+                    .icon-search {
+                        display: inline-block;
+                        margin: auto 5px;
+                        padding: 0;
+                        width: 35px;
+                        height: 35px;
+                        line-height: 35px;
+                        font-size: 14px;
+                        border: none;
+                        @include border-radius(100%);
+                        color: white;
+                        background-color: $color-light-content;
+                        @include transition();
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: $color-content;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        // 周视图
+        @at-root .week-view {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - #{$header-height + $toolbar-height + $page-head-height + $panel-height + 7px});
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            // 每列最小宽度
+            $minimum-col-width: 160px;
+
+            .week-head {
+                display: flex;
+                flex-shrink: 0;
+
+                .week-head-item {
+                    flex: 1;
+                    min-width: $minimum-col-width;
+                    position: relative;
+                    line-height: 40px;
+                    border-bottom: 4px solid $journey-task-bg;
+                    font-weight: normal;
+                    text-align: center;
+                    color: $color-light-content;
+
+                    &:not(.past) {
+                        background-color: white;
+                    }
+
+                    &.past {
+                        background-color: $content-bg;
+                    }
+
+                    &.isToday {
+                        background-color: $theme;
+                        color: white;
+
+                        &:before {
+                            content: attr(today);
+                            position: absolute;
+                            top: (40px - 18px)/2;
+                            left: 8px;
+                            line-height: 17px;
+                            height: 17px;
+                            width: 35px;
+                            border-radius: 20px;
+                            color: white;
+                            background: transparent;
+                            border: 1px solid white;
+                        }
+
+                        &:after {
+                            background: white;
+                        }
+                    }
+
+                    + .week-head-item {
+                        border-left: 4px solid $journey-task-bg;
+                    }
+
+                    &:after {
+                        content: attr(data-count);
+                        position: absolute;
+                        line-height: 18px;
+                        top: (40px - 18px)/2;
+                        right: 8px;
+                        border-radius: 9px;
+                        min-width: 1em;
+                        padding: 0 (28px - 12px)/2;
+                        color: $color-light-content;
+                        background-color: $content-bg;
+                    }
+                }
+            }
+
+            .week-body {
+                display: flex;
+                flex-grow: 1;
+                height: 100%;
+
+                .week-body-item {
+                    flex: 1;
+                    width: floor(1/7 * 100) * 1%;
+                    min-width: $minimum-col-width;
+                    position: relative;
+                    background-color: white;
+                    overflow: auto;
+                    height: 90%;
+                    max-height: 100%;
+                    padding: 10px 5px 5px;
+                    @include box-sizing();
+                    @include transition();
+
+                    &:not(.past) {
+                        background-color: white;
+                    }
+
+                    &.past {
+                        background-color: $content-bg;
+                    }
+
+                    &.isToday {
+                        background-color: rgba($theme, .3);
+                    }
+
+                    + .week-body-item {
+                        border-left: 4px solid $journey-task-bg;
+                    }
+                }
+            }
+        }
+
+        // 月视图
+        @at-root .month-view {
+            overflow: auto;
+            height: calc(100vh - #{$header-height + $toolbar-height + $page-head-height + $panel-height + 7px});
+
+            table {
+                table-layout: fixed;
+                min-width: 100%;
+                background-color: white;
+                border-collapse: collapse;
+
+                th {
+                    line-height: 40px;
+                    width: floor(1/7 * 100) * 1%;
+                    padding: 0 8px;
+                    font-weight: normal;
+                    border-bottom: 4px solid $journey-task-bg;
+                    color: $color-light-content;
+                }
+
+                td {
+                    position: relative;
+                    padding: 11px 8px 11px 12px;
+                    vertical-align: bottom;
+                    border-bottom: 1px solid $journey-task-bg;
+                    height: 100px - 11px * 2;
+
+                    .today-icon {
+                        display: none;
+                        position: absolute;
+                        left: 34px;
+                        top: 9px;
+                        width: 36px;
+                        height: 20px;
+                        line-height: 20px;
+                        text-align: center;
+                        border-radius: 20px;
+                        color: white;
+                        background: $theme;
+                    }
+
+                    &.past {
+                        color: rgba($color-light-content, .5);
+                    }
+
+                    &.isToday {
+                        background: rgba($theme, .3);
+
+                        &:before {
+                            color: $theme;
+                        }
+
+                        .today-icon {
+                            display: unset;
+                        }
+                    }
+
+                    &[data-not-empty] {
+                        cursor: pointer;
+                    }
+
+                    &:before {
+                        content: attr(data-day);
+                        position: absolute;
+                        top: 11px;
+                        left: 12px;
+                    }
+
+                    &:hover {
+                        .task-icon {
+                            @include transform(scale(1.05));
+
+                            &:first-of-type {
+                                margin-right: -10px;
+                            }
+                        }
+                    }
+
+                    &[data-invalid] {
+                        background-color: $light-red;
+
+                        &:after {
+                            position: absolute;
+                            /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+                            font-family: "icon", $font;
+                            content: '\e61a';
+                            font-size: 14px;
+                            top: 11px;
+                            right: 12px;
+                            color: $red;
+                        }
+
+                        .task-icon {
+                            border-color: $light-red;
+                        }
+                    }
+
+                }
+
+                td ~ td,
+                th ~ th {
+                    border-left: 1px solid $journey-task-bg;
+                }
+            }
+
+            .task-icon {
+                display: inline-block;
+                width: 31px;
+                font-size: 18px;
+                line-height: 31px;
+                border: 2px solid white;
+                text-align: center;
+                border-radius: 100%;
+                color: white;
+                cursor: pointer;
+                @include transition();
+                transform-style: preserve-3d;
+                @include transform-origin(0 100%);
+
+                &:first-of-type {
+                    position: relative;
+                    margin-right: -14px;
+                }
+            }
+
+            .total-figure {
+                font-size: 14px;
+                color: $color-light-content;
+            }
+
+            .icon-sms {
+                background-color: $theme;
+            }
+
+            .icon-mms {
+                background-color: $orange;
+            }
+
+            .icon-mail {
+                background-color: $purple;
+            }
+
+            .icon-wechat {
+                background-color: $wechat;
+            }
+        }
+    }
+
+    // 右侧滑出任务列表
+    .task-preview-list {
+        position: fixed;
+        z-index: 1;
+        top: $header-height + $toolbar-height + $page-head-height;
+        right: 0;
+        width: 250px;
+        bottom: 0;
+        background-color: white;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        @include box-shadow(0 0 13px rgba(black, .38));
+        @include transition();
+
+        &.slide-toggle-enter,
+        &.slide-toggle-leave-to {
+            @include transform(translateX(100%));
+        }
+
+        h5 {
+            padding: 0 18px;
+            line-height: 44px;
+            @include ellipsis();
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .icon-close {
+            float: right;
+            font-weight: normal;
+            color: $color-light-content;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-light-content;
+            }
+        }
+
+        .tasks {
+            @include box-sizing();
+            max-height: calc(100% - 45px);
+            overflow: auto;
+            padding: 19px 20px 19px 28px;
+        }
+    }
+}

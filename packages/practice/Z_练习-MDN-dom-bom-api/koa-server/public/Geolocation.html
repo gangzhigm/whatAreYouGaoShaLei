@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <h2>Geolocation</h2>
+    <button onclick="get_CurrentGeolocation()">Get_Current_Geolocation</button>
+    <button onclick="set_WatchGeolocation()">Set_Watch_Geolocation</button>
+    <!-- <button onclick="clean_WatchGeolocation()">Clean_Watch_Geolocation</button> -->
+    <div>watchID: <div id="watchidList"></div></div>
+    <p>value: <span id="Geolocation_value">null</span></p>
+    <hr>
+
+    <script>
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+        const watchID_List = [];
+        function success(pos) {
+            const crd = pos.coords;
+            console.info(crd);
+            document.getElementById("Geolocation_value").innerText = `
+            时间戳: ${pos.timestamp}, 
+            位置精度：${crd.accuracy}
+            位置海拔：${crd.altitude}
+            海拔精度：${crd.altitudeAccuracy}
+            行进方向：${crd.heading}
+            位置纬度：${crd.latitude}
+            位置经度：${crd.longitude}
+            位置速度：${crd.speed}
+            `;
+            console.log('Your current position is:');
+            console.log('Latitude : ' + crd.latitude);
+            console.log('Longitude: ' + crd.longitude);
+            console.log('More or less ' + crd.accuracy + ' meters.');
+        };
+        function error(err) {
+            console.warn('ERROR(' + err.code + '): ' + err.message);
+        };
+        function get_CurrentGeolocation(){
+            if ('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition(success, error, options);
+            } else {error({code:'null', message:'not supported Geolocation'})}
+        }
+        function set_WatchGeolocation(){
+            if ('geolocation' in navigator) {
+                const watchID = navigator.geolocation.watchPosition(success, error, options);
+                clean_WatchIDList(watchID);
+            } else {error({code:'null', message:'not supported Geolocation'})}
+        }
+        function clean_WatchGeolocation(ID){
+            if ('geolocation' in navigator) {
+                navigator.geolocation.clearWatch(ID);
+                event.target.parentNode.remove();
+            } else {error({code:'null', message:'not supported Geolocation'})}
+        }
+        function clean_WatchIDList(ID){
+            const btn = document.createElement("button");
+            btn.onclick = function(){ return clean_WatchGeolocation(ID) };
+            btn.innerText = "Clean_Watch_Geolocation";
+            
+            const text = document.createElement("span");
+            text.innerText = `${ID}:  `;
+
+            const block = document.createElement("div");
+            block.appendChild(text);
+            block.appendChild(btn);
+            document.querySelector("#watchidList").appendChild(block);
+
+        }
+
+    </script>
+</body>
+</html>

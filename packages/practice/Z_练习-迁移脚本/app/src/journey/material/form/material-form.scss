@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+.material-form {
+    
+    .form {
+        padding: 24px;
+        margin-top: 24px;
+        margin-bottom: 50px + 24px;
+        @include clearfix();
+    }
+    
+    .form-panel {
+        position: absolute;
+        bottom: 0;
+        height: 49px;
+        line-height: 49px;
+        left: 0;
+        right: 0;
+        padding: 0;
+        border-top: 1px solid $border-color;
+        background-color: white;
+        text-align: center;
+        color: $color-light-content;
+        
+        .cancel-btn {
+            float: left;
+            padding: 0 1em;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        
+        .step {
+            color: $color-content;
+        }
+        
+        .confirm-btn {
+            float: right;
+            border: none;
+            height: 49px;
+            line-height: 49px;
+            @include border-radius(0);
+        }
+    }
+    
+}

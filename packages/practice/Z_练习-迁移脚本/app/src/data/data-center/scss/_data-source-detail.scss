@@ -1,0 +1,82 @@
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+.data-source-detail {
+    .creator-name {
+        display: inline-block;
+        max-width: 20em;
+        vertical-align: top;
+        @include ellipsis();
+        margin: 0 $input-field-height;
+        
+        svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: top;
+            margin-right: 4px;
+            margin-top: 9px;
+            fill: $form-border;
+        }
+    }
+    
+    .data-source-tag {
+        display: inline-block;
+        line-height: 20px;
+        padding: 0 1em;
+        margin-top: ($input-field-height - 22px)/2;
+        vertical-align: top;
+        text-align: center;
+        color: $color-light-content;
+        background-color: $disabled-bg;
+        border: 1px solid $border-color;
+        @include border-radius(4px);
+        @include ellipsis();
+        
+        & + .data-source-tag {
+            margin-left: 12px;
+        }
+        
+        &.tag-delete {
+            cursor: pointer;
+            
+            &:hover {
+                background-color: $red;
+                color: #fff;
+            }
+        }
+    }
+    
+    .data-source-info {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 $input-field-height;
+        color: $color-light-content;
+        
+        span {
+            display: inline-block;
+            width: 60px;
+            font-weight: bold;
+        }
+    }
+    
+    //.add-sign {
+    //    position: relative;
+    //    border: 1px dashed $border-color;
+    //    color: $green;
+    //    svg {
+    //        fill: $green;
+    //    }
+    //}
+    
+    // markdown 文档容器
+    .markdown-container {
+        white-space: pre;
+        margin-bottom: 32px;
+        padding: 32px;
+        background-color: white;
+        
+        li {
+            list-style-type: inherit;
+        }
+    }
+}

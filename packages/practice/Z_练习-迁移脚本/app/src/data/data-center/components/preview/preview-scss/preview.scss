@@ -1,0 +1,23 @@
+@import "../../../../../common/scss/base/variables";
+@import "../../../../../common/scss/base/mixin";
+
+.no-data {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+}
+
+.table-box {
+    overflow-x: auto;
+}
+
+.table-wrap {
+    margin-top: 0;
+    .table {
+        thead {
+            th {
+                border-right: none;
+            }
+        }
+    }
+}

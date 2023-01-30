@@ -1,0 +1,255 @@
+@import '../../../../../common/scss/base/variables';
+@import '../../../../../common/scss/base/mixin';
+
+// 通用渲染类
+.wecom-render {
+    padding: 10px;
+    background-color: #fff;
+    @include border-radius(4px);
+    @include box-sizing();
+    &.clickable-cursor {
+        cursor: pointer;
+    }
+    .clickable-cursor {
+        cursor: pointer;
+    }
+}
+// 样式像卡片，且内容高度动态变化的类
+.wecom-cardlike-render {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: unset;
+    width: 245px;
+    min-height: 120px;
+    // 主体内容，如标题 描述等
+    .cardlike-body {
+        flex: 1;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $border-color;
+        @include box-sizing();
+        // 标题
+        .cardlike-icon {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 40px;
+        }
+        .cardlike-avatar {
+            display: inline-block;
+            vertical-align: top;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            @include border-radius(4px);
+        }
+        .cardlike-title-text {
+            display: inline-block;
+            width: calc(100% - 40px);
+            div {
+                padding-bottom: 5px;
+            }
+        }
+    }
+    // 底部栏，显示消息类型
+    .cardlike-footer {
+        height: 20px;
+        @include ellipsis();
+    }
+}
+// 样式像卡片，但固定高度的类
+.wecom-frame-render {
+    width: 245px;
+    height: 120px;
+    padding-bottom: unset;
+
+    .frame-content {
+        display: flex;
+        justify-content: start;
+        height: 90px;
+        border-bottom: 1px solid $border-color;
+        @include box-sizing();
+
+        .frame-info {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .frame-avatar {
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            @include border-radius(4px);
+            &.icon {
+                font-size: 38px;
+            }
+        }
+    }
+    .frame-footer {
+        overflow: hidden;
+        @include ellipsis();
+    }
+}
+
+// 文本
+.wecom-text-render {
+    display: inline-block;
+    max-width: 50%;
+}
+
+// 图片
+.wecom-image-render {
+    max-width: 50%;
+    max-height: 200px;
+    object-fit: contain;
+    cursor: pointer;
+    @include border-radius(4px);
+}
+
+// 已撤回
+.wecom-revoke-render {
+    color: #fff;
+    background-color: $dark-red;
+}
+
+// 语音
+.wecom-voice-render {
+    &.reverse-msg {
+        .voice-bar {
+            margin-right: unset;
+            margin-left: 5px;
+            transform: rotateY(180deg);
+        }
+        span {
+            float: left;
+        }
+    }
+    @include border-radius(4px);
+    @include box-sizing();
+    span {
+        line-height: $input-field-height;
+        vertical-align: top;
+    }
+
+    .voice-bar {
+        display: inline-block;
+        margin-right: 5px;
+        width: 100px;
+        padding: 8px 10px;
+        height: $input-field-height;
+        background-color: #c6e5ff;
+        line-height: $input-field-height;
+        cursor: pointer;
+        @include border-radius(4px);
+        @include box-sizing();
+
+        .voice-wave {
+            background: url(../../assets/audio_wave.png) right 0 no-repeat;
+            width: 16px;
+            height: 16px;
+            background-size: 400%;
+        }
+
+        .voicePlay {
+            animation-name: voicePlay;
+            animation-duration: 1s;
+            animation-direction: normal;
+            animation-iteration-count: infinite;
+            animation-timing-function: steps(3);
+        }
+
+        @keyframes voicePlay {
+            0% {
+                background-position: 0;
+            }
+            100% {
+                background-position: 100%;
+            }
+        }
+    }
+}
+
+// 视频
+.wecom-video-render {
+    video {
+        @include border-radius(4px);
+    }
+}
+
+// 表情
+.wecom-emotion-render {
+    max-width: 50%;
+    max-height: 200px;
+    object-fit: contain;
+    @include border-radius(4px);
+}
+
+// 小程序
+.wecom-weapp-render {
+    width: 245px;
+    height: 245px;
+    padding-bottom: unset;
+
+    .weapp-content {
+        position: relative;
+        height: 215px;
+        border-bottom: 1px solid $border-color;
+        @include box-sizing();
+        .weapp-title,
+        .weapp-name {
+            max-height: 34px;
+            overflow: hidden;
+        }
+        .weapp-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 80px;
+        }
+    }
+}
+
+// 投票
+.wecom-vote-render {
+    .vote-view-more {
+        cursor: pointer;
+    }
+}
+
+// 聊天记录
+.wecom-chatrecord-render {
+    width: 245px;
+    min-height: 120px;
+    padding: 10px;
+    background-color: #fff;
+
+    .chatrecord-title,
+    .chatrecord-summary {
+        margin-bottom: 10px;
+    }
+
+    .chatrecord-view-more {
+        cursor: pointer;
+    }
+}
+// 红包/互通红包
+.wecom-redpacket-render {
+    background-color: $red;
+    color: white;
+    @include border-radius(4px);
+    @include box-sizing();
+    .redpacket-body {
+        padding: 10px;
+    }
+    .redpacket-footer {
+        padding-left: 10px;
+        background-color: white;
+    }
+}
+
+// 待办
+.wecom-todo-render {
+    width: 320px;
+}

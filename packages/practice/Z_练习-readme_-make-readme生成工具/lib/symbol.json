@@ -1,0 +1,4 @@
+{
+    "symbol":[ "./", "## ", "**", "    ", "├── ", "└── ", " ", "\\", "[ ", " ](#", ")", "- ", " :  ", "  //", "\n", "/", "```", "\",\"", "\":\"", "└", "├", "│", "     #", "[" ],
+    "shortSentence":[ "git branch -a", "/origin/", "> [分支作用的语言描述]", "./README.md", "utf8", "directory", "file", "objItemFileTreeMd", "package.json", "./package.json", "utf-8" ]
+}

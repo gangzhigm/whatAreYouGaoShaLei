@@ -1,0 +1,428 @@
+@charset "utf-8";
+
+@import "../base/variables";
+@import "../base/mixin";
+
+.content-container {
+    background-color: $content-bg;
+    height: calc(100vh - #{$header-height});
+    @include clearfix();
+}
+
+.content-view {
+    min-width: 1000px;
+    margin: 0 3%;
+
+    &.padding {
+        padding: 16px 24px 24px;
+        @include box-sizing();
+    }
+
+    &.margin {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    &.white-bg {
+        background-color: white;
+    }
+}
+
+// 顶部工具栏
+.toolbar {
+    height: $toolbar-height;
+    text-align: right;
+    @include clearfix();
+    @include user-select(none);
+
+    .divider {
+        display: inline-block;
+        width: 2px;
+        height: 15px;
+        margin-top: ($toolbar-height - 1px - 15px)/2;
+        background-color: $color-light-content;
+    }
+
+    .toolbar-action {
+        color: $theme;
+        line-height: $toolbar-height;
+        vertical-align: top;
+        cursor: pointer;
+
+        &:hover {
+            color: $light-theme;
+            text-decoration: underline;
+        }
+
+        &:active {
+            color: $dark-theme;
+        }
+    }
+
+    .toolbar-btn {
+        position: relative;
+        display: inline-block;
+        padding: 0 5px;
+        border: none;
+        line-height: $toolbar-height;
+        text-align: left;
+        vertical-align: top;
+        color: $color-light-content;
+        background-color: transparent;
+        outline: none;
+        @include appearance(none);
+        cursor: pointer;
+        @include transition(color .1s linear);
+
+        &:hover {
+            color: $theme;
+        }
+
+        &:active {
+            color: $dark-theme;
+        }
+
+        svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: top;
+            fill: $theme;
+            margin: ($toolbar-height - 14px)/2 1px 0;
+        }
+    }
+}
+
+// 面包屑下方，占满宽度的标题栏
+.page-head {
+    line-height: $input-field-height;
+    padding: ($page-head-height - $input-field-height)/2 0;
+    background-color: white;
+
+    h1 {
+        display: inline;
+        vertical-align: top;
+        font-size: 24px;
+        font-weight: normal;
+        color: $color-content;
+        word-break: break-word;
+        overflow: hidden;
+    }
+
+    .page-head-btn {
+        vertical-align: top;
+        margin: 0 18px;
+    }
+}
+
+// 面包屑下方，占满宽度的tab导航
+.tab-links {
+    background-color: white;
+    @include clearfix();
+    padding: ($tab-nav-height - $input-field-height)/2 0;
+
+    .tab-link {
+        position: relative;
+        text-align: center;
+        float: left;
+        padding: 0 18px;
+        height: $input-field-height;
+        font-size: 16px;
+        line-height: $input-field-height;
+        cursor: pointer;
+        color: $color-light-content;
+        @include user-select(none);
+
+        &:after {
+            position: absolute;
+            content: '';
+            height: 0;
+            left: 0;
+            width: 100%;
+            bottom: - ($tab-nav-height - $input-field-height)/2;
+            border-bottom: 2px solid transparent;
+        }
+
+        &:hover {
+            color: $light-theme;
+        }
+
+        &:active,
+        &.active,
+        &.router-link-active {
+            color: $theme;
+
+            &:after {
+                border-bottom: 2px solid $theme;
+            }
+        }
+    }
+}
+
+// .tab-links 或 .page-head 下方内容区
+.page-content {
+    overflow: auto;
+    @include box-sizing();
+    @include clearfix();
+
+    @at-root .page-head ~ & {
+        height: calc(100vh - #{$header-height + $toolbar-height + $page-head-height});
+    }
+
+    @at-root .tab-links ~ & {
+        height: calc(100vh - #{$header-height + $toolbar-height + $tab-nav-height});
+    }
+}
+
+// 左侧分组侧边栏
+.left-group-sidebar {
+    @include box-sizing();
+    float: left;
+    margin-right: 8px;
+    width: 260px;
+    height: calc(100vh - #{$header-height + $toolbar-height + 24px});
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    @include transition(width .5s);
+    &.collapsed {
+        width: 0;
+        margin: unset;
+        overflow-y: hidden;
+        @include transition(width .5s);
+    }
+}
+
+// 右侧分组内容
+.right-group-content {
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: calc(100vh - #{$header-height + $toolbar-height + 24px});
+    $meta-height: 114px;
+    padding: 16px;
+    background-color: white;
+    @include transition(width .5s);
+}
+
+.search-box {
+    $height: $input-field-height;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 295px;
+    height: $height - 2px;
+    line-height: $height - 2px;
+    margin-left: 10px;
+    vertical-align: top;
+    @include border-radius($height/2);
+    @include transition();
+    border: 1px solid $form-border;
+
+    &:hover {
+        border-color: $theme;
+    }
+
+    &.md {
+        width: 200px;
+    }
+
+    input[type="text"] {
+        @include box-sizing();
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: $height/4 30px $height/4 $height/2;
+        line-height: $height/2;
+        border: none;
+        letter-spacing: 1px;
+        @include border-radius($height/2);
+        @include transition();
+
+        &:focus {
+            ~ svg {
+                fill: $light-theme;
+            }
+        }
+    }
+
+    $offset: ($input-field-height - 14px - 2px)/2;
+
+    svg {
+        position: absolute;
+        top: $offset;
+        width: 14px;
+        height: 14px;
+        fill: $color-light-content;
+        cursor: pointer;
+
+        &:hover {
+            fill: $light-theme;
+        }
+
+        &:nth-last-of-type(1) {
+            right: $offset;
+        }
+
+        &:nth-last-of-type(2) {
+            right: $offset * 2 + 14px;
+        }
+    }
+}
+
+// hover to show drop list
+.hidden-menu {
+    position: absolute;
+    display: inline-block;
+    z-index: 1;
+    border: 1px solid $border-color;
+    background-color: white;
+    font-size: 12px;
+    line-height: 35px;
+    @include border-radius(3px);
+    @include box-shadow(0 3px 3px rgba(#030000, .07));
+    @include user-select(none);
+    opacity: 0;
+    @include transform(scale(0, 0));
+    @include transform-origin(center top);
+    @include transition();
+    will-change: transform, opacity;
+
+    &.active {
+        opacity: 1;
+        @include transform(scale(1, 1));
+    }
+
+    @at-root .hidden-menu-trigger {
+        &:hover,
+        &.active {
+            .hidden-menu {
+                opacity: 1;
+                @include transform(scale(1, 1));
+            }
+        }
+    }
+
+    li {
+        padding: 0 15px;
+        @include ellipsis();
+        color: $color-light-content;
+
+        &:not(.readonly) {
+            cursor: pointer;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-content;
+            background-color: #f0f0f0;
+        }
+
+        &.active {
+            color: white;
+            background-color: $theme;
+        }
+    }
+}
+
+// 可点击的文本
+.action-text {
+    color: $theme;
+    cursor: pointer;
+
+    &[disabled] {
+        cursor: default;
+    }
+
+    &:not([disabled]) {
+        &:hover {
+            color: $light-theme;
+            text-decoration: underline;
+        }
+
+        &:active {
+            color: $dark-theme;
+        }
+    }
+}
+
+// 内容区使用的tab页样式
+.content-tabs {
+    $tab-height: 48px;
+    $tab-width: 102px;
+    @include clearfix();
+
+    .content-tab {
+        float: left;
+        min-width: $tab-width;
+        padding: 0 $input-field-height;
+        height: $tab-height;
+        line-height: $tab-height;
+        text-align: center;
+        border-top: 1px solid $select-border;
+        border-left: 1px solid $select-border;
+        color: $color-light-content;
+        cursor: pointer;
+        box-sizing: border-box;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            border-bottom: 1px solid $select-border;
+            z-index: 0;
+        }
+
+        &:last-child {
+            border-right: 1px solid $select-border;
+        }
+
+        &.grey {
+            background: $title-bg;
+
+            &.active {
+                background: #fff;
+                color: $green;
+                border-top: 2px solid $green;
+                position: relative;
+
+                &:after {
+                    border-bottom: 1px solid #fff;
+                }
+            }
+        }
+
+        &.white {
+            background: #fff;
+
+            &.active {
+                background: $title-bg;
+                color: $green;
+                border-top: 2px solid $green;
+                position: relative;
+
+                &:after {
+                    border-bottom: 1px solid $title-bg;
+                }
+            }
+        }
+    }
+}
+// ckeditor diystr selector add width
+.cke_combopanel {
+    &.cke_combopanel__diystr {
+        width: 280px;
+    }
+}
+.cke_combo {
+    &.cke_combo__diystr {
+        width: 194px;
+        .cke_combo_button {
+            width: 100%;
+        }
+        .cke_combo_open {
+            float: right;
+        }
+    }
+}

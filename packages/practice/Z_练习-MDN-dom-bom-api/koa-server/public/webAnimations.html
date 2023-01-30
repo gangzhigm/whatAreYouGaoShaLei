@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ani-box{
+            width: 400px;
+            height: 400px;
+            border: 2px dotted #333;
+            position: relative;
+        }
+        .ani-main{
+            width: 50px;
+            height: 50px;
+            background: #f81;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* animation: route infinite 3s linear; */
+        }
+        @keyframes route {
+            0%{
+                background: #f36;  
+                transform: rotate(0) translate3D(-50%, -50%, 0);
+            }
+            50%{
+                background: #f29;
+            }
+            100%{
+                background: #f81;
+                transform: rotate(360deg) translate3D(-50%, -50%, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <hr>
+    <h2>Web Animations API</h2>
+    <div class="ani-box">
+        <div class="ani-main"></div>
+    </div>
+    <button onclick="get_BatteryInfo()">Get_BatteryInfo</button>
+    <p>value: <span id="Battery_value">null</span></p>
+    <hr>
+
+    <script>
+        const aliceTumbling = [
+            {
+                background: "#f36",  
+                transform: "rotate(0) translate3D(-50%, -50%, 0)"
+            },
+            {
+                background: "#f29"
+            },
+            {
+                background: "#f81",
+                transform: "rotate(360deg) translate3D(-50%, -50%, 0)"
+            }
+        ];
+        const aliceTiming = {
+            duration: 3000,
+            iterations: 3
+            // iterations: Infinity
+        };
+        const ele = document.querySelector('.ani-main');
+        const ele_animation = ele.animate( aliceTumbling, aliceTiming )
+        // ele_animation.play();
+        ele_animation.onfinish = function(){
+            console.info("animation finished");
+        }
+        ele_animation.oncancel = function(){
+            console.info("animation cancel");
+        }
+        setTimeout(()=>{
+            // ele_animation.pause();
+            ele_animation.finish();
+            // ele_animation.reverse();
+            // ele_animation.cancel();
+            // ele_animation.updatePlaybackRate(.2);
+            // console.info(ele.getAnimations())
+            
+        }, 2000)
+    </script>
+</body>
+</html>

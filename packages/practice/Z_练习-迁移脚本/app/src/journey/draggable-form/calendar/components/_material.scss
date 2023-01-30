@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+@import "../../../../common/scss/base/variables";
+@import "../../../../common/scss/base/mixin";
+$material-width: 210px;
+$material-height: 265px;
+$material-preview-height: 199px;
+.material-in-store {
+    display: inline-block;
+    position: relative;
+    @include box-sizing();
+    vertical-align: top;
+    width: $material-width;
+    height: $material-height;
+    border: 1px solid #e1e1e1;
+    @include border-radius(4px);
+    background-color: white;
+    
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: $material-height - $material-preview-height;
+        height: 0;
+        @include transition();
+        will-change: height;
+    }
+    
+    &:not(.numb):hover {
+        @include box-shadow(0 3px 3px rgba(#030000, .07));
+        &:before {
+            height: $material-preview-height;
+            @include linear-gradient(to bottom, rgba(black, 0) 40%, rgba(black, .7));
+        }
+        .material-info {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-top: -63px;
+            color: white;
+            
+            h5 {
+                padding-right: 0;
+            }
+            
+            .material-type {
+                opacity: 0;
+            }
+        }
+        
+        .material-actions {
+            @include transform(scale(1));
+        }
+        
+    }
+    
+    .material-preview {
+        height: $material-preview-height - 18px;
+        padding: 9px;
+        background-color: $content-bg;
+        color: $color-light-content;
+        word-break: break-all;
+        line-height: normal;
+        white-space: pre-wrap;
+        overflow: hidden;
+        
+        img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+    
+    .material-info {
+        padding: 10px 7px;
+        position: relative;
+        @include transition();
+        will-change: margin-top, box-shadow;
+        
+        h5 {
+            padding-right: 3em;
+            @include ellipsis();
+            line-height: 20px;
+        }
+        
+        p {
+            color: $color-light-content;
+            line-height: 20px;
+            white-space: nowrap;
+            
+            span {
+                display: inline-block;
+                vertical-align: top;
+                
+                &:first-child {
+                    @include ellipsis();
+                    max-width: $material-width - 14px - 106px; // 106px saved for after span, "更新时间"
+                }
+            }
+        }
+    }
+    
+    .material-type {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        background-color: $content-bg;
+        right: 10px;
+        top: -24px;
+        text-align: center;
+        line-height: 35px;
+        @include border-radius(100%);
+        @include transition(opacity .2s ease);
+        
+        span {
+            display: block;
+            width: 35px;
+            height: 35px;
+            margin: (48px - 35px) / 2;
+            @include border-radius(100%);
+            font-size: 21px;
+            color: white;
+        }
+        
+        .icon-sms {
+            background-color: $theme;
+        }
+        
+        .icon-mms {
+            background-color: $orange;
+        }
+        
+        .icon-mail, .icon-dnd-email {
+            background-color: $purple;
+        }
+        
+        .icon-wechat {
+            background-color: $wechat;
+        }
+        
+    }
+    
+    .material-actions {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 65px;
+        @include transform(scale(0));
+        @include transform-origin(center top);
+        @include transition();
+        will-change: transform;
+        text-align: center;
+        
+        .material-action {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            margin: 15px 10px;
+            padding: 0;
+            color: white;
+            border: none;
+            font-size: 16px;
+            vertical-align: top;
+            background-color: $color-light-content;
+            @include border-radius(100%);
+            @include transition();
+            cursor: pointer;
+            
+            &:hover {
+                background-color: $color-content;
+            }
+        }
+        
+        .icon-pencil {
+            font-size: 18px;
+        }
+        
+        .hidden-menu {
+            right: 0;
+            top: 50px;
+            width: 115px;
+        }
+    }
+}

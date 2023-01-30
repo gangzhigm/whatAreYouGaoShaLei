@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+@import "./variables";
+
+/**
+ * 单行文本溢出时使用"..."结尾
+ */
+@mixin ellipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+/**
+ * clear fix for float
+ */
+@mixin clearfix($direction: both) {
+    &:before {
+        content: '';
+        display: table;
+    }
+    &:after {
+        display: table;
+        clear: $direction;
+        content: '';
+    }
+}
+
+/**
+ * placeholder
+ */
+@mixin placeholder($color: $disabled, $size: 12px, $style: normal, $opacity: 1) {
+    &::-webkit-input-placeholder {
+        opacity: $opacity;
+        color: $color;
+        font-size: $size;
+        font-style: $style;
+    }
+    
+    &:-moz-placeholder {
+        opacity: $opacity;
+        color: $color;
+        font-size: $size;
+        font-style: $style;
+    }
+    
+    &::-moz-placeholder {
+        opacity: $opacity;
+        color: $color;
+        font-size: $size;
+        font-style: $style;
+    }
+    
+    &:-ms-input-placeholder {
+        opacity: $opacity;
+        color: $color;
+        font-size: $size;
+        font-style: $style;
+    }
+}
+
+/**
+ * appearance
+ */
+@mixin appearance($content) {
+    -webkit-appearance: $content;
+    -moz-appearance: $content;
+    appearance: $content;
+}
+
+/**
+ * selection behavior
+ */
+@mixin user-select($content) {
+    -webkit-user-select: $content;
+    -moz-user-select: $content;
+    -ms-user-select: $content;
+    user-select: $content;
+}
+
+@mixin selection($color, $bg) {
+    &::selection {
+        color: $color;
+        background-color: $bg;
+    }
+    &::-moz-selection {
+        color: $color;
+        background-color: $bg;
+    }
+}
+
+/**
+ * transition
+ */
+@mixin transition($setting: all .2s ease, $rest...) {
+    -webkit-transition: $setting, $rest;
+    -moz-transition: $setting, $rest;
+    -ms-transition: $setting, $rest;
+    -o-transition: $setting, $rest;
+    transition: $setting, $rest;
+}
+
+@mixin transition-property($properties...) {
+    -webkit-transition-property: $properties;
+    -moz-transition-property: $properties;
+    -ms-transition-property: $properties;
+    -o-transition-property: $properties;
+    transition-property: $properties;
+}
+
+/**
+ * transform
+ */
+@mixin transform($content) {
+    -webkit-transform: $content;
+    -moz-transform: $content;
+    -ms-transform: $content;
+    -o-transform: $content;
+    transform: $content;
+}
+
+/**
+ * transform origin
+ */
+@mixin transform-origin($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+/**
+ * box-shadow
+ */
+@mixin box-shadow($content: 0 0 3px $disabled, $more...) {
+    -webkit-box-shadow: $content $more;
+    -moz-box-shadow: $content $more;
+    box-shadow: $content $more;
+}
+
+/**
+ * 圆角
+ */
+@mixin border-radius($content) {
+    -webkit-border-radius: $content;
+    -moz-border-radius: $content;
+    border-radius: $content;
+}
+
+@mixin box-sizing($content: border-box) {
+    -webkit-box-sizing: $content;
+    -moz-box-sizing: $content;
+    box-sizing: $content;
+}
+
+// 动画
+@mixin animation($content...) {
+    -webkit-animation: $content;
+    -o-animation: $content;
+    animation: $content;
+}
+
+// 动画帧
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content
+    }
+    
+    @-moz-keyframes #{$name} {
+        @content
+    }
+    
+    @-webkit-keyframes #{$name} {
+        @content
+    }
+    
+    @-o-keyframes #{$name} {
+        @content
+    }
+}
+
+// bg image repeating linear gradient
+@mixin repeating-linear-gradient($content...) {
+    background-image: -moz-repeating-linear-gradient($content);
+    background-image: -webkit-repeating-linear-gradient($content);
+    background-image: -o-repeating-linear-gradient($content);
+    background-image: -ms-repeating-linear-gradient($content);
+    background-image: repeating-linear-gradient($content);
+}
+
+// linear-gradient
+@mixin linear-gradient($content...) {
+    background-image: -webkit-linear-gradient($content);
+    background-image: -moz-linear-gradient($content);
+    background-image: -o-linear-gradient($content);
+    background-image: linear-gradient($content);
+}
+
+// 背景图尺寸
+@mixin background-size($content) {
+    -webkit-background-size: $content;
+    background-size: $content;
+}
+
+// 灰度
+@mixin grayscale($scale) {
+    -webkit-filter: grayscale($scale);
+    -moz-filter: grayscale($scale);
+    -ms-filter: grayscale($scale);
+    -o-filter: grayscale($scale);
+    filter: grayscale($scale);
+}
+
+/**
+ *  width-calc
+ */
+@mixin width-calc($content) {
+    width: -webkit-#{$content};
+    width: $content;
+}
+
+/**
+ *  height-calc
+ */
+@mixin height-calc($content) {
+    height: -webkit-#{$content};
+    height: $content;
+}
+
+//首页和订单相关页 summary字体大小 媒体查询 19-26px
+@mixin summary-media() {
+    @media screen and (min-width: 1440px) {
+        font-size: 26px;
+    }
+    @media screen and (min-width: 1280px) and (max-width: 1440px) {
+        font-size: 22px;
+    }
+    @media screen and (max-width: 1280px) {
+        font-size: 19px;
+    }
+}
+
+@mixin noPermission() {
+    pointer-events: none;
+    background: #f5f5f5;
+}
+
+@mixin pagerWrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .amount {
+        line-height: 64px;
+    }
+}
+
+@mixin chooseGroup {
+    display: inline-block;
+    position: relative;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    $option-height: $input-field-height;
+    $border-radius: 4px;
+    $hover-bg: #f8f9fa;
+
+    .select-text {
+        position: relative;
+        display: block;
+        @include box-sizing();
+        padding-right: $option-height - 2px;
+        width: 312px;
+        height: $option-height;
+        line-height: $option-height - 2px;
+        border: 1px solid $form-border;
+        text-indent: 0.8em;
+        @include border-radius($border-radius);
+        @include user-select(none);
+        background-color: white;
+        @include ellipsis();
+
+        &:not(.disabled):hover {
+            border-color: $theme;
+        }
+
+        &:not(.disabled) {
+            cursor: pointer;
+        }
+
+        &.disabled {
+            color: $disabled;
+            cursor: not-allowed;
+            background-color: $content-bg;
+
+            .select-icon {
+                color: $disabled;
+            }
+        }
+
+        &.placeholder {
+            color: $disabled;
+        }
+
+        &.active {
+            border-color: $theme;
+            @include box-shadow(0 1px 3px rgba($theme, 0.35));
+
+            .select-icon {
+                color: $theme;
+            }
+        }
+
+        .select-icon {
+            height: $option-height - 2px;
+            width: $option-height - 2px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-align: center;
+            text-indent: 0;
+            color: $color-light-content;
+        }
+    }
+
+    .search-tree-wrapper {
+        position: absolute;
+        top: 100%;
+        width: 310px;
+        margin-top: 4px;
+        border: 1px solid #cfd5df;
+        z-index: 10;
+        background-color: white;
+        border-radius: 4px;
+        min-height: 80px;
+        max-height: 300px;
+        overflow: auto;
+    }
+}

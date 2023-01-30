@@ -1,0 +1,276 @@
+@charset "UTF-8";
+@import '../../common/scss/base/variables';
+@import '../../common/scss/base/mixin';
+
+.mass-send-list {
+    $magic-size: 80px;
+    padding: 16px 12px;
+    background-color: #fff;
+    .btn {
+        margin: 0;
+        padding: 0;
+    }
+    .repeat {
+        padding-left: 32px;
+    }
+
+    .failError {
+        .md {
+            width: 400px;
+        }
+
+        .selectType {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+
+            .timer-format {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-left: 10px;
+            }
+            .calendar {
+                width: 140px;
+            }
+        }
+    }
+
+    .repeat + td .main {
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .material-preview {
+        float: left;
+        width: $magic-size;
+        height: $magic-size;
+        margin-right: 18px;
+        border-radius: 3px;
+        overflow: hidden;
+        background-color: $content-bg;
+        cursor: pointer;
+
+        video,
+        img {
+            display: block;
+            -webkit-writing-mode: vertical-lr;
+            -ms-writing-mode: tb;
+            writing-mode: vertical-lr;
+            width: auto;
+            height: auto;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .message-type {
+        color: $disabled;
+        line-height: 20px;
+        cursor: pointer;
+
+        &:not(.icon-disable) {
+            color: $theme;
+        }
+        &[href]:hover {
+            color: $light-theme;
+            text-decoration: underline;
+        }
+    }
+
+    .message-content {
+        line-height: 16px;
+        // padding: 16px 0;
+        margin: 16px 0;
+        max-width: 22em;
+        // @include ellipsis();
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        cursor: pointer;
+
+        & + p {
+            width: auto;
+            display: flex;
+        }
+    }
+
+    .message-state {
+        display: inline-block;
+        white-space: nowrap;
+        position: relative;
+        cursor: pointer;
+
+        &:hover .state-detail {
+            display: block;
+        }
+
+        .state-detail {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 1em;
+            border: 1px solid $theme;
+            background-color: white;
+            @include box-shadow(0 3px 3px rgba($theme, .1));
+            cursor: default;
+        }
+
+        .icon-drop {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            @include transition(border-color .2s ease);
+            border-top: 6px solid $color-content;
+            border-left: 4.5px solid transparent;
+            border-right: 4.5px solid transparent;
+        }
+    }
+
+    button.icon-delete, button.icon-refresh, button.icon-reset {
+        @include box-sizing();
+        width: 25px;
+        height: 25px;
+        border: 1px solid $color-light-content;
+        padding: 0;
+        text-align: center;
+        line-height: 23px;
+        vertical-align: top;
+        background-color: white;
+        color: $color-light-content;
+        border-radius: 100%;
+        @include transition();
+        cursor: pointer;
+
+        &:hover {
+            background-color: $red;
+            border-color: $red;
+            color: white;
+            @include box-shadow(0 1px 4px rgba($red, .5));
+        }
+    }
+
+    table {
+        tbody {
+            tr {
+                vertical-align: middle;
+                td:nth-child(2) {
+                    overflow: visible;
+                }
+                .main {
+                    position: relative;
+                    left: -20px;
+                }
+                .action-icon {
+                    width: 18px;
+                    height: 18px;
+                    text-align: left;
+
+                    &.cus {
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+    
+    .function-disabled-tip {
+        text-align: center;
+        width: 80vw;
+        height: 60vh;
+        line-height: 60vh;
+        background-color: $content-bg;
+    }
+    .group-delete {
+        margin-top: 5px;
+        fill: #10c2a9;
+    }
+    .delBox {
+        height: 500px;
+        overflow-y: auto;
+        .check-box-one {
+            position: relative;
+            margin: 10px;
+            display: block;
+            svg {
+                position: relative;
+                top: 100px;
+            }
+            img {
+                width: 520px;
+                height: 150px;
+                display: block;
+                margin-left: 25px;
+            }
+            p {
+                margin-left: 25px;
+                @include ellipsis();
+                width: 500px;
+                display: block;
+                line-height: 30px;
+                background: rgba(0,0,0,0.6);
+                padding: 0 10px;
+                color: white;
+            }
+            .delTem {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.3);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-weight: bold;
+            }
+        }
+        .check-box{
+            position: relative;
+            line-height: 100px;
+            display: block;
+            margin: 10px;
+            span {
+                margin-left: 15px;
+                @include ellipsis();
+                width: 300px;
+                display: inline-block;
+                height: 55px;
+            }
+            .materialImg{
+                width: 150px;
+                height: 100px;
+            }
+            .delTem {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.3);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.materTitle {
+    @include ellipsis();
+    width: 500px;
+    display: block;
+    line-height: 32px;
+    margin: 0 10px;
+}

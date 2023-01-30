@@ -1,0 +1,11 @@
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+.set {
+    background: #fff;
+    padding-bottom: 38px;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    @include clearfix();
+}

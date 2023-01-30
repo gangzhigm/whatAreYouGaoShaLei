@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+@import "../../common/scss/base/variables";
+@import "../../common/scss/base/mixin";
+
+.data-item {
+    
+    .content-top {
+        position: relative;
+        padding: 16px 0;
+        @include clearfix();
+        
+        .save-drag-list {
+            vertical-align: top;
+        }
+        
+        .search-title {
+            line-height: $input-field-height;
+            display: inline-block;
+            padding: 0 16px;
+            color: $color-light-content;
+            span {
+                color: $color-content;
+            }
+        }
+    }
+    
+    .metadata-table-content {
+        $row-height: 48px;
+        overflow: auto;
+        max-height: calc(100vh - #{$header-height + $toolbar-height + $tab-nav-height + 64px + 64px + $row-height});
+    }
+}
+
+.slide-enter,
+.slide-leave-to {
+    @include transform(translateX(100%));
+}
+
+.slide-enter-active,
+.slide-leave-active {
+    @include transition(all .8s ease);
+}
+
+// 右侧滑出来的表单
+.slide-form {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 544px;
+    background-color: white;
+    z-index: $index-popup;
+    @include box-shadow(0 0 62px rgba(#444a51, .45));
+    
+    .form-title {
+        height: $header-height;
+        line-height: $header-height;
+        font-size: 16px;
+        background-color: #4e545a;
+        color: #fff;
+        @include ellipsis();
+        
+        .icon-right {
+            display: inline-block;
+            width: 16px;
+            @include transform(rotate(180deg));
+            margin: 0 10px 0 18px;
+        }
+    }
+    
+    .form-content {
+        @include box-sizing();
+        overflow: auto;
+        padding-top: 32px;
+        height: calc(100% - #{$header-height + 55px});
+        
+        .form-field{
+            .selector-tree{
+                max-width: 360px;
+            }
+            .label{
+                display: inline-block;
+                width: 150px;
+                margin-right: 12px;
+                line-height: 32px;
+                color: #595959;
+                text-align: right;
+            }
+        }
+        
+    }
+    
+    .e-save-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: right;
+        background-color: $title-bg;
+        border-top: 1px solid $select-border;
+        padding: 10px 11px;
+    }
+    .form-field {
+        .calendar {
+            width: 208px;
+        }
+    }
+}
+

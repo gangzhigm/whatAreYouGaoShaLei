@@ -1,0 +1,10 @@
+// <reference path="./ccc.ts">
+namespace Food{
+    export interface Vegetables{
+        title: string;
+        heat: number;
+    }
+}
+
+type Vh = Food.Vegetables['heat']
+// 我们知道接口是可以合并的, 命名空间也是可以的, 下面我们把Vegetables类型合并到Food类型中

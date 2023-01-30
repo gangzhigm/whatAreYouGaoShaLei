@@ -1,0 +1,197 @@
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+.data-source-overview {
+    @include clearfix();
+    
+    .log-tips {
+        margin: 15px 0;
+    }
+
+    .no-data {
+        height: 32px;
+        text-align: center;
+        line-height: 32px;
+        border: 1px solid $border-color;
+    }
+    
+    .data-view {
+        display: flex;
+        position: relative;
+        min-height: 270px;
+        line-height: 24px;
+        background-color: #fff;
+        border-left: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        
+        .view-content {
+            color: $color-content;
+            font-size: 18px;
+        }
+        
+        .view-name {
+            height: 24px;
+            color: $disabled;
+        }
+        
+        // sdk
+        .sdk-view-left {
+            width: 36%;
+            overflow: hidden;
+            border-right: 1px solid $border-color;
+            @include box-sizing();
+            
+            .view-left-top, .view-left-bottom {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                line-height: 24px;
+            }
+            
+            .view-left-top {
+                height: 65%;
+                border-bottom: 1px dashed $border-color;
+                
+                .text-msg {
+                    text-align: center;
+                    width: 33%;
+                }
+                
+                .text-svg {
+                    svg {
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                        width: 32px;
+                        height: 32px;
+                        vertical-align: -0.15em;
+                        fill: #d6dbe4;
+                    }
+                }
+            }
+            
+            .view-left-bottom {
+                height: 35%;
+                color: $color-light-content;
+            }
+        }
+        
+        // sftp
+        .sftp-view-left {
+            width: 36%;
+            overflow: hidden;
+            border-right: 1px solid $border-color;
+            @include box-sizing();
+            
+            ul {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 100%;
+                line-height: 24px;
+            }
+            
+            .text-msg {
+                text-align: center;
+                width: 33%;
+            }
+            
+            .text-svg {
+                svg {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    width: 32px;
+                    height: 32px;
+                    vertical-align: -0.15em;
+                    fill: #d6dbe4;
+                }
+            }
+        }
+        
+        .view-right {
+            width: calc(100% - 36%);
+            height: 100%;
+            
+            .chart-year {
+                position: relative;
+                top: 0;
+                left: -1px;
+                width: 100%;
+                height: 48px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                border-bottom: 1px dashed $border-color;
+            }
+            
+            .chart {
+                width: 99%;
+                height: 200px;
+            }
+        }
+    }
+    
+    .error-msg {
+        height: auto;
+        margin-left: 24px;
+        
+        .error-title {
+            border: none;
+            border-bottom: 1px solid $border-color;
+            
+            .title-interval {
+                margin: 24px 0 16px 0;
+                font-weight: bold;
+            }
+            
+            .title-ul {
+                li {
+                    margin: 0 34px 16px 16px;
+                    @include ellipsis();
+                }
+            }
+        }
+        
+        .error-details {
+            margin: 16px 0;
+            font-weight: bold;
+        }
+        
+        .error-table {
+            thead {
+                background-color: #feefef;
+                color: $red;
+                font-weight: bold;
+            }
+            
+            td {
+                border-right: 1px solid $border-color;
+                border-bottom: none;
+            }
+        }
+    }
+    
+    .msg-icon {
+        position: relative;
+        top: -1px;
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: $green;
+    }
+    
+    .error-icon {
+        fill: $red;
+    }
+    
+    .down-icon {
+        fill: currentColor;
+    }
+    
+    .data-preview {
+        .preview-title {
+            padding-bottom: 16px;
+        }
+    }
+}

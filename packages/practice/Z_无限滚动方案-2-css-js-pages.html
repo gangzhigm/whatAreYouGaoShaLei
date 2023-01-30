@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .testboxbg{
+            width: 100vw;
+            height: 600vh;
+            position: relative;
+            box-sizing: border-box;
+            background: #333;
+        }
+        .main{
+            width: 50vw;
+            height: 30vh;
+            position: absolute;
+            background: hsl(100,50%,50%);
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            box-sizing: border-box;
+        }
+        .testboxside{
+            width: 100vw;
+            height: 30vh;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="testboxside t1">
+        <h1>Top</h1>
+    </div>
+    <div class="testboxbg">
+        <div class="main"></div>
+    </div>
+    <div class="testboxside t2">
+        <h1>Bottom</h1>
+    </div>
+
+    <script>
+        // 视口高度
+        const winHeight = window.innerHeight;
+        // 页面高度
+        const allHeight = document.body.scrollHeight;
+        
+        // 上元素
+        const domt1 = document.querySelector(".t1");
+        // 下元素
+        const domt2 = document.querySelector(".t2");
+        // 动画长度元素
+        const dombg = document.querySelector(".testboxbg");
+        // 动画主体元素
+        const dommain = document.querySelector(".main");
+        
+        // 单视口中心高度
+        const centerHeight = winHeight * .5 - dommain.clientHeight * .5;
+        // 上中心高度
+        const topcenterHeight = centerHeight + 0;
+        // 下中心元素
+        const bottomcenterHeight = dombg.clientHeight - winHeight + centerHeight;
+
+
+        dommain.style["transform"] = `translate(-50%,${topcenterHeight}px)`;
+        
+        const startHeight = domt1.clientHeight;
+        const endHeight = document.body.scrollHeight - domt2.clientHeight - winHeight;
+        let num = 0;
+        window.addEventListener("scroll", function(e) {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            if( scrollTop >= startHeight && scrollTop <= endHeight) {
+                const scrollHeight = scrollTop - startHeight
+                dommain.style["transform"] = `translate(-50%,${topcenterHeight + scrollHeight}px)`;
+                const ccsa = `${Math.floor(Math.abs(Math.sin(Math.random()))*100)}%`
+                console.info(ccsa);
+                dommain.style["border-radius"] = ccsa;
+            }
+            else if( scrollTop > endHeight) {
+                dommain.style["transform"] = `translate(-50%,${bottomcenterHeight}px)`;
+            }
+            else if( scrollTop < startHeight) {
+                dommain.style["transform"] = `translate(-50%,${topcenterHeight}px)`;
+            }
+        })
+    </script>
+</body>
+</html>

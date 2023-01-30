@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/velocity/2.0.6/velocity.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/velocity/2.0.6/velocity.ui.js"></script>
+    
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+    </ul>
+    
+    <script>
+        let element = document.querySelector("#div");
+
+        Velocity(element, { width: 75});
+
+        element
+            .velocity({width: 75})
+            .valocity({
+                backgroundColor:"blue"
+            }),
+            {
+                ducation: 400, // 动画时长
+                easing: "swing", // 缓动函数
+                loop: false, // 循环次数
+                delay: false, // 延迟时间
+                begin: function(){
+                    // 动画开始时触发事件钩子
+                },
+                progress: function(){
+                    // 动画进度变化时触发事件钩子
+                },
+                complete: function(){
+                    // 动画结束时触发事件钩子
+                }
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+.controller-type-group {
+    height: 50px;
+    line-height: 50px;
+    background: white;
+    cursor: pointer;
+    
+    ~ .controller-type-group {
+        border-top: 1px solid $border-color;
+    }
+    // 当最底部抽屉关闭时，添加下边框
+    &.bottom-border {
+        border-bottom: 1px solid $border-color;
+    }
+
+    &:after {
+        content: '';
+        float: right;
+        margin: 21px;
+        border: 4px solid transparent;
+    }
+    
+    &:hover,
+    &.active {
+        background: $theme;
+        color: white;
+        
+        &:after {
+            border-top-color: white;
+        }
+    }
+    
+    .icon {
+        vertical-align: top;
+        margin: 0 15px;
+        font-size: 22px;
+    }
+    
+    .name {
+        vertical-align: top;
+        margin: 0 15px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,24 @@
+.material-title {
+    $title-height: 50px;
+    @include box-sizing();
+    padding: ($title-height - $input-field-height)/2 0;
+    line-height: $input-field-height;
+    font-size: 14px;
+    white-space: nowrap;
+    
+    .upload-btn {
+        margin-left: 16px;
+        
+        input {
+            display: none;
+        }
+    }
+}
+
+.load-hint {
+    margin-top: 1em;
+    text-align: center;
+    font-style: italic;
+    line-height: $input-field-height;
+    color: $color-light-content;
+}

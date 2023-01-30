@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<script src="./three.js-master/build/three.min.js"></script>
+		<script src="./three.js-master/examples/js/controls/OrbitControls.js"></script>
+		<script>
+            // 创建场景对象 scene
+            var scene = new THREE.Scene();
+            // 创建一个立方体模型对象
+            var geometry = new THREE.BoxGeometry(100,100,100);
+            // var geometry = new THREE.SphereGeometry(60, 40, 40);
+            // 创建一个材质对象
+            var material = new THREE.MeshLambertMaterial( { color:0x00ffff } );
+            // 从立方体和材质对象创建一个网格模型对象
+            var mesh = new THREE.Mesh(geometry, material);
+            // 添加网格模型对象到场景中
+            scene.add(mesh);
+            // 创建一个点光源
+            var point = new THREE.PointLight(0xffffff);
+            // 给点光源定位到【400，200，300】的位置
+            point.position.set(400,200,300);
+            // 添加点光源对象到场景中
+            scene.add(point);
+            // 创建一个环境光对象
+            var ambient = new THREE.AmbientLight(0x444444);
+            // 添加环境光对象到场景中
+            scene.add(ambient);
+            // 配置宽度为窗口宽度
+            var width = window.innerWidth;
+            // 配置高度为窗口高度
+            var height = window.innerHeight;
+            // 配置长宽比为窗口宽度比窗口高度
+            var k = width / height;
+            // 三维场景显示范围控制系数，系数越大，显示的范围越大
+            var s = 200;
+            // 创建正投影摄像头对象，（视口） （左边界，右边界，上边界，下边界，从距离相机多远的位置开始渲染，距离相机多远的距离停止渲染）
+            var camera = new THREE.OrthographicCamera( -s * k , s * k , s , -s , 1, 1000);
+            // 设置相机位置
+            camera.position.set(200,300,400);
+            // 设置相机方向
+            camera.lookAt(scene.position);
+            // 创建渲染器对象
+            var renderer = new THREE.WebGLRenderer();
+            // 配置渲染器视口
+            renderer.setSize(width,height);
+            // 配置背景颜色
+            renderer.setClearColor(0xb9d3ff,1);
+            // 添加渲染对象
+            document.body.appendChild(renderer.domElement);
+            // 执行渲染操作
+            // renderer.render(scene, camera);
+            // 渲染函数
+            function render() {
+                renderer.render(scene,camera);//执行渲染操作
+                mesh.rotateY(0.01);//每次绕y轴旋转0.01弧度
+                requestAnimationFrame(render);//请求再次执行渲染函数render
+            }
+            render();
+            var controls = new THREE.OrbitControls(camera,renderer.domElement);//创建控件对象
+            // 已经通过requestAnimationFrame(render);周期性执行render函数，没必要再通过监听鼠标事件执行render函数
+            // controls.addEventListener('change', render)
+		</script>
+	</body>
+</html>

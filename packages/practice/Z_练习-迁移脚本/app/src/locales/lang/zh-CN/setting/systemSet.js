@@ -1,0 +1,27 @@
+export default {
+    __name__: 'systemSet',
+    title: '系统设置',
+    pending: '旅程审批流程',
+    upgrade: '升级套餐',
+    message: '请咨询Dmartech在线客服了解详情。',
+    update: '请升级套餐',
+    setApprovalNote: '在审批开启时，申请审批的旅程的每一次开启或继续都必须经过审批；关闭审批流程后则不再受此限制。',
+
+    // 两步验证
+    twoStepVerify: '两步验证',
+    openTwo: '开启两步验证',
+    phone: '手机号',
+    phoneText1: '未设置手机号，请首先在“',
+    phoneText2: '”中输入手机号',
+    phoneTip1: '除 Dmartech 登录密码外，还可以使用双重身份验证方法，以保护您的帐户免遭未经授权的访问。',
+    phoneTip2: '使用手机验证码进行二次身份验证。在您的手机上接收带有验证码的短信，登录 Dmartech 时输入该验证码。',
+    inputPwd: '登录密码',
+    sendCode: '发送短信验证码',
+    smsCode: '短信验证码',
+    sendMsg1: '已发送短信验证码至',
+    sendMsg2: '，请在 30 分钟之内输入收到的短信验证码。',
+    confirmClose: '确认要关闭两步验证吗？当你的账户受到非法侵入时将失去双重保护。',
+    closeTwo: '关闭两步验证',
+    noTwoAuth: '套餐未配置两步验证权限',
+    phoneNull: '未设置手机号，请首先在“ 个人设置 ”中输入手机号',
+};

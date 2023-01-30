@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/**
+ * 字体
+ */
+$font: 'Helvetica Neue', helvetica, Microsoft Yahei, Arial, sans-serif;
+
+/**
+ * 颜色
+ */
+$green: #0cc2a9;
+$light-green: #3dceba;
+$dark-green: #0bab95;
+$blue: #29bdfb;
+$light-blue: #4acaff;
+$dark-blue: #17aeed;
+$red: #f26565;
+$light-red: #f67d7d;
+$dark-red: #eb5150;
+$orange: #ff9023;
+$light-orange: #fcaf64;
+$dark-orange: #f08013;
+$purple: #826dee;
+$light-purple: #9b8af6;
+$dark-purple: #6851de;
+$yellow: #ffd71e;
+$light-yellow: #ffdf4d;
+$dark-yellow: #eac105;
+$theme: $green;
+$light-theme: $light-green;
+$dark-theme: $dark-green;
+$wechat: #56de03;
+
+// typography colors
+$color-title: #262626;
+$color-content: #595959;
+$color-light-content: #8c8c8c;
+$disabled: #bfbfbf;
+
+// select colors
+$select-bg: #e6fff7;
+$hover-bg: #f8f9fa;
+
+// border colors
+$form-border: #cfd5df;
+$border-color: #e0e5ea;
+$divide-border: #e0e5ea;
+$select-border: #e4e9ed;
+
+// background colors
+$title-bg: #f8f8f8; // thead etc.
+$content-bg: #f0f2f5;
+$disabled-bg: #f6f7f8;
+
+/**
+ * 层级
+ */
+$index-container: 1;
+$index-menu: 10;
+$index-mask: 20;
+$index-popup: 30;
+$index-toast: 40;
+
+/**
+ * 布局相关
+ */
+$header-height: 56px;
+$toolbar-height: 40px;
+$page-head-height: 72px; // 页面标题
+$tab-nav-height: 58px; // 页面 tab 链接高度
+$nav-bg: #434b51;
+$max-content-width: 1200px;
+$min-content-width: 1000px;
+
+// 输入框高度, 包含边框
+$input-field-height: 32px;
+
+// form
+$label-width: 6em;
+$form-label-width: 114px;
+$label-offset: 12px;
+$form-field-width: 208px;
+$form-input-width: 312px;
+$form-batch-label-width: 54px;
+// modal.vue
+$modal-head-height: 47px;
+$modal-panel-height: 48px;
+

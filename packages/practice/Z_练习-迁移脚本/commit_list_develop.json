@@ -1,0 +1,1516 @@
+{
+    "commits": [
+        {
+            "key": "77622f511",
+            "value": "Fix-emailControlViewScroll\n"
+        },
+        {
+            "key": "f20a24b1b",
+            "value": "Merge branch 'hotfix-hwUEM' into 'develop'\n"
+        },
+        {
+            "key": "95f8985c3",
+            "value": "hotfix-华为埋码问题字段类型修改\n"
+        },
+        {
+            "key": "637bd9f62",
+            "value": "Merge branch 'develop' into 'master'\n"
+        },
+        {
+            "key": "71e8e1231",
+            "value": "Fix-依赖优化\n"
+        },
+        {
+            "key": "3676e2aae",
+            "value": "Merge branch 'develop' into 'master'\n"
+        },
+        {
+            "key": "9792d1af8",
+            "value": "Merge branch 'feat-11492-v2' into 'develop'\n"
+        },
+        {
+            "key": "aea89a2b7",
+            "value": "feat-11492-v2 华为埋码需求增加首页埋码\n"
+        },
+        {
+            "key": "283c1be35",
+            "value": "Merge branch 'feat-11492' into 'develop'\n"
+        },
+        {
+            "key": "56b6d320f",
+            "value": "feat-11492 华为埋码需求初步测试\n"
+        },
+        {
+            "key": "6750bba55",
+            "value": "Merge branch 'HotFix-11469' into 'master'\n"
+        },
+        {
+            "key": "f522e3234",
+            "value": "Merge branch 'HotFix-deleteTagFix' into 'master'\n"
+        },
+        {
+            "key": "69984a3e3",
+            "value": "Merge branch 'HotFix-11469' into 'develop'\n"
+        },
+        {
+            "key": "e2e9a6f96",
+            "value": "HotFix-11469 SwarmBunch-TabList-Optimize-V3\n"
+        },
+        {
+            "key": "b0de39d4f",
+            "value": "Merge branch 'HotFix-deleteTagFix' into 'develop'\n"
+        },
+        {
+            "key": "02300ebdb",
+            "value": "HotFix-deleteTagFix\n"
+        },
+        {
+            "key": "daddbd772",
+            "value": "Merge branch 'refix-11467-v2' into 'develop'\n"
+        },
+        {
+            "key": "ec4c90c1e",
+            "value": "refix-11467-v2条件是大于、小于的情况下输入内容，警告内容没有消失\n"
+        },
+        {
+            "key": "9854e10b1",
+            "value": "Optimize-11482 给筛选结果打标签、删除筛选结果标签，添加标签或删除标签后未刷新页面\n"
+        },
+        {
+            "key": "09c12a207",
+            "value": "Merge branch 'refix-11467' into 'develop'\n"
+        },
+        {
+            "key": "d59d1c0ad",
+            "value": "refix-11467打分评级-用户评分矩阵模型编辑：列表刷新数据时，展示的内容优化\n"
+        },
+        {
+            "key": "51a9616b9",
+            "value": "Merge branch 'feat-11481' into 'develop'\n"
+        },
+        {
+            "key": "04e4e29a2",
+            "value": "feat-11481 打分评级-用户评分矩阵模型编辑：页面路由未展示路由名称\n"
+        },
+        {
+            "key": "e27867b18",
+            "value": "Merge branch 'fix-11470' into 'develop'\n"
+        },
+        {
+            "key": "0866aaf07",
+            "value": "fix-11470打分评级-用户评分矩阵模型编辑：各个运算符在编辑时的错误信息显示与隐藏样式汇总\n"
+        },
+        {
+            "key": "8e84dbbc8",
+            "value": "Optimize-11480 定时旅程&实时旅程操作连接控件连接线需自动保存\n"
+        },
+        {
+            "key": "1084d950c",
+            "value": "Merge branch 'fix-11431留言回复' into 'develop'\n"
+        },
+        {
+            "key": "cb2c42df0",
+            "value": "fix-11431留言回复\n"
+        },
+        {
+            "key": "2d11fb409",
+            "value": "Merge branch 'refix-11478' into 'develop'\n"
+        },
+        {
+            "key": "f1303a04e",
+            "value": "refix-11478\n"
+        },
+        {
+            "key": "c32e52593",
+            "value": "Merge branch 'fix-11431' into 'develop'\n"
+        },
+        {
+            "key": "96144be4e",
+            "value": "fix-11475\n"
+        },
+        {
+            "key": "a91404ca7",
+            "value": "Merge branch 'fix11467' into 'develop'\n"
+        },
+        {
+            "key": "3cb074b95",
+            "value": "fix11467打分评级-用户评分矩阵模型编辑：编辑事件因子时，提示字段已失效，加载完成后可展示事件名称（优化）\n"
+        },
+        {
+            "key": "4edc3acfc",
+            "value": "Merge branch 'fix-11475' into 'develop'\n"
+        },
+        {
+            "key": "f7bf5dd53",
+            "value": "fix-11475修改图片缩放\n"
+        },
+        {
+            "key": "f19dcdbd0",
+            "value": "Merge branch 'fix-11478' into 'develop'\n"
+        },
+        {
+            "key": "277270213",
+            "value": "fix-11478公众号运营-回复消息-回复消息后未刷新列表\n"
+        },
+        {
+            "key": "8ecde2b88",
+            "value": "Optimize-表单全局设置最大提交次数优化\n"
+        },
+        {
+            "key": "257bfdfe5",
+            "value": "Merge branch 'fix-11475' into 'develop'\n"
+        },
+        {
+            "key": "ccaa7f71c",
+            "value": "fix-11475\n"
+        },
+        {
+            "key": "baf559c29",
+            "value": "Merge branch 'HotFix-swarmTablistLoad-Optimize' into 'master'\n"
+        },
+        {
+            "key": "faf26c8d4",
+            "value": "Merge branch 'fix-11468' into 'develop'\n"
+        },
+        {
+            "key": "13fb6e546",
+            "value": "fix-11468公众号模板管理--我的模板--测试，复制全部openid到搜索栏，叉号会挡住openid尾部字母\n"
+        },
+        {
+            "key": "e21019793",
+            "value": "Merge branch 'refix-11466' into 'develop'\n"
+        },
+        {
+            "key": "7973f4dfe",
+            "value": "refix-11466 打分评级-用户评分矩阵模型编辑:条件有值时没有动态清除错误提示\n"
+        },
+        {
+            "key": "053e83d45",
+            "value": "Merge branch 'HotFix-swarmTablistLoad-Optimize' into 'develop'\n"
+        },
+        {
+            "key": "34b308a8b",
+            "value": "HotFix-11469 SwarmBunch-TabList-Optimize-V2\n"
+        },
+        {
+            "key": "e115dd95e",
+            "value": "Merge branch 'HotFix-qrcodeDetailDownloadImage' into 'master'\n"
+        },
+        {
+            "key": "0f9f5b265",
+            "value": "Merge branch 'HotFix-qrcodeDetailDownloadImage' into 'develop'\n"
+        },
+        {
+            "key": "99389c963",
+            "value": "HotFix-二维码详情页，下载二维码名称修复\n"
+        },
+        {
+            "key": "5c131fd4b",
+            "value": "Merge branch 'HotFix-swarmTablistLoad-Optimize' into 'develop'\n"
+        },
+        {
+            "key": "26e5c3ba5",
+            "value": "HotFix-11469 SwarmBunch-TabList-Optimize\n"
+        },
+        {
+            "key": "6e6f386d1",
+            "value": "Merge branch 'fix-11466' into 'develop'\n"
+        },
+        {
+            "key": "df8bb33e6",
+            "value": "fix-11466打分评级-用户评分矩阵模型编辑：运算符输入后，提示的错误信息未隐藏；报告页面保存为分群、基本配置-修改模型名称存在相同问题\n"
+        },
+        {
+            "key": "0a38d5eb8",
+            "value": "Optimize-若干优化\n"
+        },
+        {
+            "key": "e70874a54",
+            "value": "Fix-评分因子编辑弹窗，条件样式优化\n"
+        },
+        {
+            "key": "aeb31fe7f",
+            "value": "Fix-打分评级模型页左侧列表搜索优化\n"
+        },
+        {
+            "key": "ba973cb2e",
+            "value": "Fix-11461 用户识别与计算引擎列表，分页搜索关键字无法搜索到结果\n"
+        },
+        {
+            "key": "524ee8007",
+            "value": "Fix-旅程素材二级菜单高亮优化，素材测试手机号校验\n"
+        },
+        {
+            "key": "11be7058d",
+            "value": "reFix-11445 素材列表分组操作修复；\n"
+        },
+        {
+            "key": "011ed2b69",
+            "value": "Feat-11441 分群排序名称修改\n"
+        },
+        {
+            "key": "66a139981",
+            "value": "Fix-11445 素材列表分组事件监听累加修复； Optimize：用户画像样式优化；\n"
+        },
+        {
+            "key": "483dc74ee",
+            "value": "Merge branch 'feat-编辑评分因子校验逻辑优化' into 'develop'\n"
+        },
+        {
+            "key": "871d82d4d",
+            "value": "feat-编辑评分因子校验逻辑优化\n"
+        },
+        {
+            "key": "556174e12",
+            "value": "Merge branch 'feat-个性化标签日志部分优化' into 'develop'\n"
+        },
+        {
+            "key": "f25ceec61",
+            "value": "feat-个性化标签日志部分优化\n"
+        },
+        {
+            "key": "46a3dc974",
+            "value": "reFix-11438 企业设置-微信小程序，提示信息位置优化\n"
+        },
+        {
+            "key": "439afffd9",
+            "value": "Fix-新建页面名称包含特殊字符显示问题修复\n"
+        },
+        {
+            "key": "57c0a7b19",
+            "value": "Fix-11438 企业设置-微信小程序，提示信息中含有特殊符号\n"
+        },
+        {
+            "key": "3cebca4f6",
+            "value": "Fix-新建旅程选择分组blur优化\n"
+        },
+        {
+            "key": "807d652b0",
+            "value": "Fix-多选下拉框，选择时增加最大高度限制\n"
+        },
+        {
+            "key": "e3803fa44",
+            "value": "Fix-11432 获客中心栏未高亮优化\n"
+        },
+        {
+            "key": "32227e0c4",
+            "value": "Optimize-高级分群新建名称重复时，选择分组优化\n"
+        },
+        {
+            "key": "a0acf9775",
+            "value": "Fix-11427 同时开通导购助手和&互动中心，且导购助手小程序状态为已发布，互动中心页面可发布\n"
+        },
+        {
+            "key": "a9737db60",
+            "value": "Merge branch 'HotFix-企微群发选择部门传参优化' into 'master'\n"
+        },
+        {
+            "key": "d8884c082",
+            "value": "Merge branch 'HotFix-企微群发选择部门传参优化' into 'develop'\n"
+        },
+        {
+            "key": "314f3e2bd",
+            "value": "HotFix-企微群发选择部门传参优化\n"
+        },
+        {
+            "key": "346817b28",
+            "value": "Merge branch 'develop' into 'master'\n"
+        },
+        {
+            "key": "867a5c6f3",
+            "value": "Feat-11414 用户分群新增按创建者进行搜索V2\n"
+        },
+        {
+            "key": "3afe35aaa",
+            "value": "Feat-11414 用户分群新增按创建者进行搜索\n"
+        },
+        {
+            "key": "f60b534a1",
+            "value": "Merge branch 'feat-11200-v13' into 'develop'\n"
+        },
+        {
+            "key": "6500c999a",
+            "value": "feat-11200-v13 员工列表部门多余文字省略号展示\n"
+        },
+        {
+            "key": "209706061",
+            "value": "Merge branch 'feat-11200-v12' into 'develop'\n"
+        },
+        {
+            "key": "42bb6534e",
+            "value": "feat-11200-v12门店修改后刷新员工列表\n"
+        },
+        {
+            "key": "ae5ff44fc",
+            "value": "Feat-11398 企业微信群发支持选择部门优化V3\n"
+        },
+        {
+            "key": "0328847ed",
+            "value": "Merge branch 'HotFix-wecomAgentConfigUpdateV2' into 'master'\n"
+        },
+        {
+            "key": "0e093567a",
+            "value": "Merge branch 'fix-11411' into 'develop'\n"
+        },
+        {
+            "key": "3b654df8e",
+            "value": "fix-11411企业微信-组织员工-同步后-部门列表中，当前默认展示原根目录，应该默认展示全部部门\n"
+        },
+        {
+            "key": "887f2e857",
+            "value": "Merge branch 'HotFix-wecomAgentConfigUpdateV2' into 'develop'\n"
+        },
+        {
+            "key": "98e3d22fc",
+            "value": "HotFix-wecomAgentConfigUpdateV2-3\n"
+        },
+        {
+            "key": "54d4fc92d",
+            "value": "Merge branch 'HotFix-wecomAgentConfigUpdateV2' into 'develop'\n"
+        },
+        {
+            "key": "4b407b341",
+            "value": "HotFix-wecomAgentConfigUpdateV2-2\n"
+        },
+        {
+            "key": "5a8bbd39e",
+            "value": "Feat-11398 企业微信群发支持选择部门优化V2\n"
+        },
+        {
+            "key": "cdf19db5d",
+            "value": "Merge branch 'HotFix-wecomAgentConfigUpdateV2' into 'develop'\n"
+        },
+        {
+            "key": "9320ed7b6",
+            "value": "HotFix-wecomAgentConfigUpdateV2\n"
+        },
+        {
+            "key": "78540a269",
+            "value": "Feat-11398 企业微信群发支持选择部门优化\n"
+        },
+        {
+            "key": "983bdf7cb",
+            "value": "Merge branch 'HotFix-wecomAgentConfigUpdate' into 'master'\n"
+        },
+        {
+            "key": "9e838fe9d",
+            "value": "Merge branch 'HotFix-wecomAgentConfigUpdate' into 'develop'\n"
+        },
+        {
+            "key": "d15a27c2b",
+            "value": "HotFix-wecomAgentConfigUpdateV3\n"
+        },
+        {
+            "key": "12fac8ff2",
+            "value": "Feat-导购助手企微配置页更新\n"
+        },
+        {
+            "key": "e2bfe1cc1",
+            "value": "Merge branch 'HotFix-wecomAgentConfigUpdate' into 'develop'\n"
+        },
+        {
+            "key": "48174d12e",
+            "value": "HotFix-wecomAgentConfigUpdateV2\n"
+        },
+        {
+            "key": "ef6688f6a",
+            "value": "Merge branch 'HotFix-wecomAgentConfigUpdate' into 'develop'\n"
+        },
+        {
+            "key": "51d0a5ac8",
+            "value": "HotFix-wecomAgentConfigUpdate\n"
+        },
+        {
+            "key": "6a9724a20",
+            "value": "Fix-企微员工信息授权重定向页又又又又又又又改\n"
+        },
+        {
+            "key": "aedd4b7fe",
+            "value": "reFeat-新增导航菜单名称变更\n"
+        },
+        {
+            "key": "82862ab42",
+            "value": "Feat-导航菜单添加互动模块菜单\n"
+        },
+        {
+            "key": "b0a3f8450",
+            "value": "Merge branch 'feat-素材管理优化' into 'develop'\n"
+        },
+        {
+            "key": "039a93be7",
+            "value": "feat-素材管理优化-点击分组多次后 接口的数量会累计\n"
+        },
+        {
+            "key": "fb4953f69",
+            "value": "Merge branch 'feat-11194v4' into 'develop'\n"
+        },
+        {
+            "key": "ae3d5331c",
+            "value": "feat-11194v4样式调整\n"
+        },
+        {
+            "key": "38ea4844f",
+            "value": "Feat-企微员工信息授权重定向页，又又又又改原型\n"
+        },
+        {
+            "key": "4bfdec309",
+            "value": "Optimize-企微员工更新信息ui优化\n"
+        },
+        {
+            "key": "7d186f3b2",
+            "value": "Fix-formatFix\n"
+        },
+        {
+            "key": "d85f54ab7",
+            "value": "Merge branch 'fix-11392交互问题' into 'develop'\n"
+        },
+        {
+            "key": "cc6f8b809",
+            "value": "fix-11392\n"
+        },
+        {
+            "key": "352adceb8",
+            "value": "Fix-shoppingGuide添加小程序类型判断\n"
+        },
+        {
+            "key": "14b886082",
+            "value": "fix-11392\n"
+        },
+        {
+            "key": "898e882e0",
+            "value": "Merge branch 'fix-11394' into 'develop'\n"
+        },
+        {
+            "key": "0a4274b81",
+            "value": "fix-11394 导购助手-员工管理页面：创建门店，无数据时点击添加门店，“当前没有任何数据”文案和背景图片未隐藏\n"
+        },
+        {
+            "key": "bc8b7de8e",
+            "value": "fix-11392\n"
+        },
+        {
+            "key": "cbcbaad1b",
+            "value": "Merge branch 'fix-11389' into 'develop'\n"
+        },
+        {
+            "key": "48e054748",
+            "value": "fix-11389翻页后，更改每页显示条数，pageNum传值错误，应传参1\n"
+        },
+        {
+            "key": "c3472a6c0",
+            "value": "Merge branch 'feat-11200-v11' into 'develop'\n"
+        },
+        {
+            "key": "52c01f686",
+            "value": "feat-11200-v11 销售数据获取自定义字段关系,获取全部权限\n"
+        },
+        {
+            "key": "51bcec6f1",
+            "value": "Merge branch 'fix-标签分组所有分组标签接口新加请求参数' into 'develop'\n"
+        },
+        {
+            "key": "d70d08799",
+            "value": "fix-树级分组列表参数修改\n"
+        },
+        {
+            "key": "663a7564e",
+            "value": "fix- 标签管理人数滚动显示\n"
+        },
+        {
+            "key": "ce25878db",
+            "value": "Merge branch 'fix-11386' into 'develop'\n"
+        },
+        {
+            "key": "0aead7b17",
+            "value": "fix-11386\n"
+        },
+        {
+            "key": "1e931c3d0",
+            "value": "Merge branch 'fix-原型图更改弹窗提示文案' into 'develop'\n"
+        },
+        {
+            "key": "54e1f54a5",
+            "value": "fix-新增需求问题更改\n"
+        },
+        {
+            "key": "6b2186712",
+            "value": "Fix-indentFix\n"
+        },
+        {
+            "key": "e8853b19f",
+            "value": "Merge branch 'fix-原型图更改问题' into 'develop'\n"
+        },
+        {
+            "key": "2e7731fa6",
+            "value": "fix-点击预计数量查看否存在更新\n"
+        },
+        {
+            "key": "dc70c3613",
+            "value": "Merge branch 'feat-11194v3' into 'develop'\n"
+        },
+        {
+            "key": "856894d47",
+            "value": "feat-11194v3 0801新增需求更改\n"
+        },
+        {
+            "key": "a53874851",
+            "value": "Merge branch 'feat-11194v2' into 'develop'\n"
+        },
+        {
+            "key": "175b628bb",
+            "value": "feat-11194v2需求更改-标签为空，重新计算不需要校验，将回访客户数量，相关员工数量重置为0\n"
+        },
+        {
+            "key": "ee11f80db",
+            "value": "Merge branch 'fix-11379' into 'develop'\n"
+        },
+        {
+            "key": "926586dd3",
+            "value": "fix-11379\n"
+        },
+        {
+            "key": "413a3a662",
+            "value": "Fix-缩进问题\n"
+        },
+        {
+            "key": "8dad653d2",
+            "value": "Merge branch 'fix-客户分组标签人数点击标签数量没有打开新的页面' into 'develop'\n"
+        },
+        {
+            "key": "3aff921ed",
+            "value": "fix-客户分组标签人数点击标签数量没有打开新的页面\n"
+        },
+        {
+            "key": "586c94c97",
+            "value": "Merge branch 'fix-11375' into 'develop'\n"
+        },
+        {
+            "key": "940c3df40",
+            "value": "Merge branch 'feat-11200-v10' into 'develop'\n"
+        },
+        {
+            "key": "cd980b5d5",
+            "value": "feat-11200-v10员工列表更新者帐号改为 后端处理\n"
+        },
+        {
+            "key": "99c185c5d",
+            "value": "fix-11375导购助手销售数据页面：配置顾客类型条件弹窗样式优化\n"
+        },
+        {
+            "key": "8c798d8e8",
+            "value": "Merge branch 'fix-11373' into 'develop'\n"
+        },
+        {
+            "key": "27e191813",
+            "value": "fix-11373\n"
+        },
+        {
+            "key": "63126381d",
+            "value": "Merge branch 'feat-11200-v9' into 'develop'\n"
+        },
+        {
+            "key": "ba0791af4",
+            "value": "feat-11200-v9员工列表 更新者帐号默认当前帐号\n"
+        },
+        {
+            "key": "1b0df80f5",
+            "value": "Fix-导购助手路由优化\n"
+        },
+        {
+            "key": "c401b305b",
+            "value": "Merge branch 'feat-11200-v8' into 'develop'\n"
+        },
+        {
+            "key": "e005b0eca",
+            "value": "feat-11200-v8客户列表搜索提示语优化\n"
+        },
+        {
+            "key": "839d11116",
+            "value": "Merge branch 'fix-11361+11363' into 'develop'\n"
+        },
+        {
+            "key": "98b839cf3",
+            "value": "fix-11361+11363\n"
+        },
+        {
+            "key": "19e194431",
+            "value": "Merge branch 'feat-11200-v7' into 'develop'\n"
+        },
+        {
+            "key": "2c1919eec",
+            "value": "feat-11200-v7门店id过长样式优化\n"
+        },
+        {
+            "key": "ccf01d94c",
+            "value": "Merge branch 'feat-11200-v6' into 'develop'\n"
+        },
+        {
+            "key": "15187c01e",
+            "value": "feat-11200-v6客户列表查询提示语句优化\n"
+        },
+        {
+            "key": "84ac6c6fb",
+            "value": "Merge branch 'feat-11194v1' into 'develop'\n"
+        },
+        {
+            "key": "cd1cca723",
+            "value": "feat-11194v1需求调整\n"
+        },
+        {
+            "key": "175b8e23e",
+            "value": "Merge branch 'fix-11362+11364+11365' into 'develop'\n"
+        },
+        {
+            "key": "43825d66c",
+            "value": "fix-11362+11364+11365\n"
+        },
+        {
+            "key": "9c59a96a8",
+            "value": "Merge branch 'feat-11194' into 'develop'\n"
+        },
+        {
+            "key": "a428a3c8b",
+            "value": "feat-11194逻辑优化\n"
+        },
+        {
+            "key": "5b9c5e1a9",
+            "value": "Feat-企微员工信息授权重定向页说明修改\n"
+        },
+        {
+            "key": "7aabbeb05",
+            "value": "Merge branch 'fix-客户详情标签宽度不够' into 'develop'\n"
+        },
+        {
+            "key": "f168f92ec",
+            "value": "fix-客户分组详情标签宽度过短\n"
+        },
+        {
+            "key": "5dee15e0a",
+            "value": "Merge branch 'feat-11200-v5' into 'develop'\n"
+        },
+        {
+            "key": "d8d9c0fb0",
+            "value": "feat-11200-v5 客户列表添加‘企业微信联系人名称’字段\n"
+        },
+        {
+            "key": "576bfbec4",
+            "value": "Feat-企微员工信息授权重定向页说明修改\n"
+        },
+        {
+            "key": "3c4e034bd",
+            "value": "Merge branch 'feat-11192v10' into 'develop'\n"
+        },
+        {
+            "key": "0501fa271",
+            "value": "feat-11192v10需求变更调整\n"
+        },
+        {
+            "key": "804d1a048",
+            "value": "Merge branch 'feat-11200-v4' into 'develop'\n"
+        },
+        {
+            "key": "cdff9fd9a",
+            "value": "feat-11200-v4客户列表查询逻辑优化\n"
+        },
+        {
+            "key": "967cc5644",
+            "value": "Merge branch 'fix-11351' into 'develop'\n"
+        },
+        {
+            "key": "1d2ed5334",
+            "value": "Feat-分群会员等级更改目录\n"
+        },
+        {
+            "key": "2e005645f",
+            "value": "fix-11351\n"
+        },
+        {
+            "key": "843b4f8ec",
+            "value": "fix-11351\n"
+        },
+        {
+            "key": "407ab095d",
+            "value": "Feat-授权小程序取消未授权时微页面相关说明\n"
+        },
+        {
+            "key": "9f3786fb4",
+            "value": "Merge branch 'fix-11349' into 'develop'\n"
+        },
+        {
+            "key": "64a3ab4cc",
+            "value": "Fix-wecomconfig翻译修改\n"
+        },
+        {
+            "key": "6c927983f",
+            "value": "fix-11349+11350\n"
+        },
+        {
+            "key": "cf6265077",
+            "value": "Merge branch 'fix-修改未添加企微客户数弹窗表头未居中' into 'develop'\n"
+        },
+        {
+            "key": "188deffa1",
+            "value": "fix-11343查看客户分组弹窗，联系人无法全部显示\n"
+        },
+        {
+            "key": "df26598fe",
+            "value": "Fix-企微员工信息通知内容输入优化\n"
+        },
+        {
+            "key": "7bfcdd206",
+            "value": "Feat-otherconfig背景图片显示\n"
+        },
+        {
+            "key": "4d5d994cc",
+            "value": "Merge branch 'feat-11200+11202-v1' into 'develop'\n"
+        },
+        {
+            "key": "efb7ce224",
+            "value": "feat-11200+11202-v1门店改变时的逻辑优化+门店名称/关联员工过长时的样式优化\n"
+        },
+        {
+            "key": "8c390923d",
+            "value": "Merge branch 'feat-11348' into 'develop'\n"
+        },
+        {
+            "key": "f845b6be0",
+            "value": "feat-11348导购助手-员工管理页面：所属门店过长时，hover显示全部样式需优化\n"
+        },
+        {
+            "key": "5a105185d",
+            "value": "Merge branch 'fix-11346' into 'develop'\n"
+        },
+        {
+            "key": "4151cb820",
+            "value": "fix-11346导购助手-员工管理页面：列表翻页后，搜索关键词无效\n"
+        },
+        {
+            "key": "bf681b991",
+            "value": "Fix-企微通知员工更新敏感信息员工选择优化\n"
+        },
+        {
+            "key": "d6f16a3be",
+            "value": "Merge branch 'fix-11137' into 'develop'\n"
+        },
+        {
+            "key": "b29da8dfe",
+            "value": "fix-11137+11138+11139+11141\n"
+        },
+        {
+            "key": "d1fa385f2",
+            "value": "Fix-小程序审核类型翻译修改\n"
+        },
+        {
+            "key": "edd83b078",
+            "value": "Merge branch 'feat-11171完善编辑时回显的标签' into 'develop'\n"
+        },
+        {
+            "key": "910a37a2d",
+            "value": "Feat-企微配置原型修改\n"
+        },
+        {
+            "key": "3f0948c62",
+            "value": "feat-11171编辑是回显标签问题\n"
+        },
+        {
+            "key": "92d491dc6",
+            "value": "Merge branch 'feat-11171客户分组' into 'develop'\n"
+        },
+        {
+            "key": "a3d44f8f7",
+            "value": "feat-11171企微客户人数回显问题\n"
+        },
+        {
+            "key": "ff7b2a4e0",
+            "value": "Merge branch 'feat-11171导购助手' into 'develop'\n"
+        },
+        {
+            "key": "d05deac26",
+            "value": "feat-11171导购助手\n"
+        },
+        {
+            "key": "83a8dcb2c",
+            "value": "Feat-企微员工信息授权V2\n"
+        },
+        {
+            "key": "1748d3af0",
+            "value": "Merge branch 'feat-11192v9' into 'develop'\n"
+        },
+        {
+            "key": "b50ea28aa",
+            "value": "Optimize-未授权页面title及小程序图标类型优化\n"
+        },
+        {
+            "key": "03d3c8440",
+            "value": "feat-11192v9\n"
+        },
+        {
+            "key": "4f74b6634",
+            "value": "Optimize-增值服务及绑定企微流程优化\n"
+        },
+        {
+            "key": "46db872ec",
+            "value": "Merge branch 'Feat-shoppingGuide-dev' into develop\n"
+        },
+        {
+            "key": "8c207267a",
+            "value": "Merge branch 'feat-11172导购助手客户分组' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "3156afeca",
+            "value": "Merge branch 'feat-11192v8' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "e1bfd75e7",
+            "value": "feat-11192v8样式调整\n"
+        },
+        {
+            "key": "f094f12e6",
+            "value": "feat-11172客户分组\n"
+        },
+        {
+            "key": "50aa22528",
+            "value": "Feat-readyforbeta\n"
+        },
+        {
+            "key": "19e874ff5",
+            "value": "feat-11172导购助手客户分组\n"
+        },
+        {
+            "key": "0ededeeb8",
+            "value": "Fix-11172\n"
+        },
+        {
+            "key": "a55d3a97e",
+            "value": "Merge branch 'feat-11172' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "811020db5",
+            "value": "Merge branch 'Feat-shoppingGuide-develop' of https://gitlab.qdum.com/dmartech/app into Feat-shoppingGuide-develop\n"
+        },
+        {
+            "key": "41f4b84cb",
+            "value": "Feat-readyforbeta\n"
+        },
+        {
+            "key": "8b8ff49a7",
+            "value": "Merge branch 'feat-11192v7' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "bfe7e6f1b",
+            "value": "feat-11192v7修改批量操作按钮样式\n"
+        },
+        {
+            "key": "ae4c223f4",
+            "value": "feat-11172\n"
+        },
+        {
+            "key": "f7de1bc15",
+            "value": "Merge branch 'feat-11202-v4' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "89cce3bb8",
+            "value": "feat-11202-v4provide添加\n"
+        },
+        {
+            "key": "77c9e81b8",
+            "value": "Merge branch 'feat-11192v6' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "c771797de",
+            "value": "feat-11192v6\n"
+        },
+        {
+            "key": "abf4dc07e",
+            "value": "Merge branch 'feat-11200-v3' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "6ffa8593c",
+            "value": "feat-11200-v3员工列表选中的门店被删除时，默认选中宣布门店\n"
+        },
+        {
+            "key": "0a037744c",
+            "value": "Merge branch 'feat-11202-v3' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "5c8295a4d",
+            "value": "feat-11202-v3顾客类型长度限制逻辑调整\n"
+        },
+        {
+            "key": "21d61914e",
+            "value": "Feat-其他配置文案优化\n"
+        },
+        {
+            "key": "c8402596c",
+            "value": "Merge branch 'feat-11192v5' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "7bc9ac53b",
+            "value": "feat-11192v5\n"
+        },
+        {
+            "key": "38c4b728b",
+            "value": "Fix-客户分组api修复\n"
+        },
+        {
+            "key": "73ca2d355",
+            "value": "Merge branch 'feat-11171' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "20e530907",
+            "value": "Merge branch 'Feat-shoppingGuide-develop' into feat-11171\n"
+        },
+        {
+            "key": "8bae24c5b",
+            "value": "feat-11171导购助手客户分组列表\n"
+        },
+        {
+            "key": "4fda8b650",
+            "value": "Feat-屏蔽导购助手小程序页面导航设置\n"
+        },
+        {
+            "key": "99ac29560",
+            "value": "Merge branch 'feat-11192v4' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "5cb565204",
+            "value": "feat-11192v4新建任务和编辑任务的保存逻辑优化\n"
+        },
+        {
+            "key": "21c05af5c",
+            "value": "Merge branch 'feat-11192v3' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "4cf1ee8b2",
+            "value": "feat-11192v3\n"
+        },
+        {
+            "key": "66be6a65c",
+            "value": "Merge branch 'feat-11200+11202' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "4e76d5264",
+            "value": "feat-11200+11202逻辑优化\n"
+        },
+        {
+            "key": "94a24d348",
+            "value": "Feat-子账号路由信息补充\n"
+        },
+        {
+            "key": "338fa9465",
+            "value": "Merge branch 'feat-11192v2' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "f7eb51359",
+            "value": "feat-11192v2\n"
+        },
+        {
+            "key": "ffbd42ff9",
+            "value": "Fix-removeRepeatTranslate\n"
+        },
+        {
+            "key": "770b2482d",
+            "value": "Merge branch 'feat-11196' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "4788d0fa0",
+            "value": "Merge branch 'Feat-shoppingGuide-develop' into feat-11196\n"
+        },
+        {
+            "key": "b050bd107",
+            "value": "fix-11171 客户分组列表\n"
+        },
+        {
+            "key": "e80197419",
+            "value": "Merge branch 'feat-11192' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "85c37e35f",
+            "value": "Merge branch 'Feat-shoppingGuide-develop' of https://gitlab.qdum.com/dmartech/app into feat-11192\n"
+        },
+        {
+            "key": "c16e5bb0e",
+            "value": "feat-11192\n"
+        },
+        {
+            "key": "9574c76ad",
+            "value": "Merge branch 'HotFix-11319' into 'master'\n"
+        },
+        {
+            "key": "7ae179f79",
+            "value": "Merge branch 'feat-11202-v2' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "d613c44a9",
+            "value": "feat-11202-v2接口联调\n"
+        },
+        {
+            "key": "d3ee8f833",
+            "value": "Merge branch 'Feat-11168/11175/11188V2' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "8603ad96b",
+            "value": "Feat-11168/11175/11188V2\n"
+        },
+        {
+            "key": "a11be2a8d",
+            "value": "Merge branch 'HotFix-11319' into 'develop'\n"
+        },
+        {
+            "key": "ec0d3d76e",
+            "value": "Fix-11330\n"
+        },
+        {
+            "key": "77fdd98b4",
+            "value": "Merge branch 'HotFix-11319' into 'develop'\n"
+        },
+        {
+            "key": "f9d044b68",
+            "value": "Fix-11329\n"
+        },
+        {
+            "key": "0e469769e",
+            "value": "Merge branch 'feat-11200-v2' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "15ae9a13c",
+            "value": "feat-11200-v2联调相对应的逻辑修改\n"
+        },
+        {
+            "key": "1e89fa9c5",
+            "value": "Feat-企微员工敏感信息授权重定向页面V2\n"
+        },
+        {
+            "key": "660124654",
+            "value": "Merge branch 'HotFix-11319' into 'develop'\n"
+        },
+        {
+            "key": "1fa7f7ddf",
+            "value": "HotFix-11323\n"
+        },
+        {
+            "key": "f1b8ccbb1",
+            "value": "Merge branch 'Feat-updateStaffSensitiveInfo' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "8b7094130",
+            "value": "Feat-企业微信员工信息授权V2\n"
+        },
+        {
+            "key": "69934fe71",
+            "value": "Merge branch 'HotFix-11319' into 'develop'\n"
+        },
+        {
+            "key": "d0265a475",
+            "value": "HotFix-11319 导出微信二维码明细列表V2\n"
+        },
+        {
+            "key": "77cd76754",
+            "value": "Merge branch 'Feat-redirectPage' into 'develop'\n"
+        },
+        {
+            "key": "b6865a601",
+            "value": "Feat-企微员工敏感信息授权重定向页面V2\n"
+        },
+        {
+            "key": "6211038d3",
+            "value": "HotFix-11319 导出微信二维码明细列表\n"
+        },
+        {
+            "key": "ff5211051",
+            "value": "Merge branch 'feat-11200' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "a08cb5ed8",
+            "value": "feat-11200导购助手员工管理页面\n"
+        },
+        {
+            "key": "f4706eeff",
+            "value": "Merge branch 'feat-11200' of https://gitlab.qdum.com/dmartech/app into feat-11200\n"
+        },
+        {
+            "key": "c2c009a50",
+            "value": "Merge branch 'Feat-shoppingGuide-develop' of https://gitlab.qdum.com/dmartech/app into feat-11200\n"
+        },
+        {
+            "key": "e55c9933c",
+            "value": "Merge branch 'Feat-updateStaffSensitiveInfo' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "732715f2d",
+            "value": "Merge branch 'shoppingGuide-dev' into updateInfo\n"
+        },
+        {
+            "key": "03bb72ad2",
+            "value": "Merge branch 'Feat-redirectPage' into 'develop'\n"
+        },
+        {
+            "key": "fc532e179",
+            "value": "Feat-企微员工敏感信息授权重定向页面\n"
+        },
+        {
+            "key": "4446cf06c",
+            "value": "Feat-更新企微员工敏感信息\n"
+        },
+        {
+            "key": "f6a12ca8c",
+            "value": "Merge branch 'feat-11202' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "efa661c9a",
+            "value": "feat-11202导购助手销售数据页面\n"
+        },
+        {
+            "key": "73c17d98e",
+            "value": "Merge branch 'feat-11202' of https://gitlab.qdum.com/dmartech/app into feat-11202\n"
+        },
+        {
+            "key": "53f966bb5",
+            "value": "导购助手员工管理页面\n"
+        },
+        {
+            "key": "138fac0ff",
+            "value": "Merge branch 'feat-11200' of https://gitlab.qdum.com/dmartech/app into feat-11200\n"
+        },
+        {
+            "key": "4f25345be",
+            "value": "Merge branch 'Feat-shoppingGuide-develop' of https://gitlab.qdum.com/dmartech/app into feat-11200\n"
+        },
+        {
+            "key": "1cfc60302",
+            "value": "HotFix-11236\n"
+        },
+        {
+            "key": "53117cb41",
+            "value": "HotFix-11236\n"
+        },
+        {
+            "key": "7b6b16097",
+            "value": "Merge branch 'HotFix-11236' into 'master'\n"
+        },
+        {
+            "key": "35cb6ed38",
+            "value": "Merge branch 'HotFix-11236' into 'develop'\n"
+        },
+        {
+            "key": "a17e3610d",
+            "value": "HotFix-11236 单个文件下载修复\n"
+        },
+        {
+            "key": "fb5d43292",
+            "value": "Merge branch 'HotFix-11236' into 'develop'\n"
+        },
+        {
+            "key": "9846f7e6e",
+            "value": "HotFix-11236 单个文件下载修复\n"
+        },
+        {
+            "key": "7eb608b40",
+            "value": "Merge branch 'Feat-shoppingGuide-develop' of https://gitlab.qdum.com/dmartech/app into feat-11200\n"
+        },
+        {
+            "key": "641f8daec",
+            "value": "Merge branch 'Feat-shoppingGuide-develop' of https://gitlab.qdum.com/dmartech/app into feat-11196\n"
+        },
+        {
+            "key": "6609f10e8",
+            "value": "feat-11171 客户分组列表\n"
+        },
+        {
+            "key": "2ad0f11fa",
+            "value": "Merge branch 'Feat-11168/11175/11188' into 'Feat-shoppingGuide-develop'\n"
+        },
+        {
+            "key": "7d0139c63",
+            "value": "Feat-11168And11175And11188\n"
+        },
+        {
+            "key": "8beec8a27",
+            "value": "Merge branch 'HotFix-11245' into 'master'\n"
+        },
+        {
+            "key": "9906315e4",
+            "value": "Merge branch 'HotFix-11245' into 'develop'\n"
+        },
+        {
+            "key": "d3fdc3b2c",
+            "value": "HotFix-11245 企微配置英文翻译优化\n"
+        },
+        {
+            "key": "70c1f517d",
+            "value": "Merge branch 'HotFix-11245' into 'develop'\n"
+        },
+        {
+            "key": "fbb53acdc",
+            "value": "HotFix-11245 企微可信IP配置说明+企微配置英文翻译优化\n"
+        },
+        {
+            "key": "3b015bf53",
+            "value": "Merge branch 'HotFix-11237' into 'master'\n"
+        },
+        {
+            "key": "0395bc04b",
+            "value": "feat-11202导购助手销售数据页面\n"
+        },
+        {
+            "key": "d716814df",
+            "value": "Merge branch 'hotfix-提示文案' into 'master'\n"
+        },
+        {
+            "key": "9c1fb6fbe",
+            "value": "feat-11200导购助手员工管理页面\n"
+        },
+        {
+            "key": "8b2629819",
+            "value": "hotfix-修改提示文案\n"
+        },
+        {
+            "key": "c9c5746ef",
+            "value": "客户分组\n"
+        },
+        {
+            "key": "8df82fa36",
+            "value": "HotFix-11237 二维码界面增加自定义展示界面数量功能，支持批量下载\n"
+        },
+        {
+            "key": "e7022ad39",
+            "value": "Merge branch 'develop' into 'master'\n"
+        },
+        {
+            "key": "7dadd6706",
+            "value": "Merge branch 'fix-修改文字颜色' into 'develop'\n"
+        },
+        {
+            "key": "d8be15915",
+            "value": "fix-修改频次文案颜色大小\n"
+        },
+        {
+            "key": "73ab9e587",
+            "value": "fix-修改频次限制文案颜色大小\n"
+        },
+        {
+            "key": "3835b7d82",
+            "value": "客户分组\n"
+        },
+        {
+            "key": "2cc822f77",
+            "value": "Merge branch 'Fix-eventControlFix' into 'develop'\n"
+        },
+        {
+            "key": "7e3236421",
+            "value": "Fix-旅程事件控件小程序事件选择逻辑优化\n"
+        },
+        {
+            "key": "667357f56",
+            "value": "Feat-shoppingGuide-init\n"
+        },
+        {
+            "key": "889ed6ff1",
+            "value": "Merge branch 'feat-11138v6' into 'develop'\n"
+        },
+        {
+            "key": "c9f20e446",
+            "value": "feat-11138v6\n"
+        },
+        {
+            "key": "4f548d7e1",
+            "value": "Merge branch 'fix-11167' into 'develop'\n"
+        },
+        {
+            "key": "df4fea068",
+            "value": "fix-11167短信报告未选中任何任务时，点击下载，旅程名称无法带入\n"
+        },
+        {
+            "key": "44f7d1652",
+            "value": "Merge branch 'feat-11138v5' into 'develop'\n"
+        },
+        {
+            "key": "bdd2a48a4",
+            "value": "feat-11138v5\n"
+        },
+        {
+            "key": "cc17d8f50",
+            "value": "Merge branch 'feat-11138v4' into 'develop'\n"
+        },
+        {
+            "key": "85b680f46",
+            "value": "feat-11138v4 搜索框未过滤空格\n"
+        },
+        {
+            "key": "033cd24ca",
+            "value": "Merge branch 'feat-11138v3' into 'develop'\n"
+        },
+        {
+            "key": "82df4276c",
+            "value": "feat-11138v3修复搜索之后，点击确定按钮不清空搜索框\n"
+        },
+        {
+            "key": "ff86fce07",
+            "value": "Merge branch 'fix-11160' into 'develop'\n"
+        },
+        {
+            "key": "7d868045c",
+            "value": "修改发送频次数据提醒文案\n"
+        },
+        {
+            "key": "d8384a914",
+            "value": "Merge branch 'fix-11161' into 'develop'\n"
+        },
+        {
+            "key": "68d88b93b",
+            "value": "fix-11161 邮件/短信报告，点击确定后下拉框不隐藏、加载图表时添加loading状态\n"
+        },
+        {
+            "key": "6bd1543b2",
+            "value": "Merge branch 'fix-11159' into 'develop'\n"
+        },
+        {
+            "key": "05e0f0038",
+            "value": "fix-11159 短信发送报告 搜索关键字后，统计数据展示错误\n"
+        },
+        {
+            "key": "04af92290",
+            "value": "Merge branch 'feat-11134优化加载' into 'develop'\n"
+        },
+        {
+            "key": "02ecaffdc",
+            "value": "feat 1.组件加载的优化 2.组件中冗余代码的删除\n"
+        },
+        {
+            "key": "7e9cfcb3c",
+            "value": "Merge branch 'feat-11138v2' into 'develop'\n"
+        },
+        {
+            "key": "3b9f90d1e",
+            "value": "feat-11138v2功能优化\n"
+        },
+        {
+            "key": "9486cbae8",
+            "value": "Merge branch 'fix-11153' into 'develop'\n"
+        },
+        {
+            "key": "a74c7acb1",
+            "value": "Optimize-feat11134代码格式调整\n"
+        },
+        {
+            "key": "f4fa29c7f",
+            "value": "Merge branch 'feat-11134' into 'develop'\n"
+        },
+        {
+            "key": "5bda7d920",
+            "value": "feat-11134 1.增加条件失效的提示语（公共组件涉及共享规则与标签） 2.共享规则中的遗漏国际化的处理 3.点击\"开启\"时二次确认弹框的添加\n"
+        },
+        {
+            "key": "f2364d93d",
+            "value": "fix-11153优化分群筛选搜索输入框\n"
+        },
+        {
+            "key": "92a1c44a2",
+            "value": "Merge branch 'feat-11132' into 'develop'\n"
+        },
+        {
+            "key": "4a7bba05c",
+            "value": "feat -11132频次控制前端优化\n"
+        },
+        {
+            "key": "f6597f00c",
+            "value": "Merge branch 'feat-11138' into 'develop'\n"
+        },
+        {
+            "key": "e46a03255",
+            "value": "feat-11138增加确认按钮，点击按钮后再进行报告数据查询\n"
+        },
+        {
+            "key": "f10a788be",
+            "value": "Merge branch 'HotFix-removeNotice' into 'master'\n"
+        },
+        {
+            "key": "5e958b5ad",
+            "value": "Merge branch 'HotFix-removeNotice' into 'develop'\n"
+        },
+        {
+            "key": "ae665ae7b",
+            "value": "HotFix-取消导航重命名公告提示框\n"
+        },
+        {
+            "key": "86cf54186",
+            "value": "Merge branch 'Fix-11149' into 'develop'\n"
+        },
+        {
+            "key": "c0a9ca205",
+            "value": "Fix-11149 企业设置—权限管理：分组列显示不全\n"
+        },
+        {
+            "key": "8c07e63c7",
+            "value": "Merge branch 'HotFix-removeNavReport' into 'master'\n"
+        },
+        {
+            "key": "84be70209",
+            "value": "Merge branch 'HotFix-removeNavReport' into 'develop'\n"
+        },
+        {
+            "key": "c2e3155b9",
+            "value": "HotFix-导航营销报告去掉数据报告分割标题\n"
+        },
+        {
+            "key": "861d00f48",
+            "value": "Merge branch 'HotFix-datacenterRemoveAuth' into 'master'\n"
+        },
+        {
+            "key": "97c0a3fd1",
+            "value": "Merge branch 'HotFix-datacenterRemoveAuth' into 'develop'\n"
+        },
+        {
+            "key": "1147ca36a",
+            "value": "HotFix-营销报告去掉权限控制\n"
+        },
+        {
+            "key": "920932126",
+            "value": "Merge branch 'develop' into 'master'\n"
+        },
+        {
+            "key": "cb7d54022",
+            "value": "Feat-华为‘表单’导航名称统一变更\n"
+        },
+        {
+            "key": "69412bc3f",
+            "value": "Merge branch 'HotFix-11127' into 'master'\n"
+        },
+        {
+            "key": "d6a538e5f",
+            "value": "Merge branch 'HotFix-11127' into 'develop'\n"
+        },
+        {
+            "key": "9e766d360",
+            "value": "reFeat-11127\n"
+        },
+        {
+            "key": "d960b326d",
+            "value": "feat-11127\n"
+        },
+        {
+            "key": "4ad45ec57",
+            "value": "Merge branch 'DMT-rename-dev' into 'develop'\n"
+        },
+        {
+            "key": "7d3dc071c",
+            "value": "reFeat-11127\n"
+        },
+        {
+            "key": "8637c3e95",
+            "value": "Merge branch 'DMT-rename-dev' into 'develop'\n"
+        },
+        {
+            "key": "fffe075d9",
+            "value": "feat-11127\n"
+        },
+        {
+            "key": "6016efab6",
+            "value": "Merge branch 'DMT-rename-dev' into 'develop'\n"
+        },
+        {
+            "key": "46c8261ba",
+            "value": "Feat-10630\n"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+@import '../../../../../common/scss//base/variables';
+@import '../../../../../common/scss/base/mixin';
+
+.wechat-sub-channels {
+    .wechat-folder {
+        box-sizing: border-box;
+        height: 59px;
+        padding: 0 20px 0 64px;
+        line-height: 58px;
+        border-bottom: 1px dashed #e0e5ea;
+        background: white;
+        cursor: pointer;
+        
+        &:hover,
+        &.active {
+            background: $theme;
+            color: white;
+            border-bottom: unset;
+            &:after {
+                border-top-color: white;
+            }
+        }
+        
+        .icon {
+            float: right;
+            vertical-align: top;
+            font-size: 14px;
+            transition: transform 0.2s linear;
+            &.active {
+                transform: rotate(90deg);
+            }
+        }
+        
+        .name {
+            vertical-align: top;
+            font-size: 14px;
+        }
+    }
+    .wechat-msg-container {
+        will-change: height;
+        .wechat-msg-type {
+            padding-left: 94px !important;
+        }
+    }
+    // 图文消息的英文文本过长，减小字号实现一行显示
+    .long-text {
+        font-size: 12px;
+        i {
+            font-size: 14px;
+        }
+    }
+}

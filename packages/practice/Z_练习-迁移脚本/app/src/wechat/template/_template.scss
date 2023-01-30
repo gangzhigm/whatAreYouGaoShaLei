@@ -1,0 +1,7 @@
+@import '../../common/scss/base/variables';
+@import '../../common/scss/base/mixin';
+.table-head {
+    padding-bottom: 8px;
+    line-height: $input-field-height;
+    border-bottom: 1px solid $border-color;
+}

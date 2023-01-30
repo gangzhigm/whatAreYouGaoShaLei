@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <h2>webUsb</h2>
+    <button onclick="get_BatteryInfo()">Get_BatteryInfo</button>
+    <p>value: <span id="Battery_value">null</span></p>
+    <hr>
+
+    <script>
+        navigator.usb.getDevices()
+        .then((devices) => {
+        console.log(devices);
+        console.log(`Total devices: ${devices.length}`);
+        devices.forEach((device) => {
+            console.log(`Product name: ${device.productName}, serial number ${device.serialNumber}`);
+        });
+        });
+
+
+        // const filters = [
+        // { vendorId: 0x1209, productId: 0xa800 },
+        // { vendorId: 0x1209, productId: 0xa850 },
+        // ];
+        // navigator.usb.requestDevice({ filters })
+        // .then((usbDevice) => {
+        //     console.log(`Product name: ${usbDevice.productName}`);
+        // })
+        // .catch((e) => {
+        //     console.error(`There is no device. ${e}`);
+        // });
+
+        // navigator.usb.addEventListener('disconnect', (event) => {
+        // // Remove event.device from the UI.
+        // });
+        // navigator.usb.addEventListener('connect', (event) => {
+        // // Add event.device to the UI.
+        // });
+    </script>
+</body>
+</html>

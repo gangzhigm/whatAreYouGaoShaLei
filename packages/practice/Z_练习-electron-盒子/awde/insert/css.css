@@ -1,0 +1,22 @@
+/* .navLayout_side_logo , .navLayout_mobileNav{
+    -webkit-app-region: drag;
+}
+
+button {
+    -webkit-app-region: no-drag;
+}
+
+.titlebar {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+} */
+
+#app_inner{
+    
+}
+
+body{
+    /* border: 2px solid red;
+    padding: 4px; */
+}
+

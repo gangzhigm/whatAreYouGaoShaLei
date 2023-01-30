@@ -1,0 +1,658 @@
+{
+  "Hong Kong": {
+    "latitude": 22.25,
+    "longitude": 114.1667
+  },
+  "Afghanistan": {
+    "latitude": 33,
+    "longitude": 65
+  },
+  "Albania": {
+    "latitude": 41,
+    "longitude": 20
+  },
+  "Algeria": {
+    "latitude": 28,
+    "longitude": 3
+  },
+  "Angola": {
+    "latitude": -12.5,
+    "longitude": 18.5
+  },
+  "Argentina": {
+    "latitude": -34,
+    "longitude": -64
+  },
+  "Armenia": {
+    "latitude": 40,
+    "longitude": 45
+  },
+  "Australia": {
+    "latitude": -27,
+    "longitude": 133
+  },
+  "Austria": {
+    "latitude": 47.3333,
+    "longitude": 13.3333
+  },
+  "Azerbaijan": {
+    "latitude": 40.5,
+    "longitude": 47.5
+  },
+  "Bahrain": {
+    "latitude": 26,
+    "longitude": 50.55
+  },
+  "Bangladesh": {
+    "latitude": 24,
+    "longitude": 90
+  },
+  "Belarus": {
+    "latitude": 53,
+    "longitude": 28
+  },
+  "Belgium": {
+    "latitude": 50.8333,
+    "longitude": 4
+  },
+  "Benin": {
+    "latitude": 9.5,
+    "longitude": 2.25
+  },
+  "Bhutan": {
+    "latitude": 27.5,
+    "longitude": 90.5
+  },
+  "Bolivia": {
+    "latitude": -17,
+    "longitude": -65
+  },
+  "BosniaandHerzegovina": {
+    "latitude": 44,
+    "longitude": 18
+  },
+  "Botswana": {
+    "latitude": -22,
+    "longitude": 24
+  },
+  "Brazil": {
+    "latitude": -10,
+    "longitude": -55
+  },
+  "Brunei": {
+    "latitude": 4.5,
+    "longitude": 114.6667
+  },
+  "Bulgaria": {
+    "latitude": 43,
+    "longitude": 25
+  },
+  "Burundi": {
+    "latitude": -3.5,
+    "longitude": 30
+  },
+  "Cambodia": {
+    "latitude": 13,
+    "longitude": 105
+  },
+  "Cameroon": {
+    "latitude": 6,
+    "longitude": 12
+  },
+  "Canada": {
+    "latitude": 54,
+    "longitude": -100
+  },
+  "CapeVerde": {
+    "latitude": 16,
+    "longitude": -24
+  },
+  "Chad": {
+    "latitude": 15,
+    "longitude": 19
+  },
+  "Chile": {
+    "latitude": -30,
+    "longitude": -71
+  },
+  "China": {
+    "latitude": 35,
+    "longitude": 105
+  },
+  "Colombia": {
+    "latitude": 4,
+    "longitude": -72
+  },
+  "Comoros": {
+    "latitude": -12.1667,
+    "longitude": 44.25
+  },
+  "CostaRica": {
+    "latitude": 10,
+    "longitude": -84
+  },
+  "CotedIvoire": {
+    "latitude": 8,
+    "longitude": -5
+  },
+  "Croatia": {
+    "latitude": 45.1667,
+    "longitude": 15.5
+  },
+  "Cuba": {
+    "latitude": 21.5,
+    "longitude": -80
+  },
+  "Cyprus": {
+    "latitude": 35,
+    "longitude": 33
+  },
+  "CzechRep": {
+    "latitude": 49.75,
+    "longitude": 15.5
+  },
+  "Denmark": {
+    "latitude": 56,
+    "longitude": 10
+  },
+  "Djibouti": {
+    "latitude": 11.5,
+    "longitude": 43
+  },
+  "Ecuador": {
+    "latitude": -2,
+    "longitude": -77.5
+  },
+  "Egypt": {
+    "latitude": 27,
+    "longitude": 30
+  },
+  "ElSalvador": {
+    "latitude": 13.8333,
+    "longitude": -88.9167
+  },
+  "EquatorialGuinea": {
+    "latitude": 2,
+    "longitude": 10
+  },
+  "Eritrea": {
+    "latitude": 15,
+    "longitude": 39
+  },
+  "Estonia": {
+    "latitude": 59,
+    "longitude": 26
+  },
+  "Ethiopia": {
+    "latitude": 8,
+    "longitude": 38
+  },
+  "Fiji": {
+    "latitude": -18,
+    "longitude": 175
+  },
+  "Finland": {
+    "latitude": 62,
+    "longitude": 26
+  },
+  "France": {
+    "latitude": 46,
+    "longitude": 2
+  },
+  "Gabon": {
+    "latitude": -1,
+    "longitude": 11.75
+  },
+  "Gambia": {
+    "latitude": 13.4667,
+    "longitude": -16.5667
+  },
+  "Georgia": {
+    "latitude": 42,
+    "longitude": 43.5
+  },
+  "Germany": {
+    "latitude": 51,
+    "longitude": 9
+  },
+  "Ghana": {
+    "latitude": 8,
+    "longitude": -2
+  },
+  "Greece": {
+    "latitude": 39,
+    "longitude": 22
+  },
+  "Guatemala": {
+    "latitude": 15.5,
+    "longitude": -90.25
+  },
+  "Guinea": {
+    "latitude": 11,
+    "longitude": -10
+  },
+  "Guinea-Bissau": {
+    "latitude": 12,
+    "longitude": -15
+  },
+  "Guyana": {
+    "latitude": 5,
+    "longitude": -59
+  },
+  "Haiti": {
+    "latitude": 19,
+    "longitude": -72.4167
+  },
+  "Honduras": {
+    "latitude": 15,
+    "longitude": -86.5
+  },
+  "Hungary": {
+    "latitude": 47,
+    "longitude": 20
+  },
+  "Iceland": {
+    "latitude": 65,
+    "longitude": -18
+  },
+  "India": {
+    "latitude": 20,
+    "longitude": 77
+  },
+  "Indonesia": {
+    "latitude": -5,
+    "longitude": 120
+  },
+  "Iran": {
+    "latitude": 32,
+    "longitude": 53
+  },
+  "Iraq": {
+    "latitude": 33,
+    "longitude": 44
+  },
+  "Ireland": {
+    "latitude": 53,
+    "longitude": -8
+  },
+  "Israel": {
+    "latitude": 31.5,
+    "longitude": 34.75
+  },
+  "Italy": {
+    "latitude": 42.8333,
+    "longitude": 12.8333
+  },
+  "Jamaica": {
+    "latitude": 18.25,
+    "longitude": -77.5
+  },
+  "Japan": {
+    "latitude": 36,
+    "longitude": 138
+  },
+  "Jordan": {
+    "latitude": 31,
+    "longitude": 36
+  },
+  "Kazakhstan": {
+    "latitude": 48,
+    "longitude": 68
+  },
+  "Kenya": {
+    "latitude": 1,
+    "longitude": 38
+  },
+  "Korea": {
+    "latitude": 37,
+    "longitude": 127.5
+  },
+  "Kuwait": {
+    "latitude": 29.3375,
+    "longitude": 47.6581
+  },
+  "Kyrgyzstan": {
+    "latitude": 41,
+    "longitude": 75
+  },
+  "Laos": {
+    "latitude": 18,
+    "longitude": 105
+  },
+  "Latvia": {
+    "latitude": 57,
+    "longitude": 25
+  },
+  "Lebanon": {
+    "latitude": 33.8333,
+    "longitude": 35.8333
+  },
+  "Lesotho": {
+    "latitude": -29.5,
+    "longitude": 28.5
+  },
+  "Liberia": {
+    "latitude": 6.5,
+    "longitude": -9.5
+  },
+  "Libya": {
+    "latitude": 25,
+    "longitude": 17
+  },
+  "Lithuania": {
+    "latitude": 55,
+    "longitude": 24
+  },
+  "Luxembourg": {
+    "latitude": 49.75,
+    "longitude": 6
+  },
+  "Macedonia": {
+    "latitude": 41.8333,
+    "longitude": 22
+  },
+  "Madagascar": {
+    "latitude": -20,
+    "longitude": 47
+  },
+  "Malawi": {
+    "latitude": -13.5,
+    "longitude": 34
+  },
+  "Malaysia": {
+    "latitude": 2.5,
+    "longitude": 112.5
+  },
+  "Mali": {
+    "latitude": 17,
+    "longitude": -4
+  },
+  "Mauritania": {
+    "latitude": 20,
+    "longitude": -12
+  },
+  "Mauritius": {
+    "latitude": -20.2833,
+    "longitude": 57.55
+  },
+  "Mexico": {
+    "latitude": 23,
+    "longitude": -102
+  },
+  "Moldova": {
+    "latitude": 47,
+    "longitude": 29
+  },
+  "Mongolia": {
+    "latitude": 46,
+    "longitude": 105
+  },
+  "Montenegro": {
+    "latitude": 42.5,
+    "longitude": 19.4
+  },
+  "Morocco": {
+    "latitude": 32,
+    "longitude": -5
+  },
+  "Mozambique": {
+    "latitude": -18.25,
+    "longitude": 35
+  },
+  "Myanmar": {
+    "latitude": 22,
+    "longitude": 98
+  },
+  "Namibia": {
+    "latitude": -22,
+    "longitude": 17
+  },
+  "Nepal": {
+    "latitude": 28,
+    "longitude": 84
+  },
+  "Netherlands": {
+    "latitude": 52.5,
+    "longitude": 5.75
+  },
+  "NewZealand": {
+    "latitude": -41,
+    "longitude": 174
+  },
+  "Nicaragua": {
+    "latitude": 13,
+    "longitude": -85
+  },
+  "Niger": {
+    "latitude": 16,
+    "longitude": 8
+  },
+  "Nigeria": {
+    "latitude": 10,
+    "longitude": 8
+  },
+  "Norway": {
+    "latitude": 62,
+    "longitude": 10
+  },
+  "Oman": {
+    "latitude": 21,
+    "longitude": 57
+  },
+  "Pakistan": {
+    "latitude": 30,
+    "longitude": 70
+  },
+  "Panama": {
+    "latitude": 9,
+    "longitude": -80
+  },
+  "PapuaNewGuinea": {
+    "latitude": -6,
+    "longitude": 147
+  },
+  "Paraguay": {
+    "latitude": -23,
+    "longitude": -58
+  },
+  "Peru": {
+    "latitude": -10,
+    "longitude": -76
+  },
+  "Philippines": {
+    "latitude": 13,
+    "longitude": 122
+  },
+  "Poland": {
+    "latitude": 52,
+    "longitude": 20
+  },
+  "Portugal": {
+    "latitude": 39.5,
+    "longitude": -8
+  },
+  "PuertoRico": {
+    "latitude": 18.25,
+    "longitude": -66.5
+  },
+  "Qatar": {
+    "latitude": 25.5,
+    "longitude": 51.25
+  },
+  "Romania": {
+    "latitude": 46,
+    "longitude": 25
+  },
+  "Russia": {
+    "latitude": 60,
+    "longitude": 100
+  },
+  "Rwanda": {
+    "latitude": -2,
+    "longitude": 30
+  },
+  "SaudiArabia": {
+    "latitude": 25,
+    "longitude": 45
+  },
+  "Senegal": {
+    "latitude": 14,
+    "longitude": -14
+  },
+  "Serbia": {
+    "latitude": 44,
+    "longitude": 21
+  },
+  "SierraLeone": {
+    "latitude": 8.5,
+    "longitude": -11.5
+  },
+  "Singapore": {
+    "latitude": 1.3667,
+    "longitude": 103.8
+  },
+  "SlovakRepublic": {
+    "latitude": 48.6667,
+    "longitude": 19.5
+  },
+  "Slovenia": {
+    "latitude": 46,
+    "longitude": 15
+  },
+  "SolomonIslands": {
+    "latitude": -8,
+    "longitude": 159
+  },
+  "Somalia": {
+    "latitude": 10,
+    "longitude": 49
+  },
+  "SouthAfrica": {
+    "latitude": -29,
+    "longitude": 24
+  },
+  "Spain": {
+    "latitude": 40,
+    "longitude": -4
+  },
+  "SriLanka": {
+    "latitude": 7,
+    "longitude": 81
+  },
+  "Sudan": {
+    "latitude": 15,
+    "longitude": 30
+  },
+  "Suriname": {
+    "latitude": 4,
+    "longitude": -56
+  },
+  "Swaziland": {
+    "latitude": -26.5,
+    "longitude": 31.5
+  },
+  "Sweden": {
+    "latitude": 62,
+    "longitude": 15
+  },
+  "Switzerland": {
+    "latitude": 47,
+    "longitude": 8
+  },
+  "Syria": {
+    "latitude": 35,
+    "longitude": 38
+  },
+  "Taiwan": {
+    "latitude": 23.5,
+    "longitude": 121
+  },
+  "Tajikistan": {
+    "latitude": 39,
+    "longitude": 71
+  },
+  "Tanzania": {
+    "latitude": -6,
+    "longitude": 35
+  },
+  "Thailand": {
+    "latitude": 15,
+    "longitude": 100
+  },
+  "Togo": {
+    "latitude": 8,
+    "longitude": 1.1667
+  },
+  "TrinidadandTobago": {
+    "latitude": 11,
+    "longitude": -61
+  },
+  "Tunisia": {
+    "latitude": 34,
+    "longitude": 9
+  },
+  "Turkey": {
+    "latitude": 39,
+    "longitude": 35
+  },
+  "Turkmenistan": {
+    "latitude": 40,
+    "longitude": 60
+  },
+  "Uganda": {
+    "latitude": 1,
+    "longitude": 32
+  },
+  "Ukraine": {
+    "latitude": 49,
+    "longitude": 32
+  },
+  "UnitedArabEmirates": {
+    "latitude": 24,
+    "longitude": 54
+  },
+  "UnitedKingdom": {
+    "latitude": 54,
+    "longitude": -2
+  },
+  "America": {
+    "latitude": 38,
+    "longitude": -97
+  },
+  "Uruguay": {
+    "latitude": -33,
+    "longitude": -56
+  },
+  "Uzbekistan": {
+    "latitude": 41,
+    "longitude": 64
+  },
+  "Venezuela": {
+    "latitude": 8,
+    "longitude": -66
+  },
+  "WestBankandGaza": {
+    "latitude": 32,
+    "longitude": 35.25
+  },
+  "Vietnam": {
+    "latitude": 16,
+    "longitude": 106
+  },
+  "Yemen": {
+    "latitude": 15,
+    "longitude": 48
+  },
+  "Zambia": {
+    "latitude": -15,
+    "longitude": 30
+  },
+  "Zimbabwe": {
+    "latitude": -20,
+    "longitude": 30
+  },
+  "HongKong": {
+    "latitude": 22.25,
+    "longitude": 114.1667
+  }
+}

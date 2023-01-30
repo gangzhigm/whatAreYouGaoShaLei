@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/roughjs@4.5.1/bundled/rough.js"></script>
+    <style>
+        div{
+            background-image: linear-gradient(to right, transparent 90%, #ccc 0), linear-gradient(to bottom, transparent 90%, #ccc 0);
+            background-size: 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:100px;height:100px;border:1px solid red;"></div>
+    <!-- <script>
+        class Vector2D extends Array {
+            constructor(x = 1, y = 0) {
+                super(x, y);
+
+            }
+
+            set x(v) {
+                this[0] = v;
+            }
+
+            set y(v) {
+                this[1] = v;
+            }
+
+            get x() {
+                return this[0];
+            }
+
+            get y() {
+                return this[1];
+            }
+
+            get length() {
+                return Math.hypot(this.x, this.y);
+            }
+
+            get dir() {
+                return Math.atan2(this.y, this.x);
+            }
+
+            copy() {
+                return new Vector2D(this.x, this.y);
+            }
+
+            add(v) {
+                this.x += v.x;
+                this.y += v.y;
+                return this;
+            }
+
+            sub(v) {
+                this.x -= v.x;
+                this.y -= v.y;
+                return this;
+            }
+
+            scale(a) {
+                this.x *= a;
+                this.y *= a;
+                return this;
+            }
+
+            cross(v) {
+                return this.x * v.y - v.x * this.y;
+            }
+
+            dot(v) {
+                return this.x * v.x + v.y * this.y;
+            }
+
+            normalize() {
+                return this.scale(1 / this.length);
+            }
+
+            rotate(rad) {
+                const c = Math.cos(rad),
+                s = Math.sin(rad);
+                const [x, y] = this;
+
+                this.x = x * c + y * -s;
+                this.y = x * s + y * c;
+
+                // 旋转矩阵
+                // [ c -s ]
+                // [ s c  ]
+                return this;
+            }
+            }
+    </script>
+    <script>
+        import * as Vec3Func from './functions/Vec3Func.js';
+class Vec3 extends Array {
+    constructor(x = 0, y = x, z = x) {
+        super(x, y, z);
+        return this;
+    }
+
+    get x() {
+        return this[0];
+    }
+
+    get y() {
+        return this[1];
+    }
+
+    get z() {
+        return this[2];
+    }
+
+    set x(v) {
+        this[0] = v;
+    }
+
+    set y(v) {
+        this[1] = v;
+    }
+
+    set z(v) {
+        this[2] = v;
+    }
+
+    set(x, y = x, z = x) {
+        if (x.length) return this.copy(x);
+        Vec3Func.set(this, x, y, z);
+        return this;
+    }
+
+    copy(v) {
+        Vec3Func.copy(this, v);
+        return this;
+    }
+
+    add(va, vb) {
+        if (vb) Vec3Func.add(this, va, vb);
+        else Vec3Func.add(this, this, va);
+        return this;
+    }
+
+    sub(va, vb) {
+        if (vb) Vec3Func.subtract(this, va, vb);
+        else Vec3Func.subtract(this, this, va);
+        return this;
+    }
+
+    multiply(v) {
+        if (v.length) Vec3Func.multiply(this, this, v);
+        else Vec3Func.scale(this, this, v);
+        return this;
+    }
+
+    divide(v) {
+        if (v.length) Vec3Func.divide(this, this, v);
+        else Vec3Func.scale(this, this, 1 / v);
+        return this;
+    }
+
+    inverse(v = this) {
+        Vec3Func.inverse(this, v);
+        return this;
+    }
+
+    // Can't use 'length' as Array.prototype uses it
+    len() {
+        return Vec3Func.length(this);
+    }
+
+    distance(v) {
+        if (v) return Vec3Func.distance(this, v);
+        else return Vec3Func.length(this);
+    }
+
+    squaredLen() {
+        return Vec3Func.squaredLength(this);
+    }
+    
+    squaredDistance(v) {
+        if (v) return Vec3Func.squaredDistance(this, v);
+        else return Vec3Func.squaredLength(this);
+    }
+
+    negate(v = this) {
+        Vec3Func.negate(this, v);
+        return this;
+    }
+
+    cross(va, vb) {
+        if (vb) Vec3Func.cross(this, va, vb);
+        else Vec3Func.cross(this, this, va);
+        return this;
+    }
+
+    scale(v) {
+        Vec3Func.scale(this, this, v);
+        return this;
+    }
+
+    normalize() {
+        Vec3Func.normalize(this, this);
+        return this;
+    }
+
+    dot(v) {
+        return Vec3Func.dot(this, v);
+    }
+
+    equals(v) {
+        return Vec3Func.exactEquals(this, v);
+    }
+
+    applyMatrix4(mat4) {
+        Vec3Func.transformMat4(this, this, mat4);
+        return this;
+    }
+
+    applyQuaternion(q) {
+        Vec3Func.transformQuat(this, this, q);
+        return this;
+    }
+
+    angle(v) {
+        return Vec3Func.angle(this, v);
+    }
+
+    lerp(v, t) {
+        Vec3Func.lerp(this, this, v, t);
+        return this;
+    }
+
+    clone() {
+        return new Vec3(this[0], this[1], this[2]);
+    }
+
+    fromArray(a, o = 0) {
+		this[0] = a[o];
+		this[1] = a[o + 1];
+		this[2] = a[o + 2];
+		return this;
+    }
+
+	toArray(a = [], o = 0) {
+		a[o] = this[0];
+		a[o + 1] = this[1];
+		a[o + 2] = this[2];
+		return a;
+	}
+    
+    transformDirection(mat4) {
+        const x = this[0];
+        const y = this[1];
+        const z = this[2];
+
+        this[0] = mat4[0] * x + mat4[4] * y + mat4[8] * z;
+        this[1] = mat4[1] * x + mat4[5] * y + mat4[9] * z;
+        this[2] = mat4[2] * x + mat4[6] * y + mat4[10] * z;
+        
+        return this.normalize();
+    }
+}
+
+    </script>
+    <canvas width="512" height="256" id="canvas"></canvas>
+    <script>
+        // const rc = rough.canvas(document.querySelector('canvas'));
+        // const hillOpts = {
+        //     roughness: 2.9,
+        //     strokeWidth: 2,
+        //     fill: 'blue'
+        // };
+        // rc.path('M76 256 L176 156 L276 256', hillOpts);
+        // rc.path('M236 256 L336 156 L436 256', hillOpts);
+        // rc.circle(
+        //     256, 
+        //     106, 
+        //     105, 
+        //     { 
+        //         stroke: 'red', 
+        //         strokeWidth: 4, 
+        //         fill: 'rgba(255, 255, 0, 0.4)', 
+        //         fillStyle: 'solid',
+        //     }
+        // );
+
+        // const rc = rough.canvas(document.querySelector('canvas'));
+        // const ctx = rc.ctx
+        // ctx.translate(256,256)
+        // ctx.scale(1,-1)
+        // const hillOpts = {
+        //     roughness: 2.9,
+        //     strokeWidth: 2,
+        //     fill: 'blue'
+        // };
+        // rc.path('M-180 0 L-80 100 L0 0', hillOpts);
+        // rc.path('M0 0 L80 100 L180 0', hillOpts);
+        // rc.circle(
+        //     0, 
+        //     150, 
+        //     150, 
+        //     { 
+        //         stroke: 'red', 
+        //         strokeWidth: 4, 
+        //         fill: 'rgba(255, 255, 0, 0.4)', 
+        //         fillStyle: 'solid',
+        //     }
+        // );
+        // const canvas = document.querySelector('canvas')
+        // const ctx = canvas.getContext("2d")
+        // ctx.translate(canvas.width/2,canvas.height)
+        // ctx.scale(1,-1)
+        // ctx.lineCap = 'round';
+        // // context  上下文
+        // // v0, 起始向量
+        // // length, 长度
+        // // thickness, 粗细 分支
+        // // dir, 方向是当前树枝的方向，用与 x 轴的夹角表示，单位是弧度
+        // // bias 随机偏向
+        // function drawBranch(context, v0, length, thickness, dir, bias) { 
+        //     const v = new Vector2D().rotate(dir).scale(length);
+        //     const v1 = v0.copy().add(v);
+        //     // 90 × (π/180) = π/2(rad)
+        //     // 1rad = (180/π)°
+        //     // 1° = (π/180)rad 
+        //     // sin30度 是0.5，那么程序中的值是多少呢？  console.log( Math.sin( 30*Math.PI/180 ) );
+        //     // 弧度= 角度 * Math.PI / 180;
+        //     // 角度 = 弧度 * 180 / Math.PI;
+        //     context.lineWidth = thickness;
+        //     context.beginPath();
+        //     context.moveTo(...v0);
+        //     context.lineTo(...v1);
+        //     context.stroke();
+
+        //     if(thickness > 2) { 
+        //         const left =Math.PI / 4 + 0.5 * (dir + 0.2) + bias * (Math.random() - 0.5);
+        //         drawBranch(context, v1, length * 0.9, thickness * 0.8, left, bias * 0.9);
+        //         const right =Math.PI / 4 + 0.5 * (dir - 0.2) + bias * (Math.random() - 0.5);
+        //         drawBranch(context, v1, length * 0.9, thickness * 0.8, right, bias * 0.9);
+        //      }
+
+        //     if(thickness < 1 && Math.random() < 0.3) {
+        //         context.save();
+
+        //         context.strokeStyle = '#c72c35';
+
+        //         const th = Math.random() * 6 + 3;
+
+        //         context.lineWidth = th;
+        //         context.beginPath();
+        //         context.moveTo(...v1);
+        //         context.lineTo(v1.x, v1.y - 2);
+        //         context.stroke();
+        //         context.restore();
+        //     }
+        // }
+
+        // const v0 = new Vector2D(0,0);
+        // const length = 30
+        // const thickness = 5
+        // const dir = Math.atan2(1,0)
+        // const bias = 3
+        // drawBranch(ctx, v0, length, thickness, dir, bias);
+
+        // const canvas = document.querySelector('canvas')
+        // const ctx = canvas.getContext('2d')
+        // function regularShape(edges = 3, x, y, step) {
+        //     const ret = [];
+        //     const delta = Math.PI
+        // }
+
+
+        import {Vec3} from '../common/lib/math/vec3.js';
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        function randomRGB() { return new Vec3( 0.5 * Math.random(), 0.5 * Math.random(), 0.5 * Math.random(), );
+            }ctx.translate(256, 256);
+            ctx.scale(1, -1);
+            for(let i = 0;
+            i < 3;
+            i++) { const colorVector = randomRGB();
+                for(let j = 0;
+                j < 5;
+                j++) { const c = colorVector.clone().scale(0.5 + 0.25 * j);
+                ctx.fillStyle = `rgb(${Math.floor(c[0] * 256)}, ${Math.floor(c[1] * 256)}, ${Math.floor(c[2] * 256)})`;
+            ctx.beginPath();
+            ctx.arc((j - 2) * 60, (i - 1) * 60, 20, 0, Math.PI * 2);
+            ctx.fill();
+     }}
+    </script> -->
+</body>
+</html>

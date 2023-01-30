@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <h2>WebSocket</h2>
+    <div>
+        <p>
+            Self ID : 
+            <input type="text" id="CreateFileInput">
+            <button onclick="ws()">init ID</button>
+        </p>
+    </div>
+    <div>
+        <p>
+            Send ID : 
+            <input type="text" id="CreateFileInput">
+            Send Value : 
+            <input type="text" id="CreateFileInput">
+            <button onclick="createFile()">Send</button>
+        </p>
+    </div>
+    <p>value: <span id="Battery_value">null</span></p>
+
+    <hr>
+
+    <script>
+        var webs = null; // websocket对象
+        var mId = null; // 我的id
+        function ws() {
+            mId = document.getElementById('nameInput').value;
+            webs = new WebSocket('ws://localhost:3000/koa/ws?id=' + mId)
+            webs.onopen = function () {
+                console.log('连接成功')
+            }
+            // 接收服务器发送的信息
+            webs.onmessage = function (evt) {
+                console.log(evt)
+            }
+        }
+
+        
+    // 给特定的id发送信息,服务器接收后会向该id发送
+    function send() {
+        var id = document.getElementById('sendId').value;
+        var content = document.getElementById('sendContent').value;
+        var data = {
+            mId: mId,
+            uId: id,
+            content: content
+        }
+        webs.send(JSON.stringify(data))
+    }
+    // WebSocket.close();
+    </script>
+</body>
+</html>

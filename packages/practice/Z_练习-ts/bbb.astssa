@@ -1,0 +1,3 @@
+import {Food} from './aaa.tssa'
+let meat: Food.Meat;
+let fruits: Food.Fruits;

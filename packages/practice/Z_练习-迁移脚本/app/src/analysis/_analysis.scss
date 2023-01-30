@@ -1,0 +1,64 @@
+/**
+ * 分析页面 公用样式
+ */
+// 1. 书签标题(页面标题)
+.analysis-page-title {
+    float: left;
+    margin: 38px 0 0;
+    max-width: 80%;
+    font-size: 18px;
+    line-height: 26px;
+    color: $color-title;
+    outline: none;
+    @include ellipsis();
+}
+
+.analysis-page-title-edit {
+    width: 14px;
+    height: 14px;
+    margin: 45px 0 0 5px;
+    color: rgba(black, .1);
+    cursor: pointer;
+    @include transition(color .2s linear);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    
+    svg {
+        display: block;
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+    }
+    
+    &:hover {
+        color: $theme;
+    }
+}
+
+// 2. 书签描述(页面描述)
+.analysis-page-desc {
+    float: left;
+    clear: both;
+    border: none;
+    margin-bottom: 12px;
+    padding: 1px 0;
+    line-height: 18px;
+    color: $color-light-content;
+}
+
+// 书签标题、描述表单
+.title-and-desc-form {
+    .label {
+        width: 60px;
+        display: inline-block;
+        padding: 0 1em 0 2em;
+        line-height: $input-field-height;
+        vertical-align: top;
+    }
+    
+    .input {
+        @include box-sizing();
+        width: 70%;
+    }
+}

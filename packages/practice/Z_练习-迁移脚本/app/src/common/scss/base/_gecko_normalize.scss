@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixin";
+// Experimental: 这是一个实验中的功能 重置firefox浏览器滚动条样式，目前仅支持宽度和颜色 要求version >= 64
+// https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Scrollbars 
+html {
+    * {
+        // scrollbar-color: rebeccapurple green;
+        scrollbar-width: thin;
+    }
+}

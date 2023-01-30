@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+.board-inner-chart {
+    position: relative;
+    height: calc(100% - 37px);
+    
+    .widget-load {
+        position: absolute;
+        left: calc(50% - 93px);
+        top: calc(50% - 113px);
+    }
+    
+    .bound-btn {
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        margin-top: ($input-field-height - 25px)/2;
+        padding: 0;
+        border: none;
+        outline: none;
+        text-align: center;
+        font-size: 18px;
+        line-height: 25px;
+        vertical-align: top;
+        background-color: transparent;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: $content-bg;
+        }
+    }
+    
+    header {
+        line-height: 24px;
+        color: $color-title;
+        h4 {
+            font-weight: 400;
+            font-size: 16px;
+            margin: 0 0 6px 0;
+            height: 30px;
+            cursor: pointer;
+            @include ellipsis();
+            &:hover {
+                text-decoration: underline;
+                color: $dark-blue;
+            }
+        }
+    }
+    
+    .widget-total {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        vertical-align: middle;
+        li {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+            &.total-number-more {
+                width: 50%;
+                .widget-key {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .widget-key {
+        font-size: 60px;
+        line-height: 60px;
+        color: #559ff0;
+        text-align: center;
+        .widget-unit {
+            font-size: 12px;
+            font-weight: 300;
+            color: #3398db !important;
+        }
+    }
+    .widget-key-caption {
+        text-align: center;
+    }
+}

@@ -1,0 +1,4 @@
+// <reference path="xxx.ts" />
+let meat: Food.Meat;
+let fruits: Food.Fruits;
+

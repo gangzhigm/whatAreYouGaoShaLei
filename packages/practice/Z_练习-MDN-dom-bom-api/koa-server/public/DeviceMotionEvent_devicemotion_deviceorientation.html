@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <h2>WebSocket</h2>
+    <div>
+        <p>
+            Self ID : 
+            <input type="text" id="CreateFileInput">
+            <button onclick="ws()">init ID</button>
+        </p>
+    </div>
+    <div>
+        <p>
+            Send ID : 
+            <input type="text" id="CreateFileInput">
+            Send Value : 
+            <input type="text" id="CreateFileInput">
+            <button onclick="createFile()">Send</button>
+        </p>
+    </div>
+    <p>value: <span id="Battery_value">null</span></p>
+
+    <hr>
+
+    <script>
+        // （1）accelerationIncludingGravity：重力加速度（包括重心引力9.8）
+        // （2）acceleration：加速度（需要设备陀螺仪支持）
+        // （3）rotationRate（alpha，beat，gamma）；旋转速度
+        // （4）interval：获取的时间间隔
+        // window.addEventListener('devicemotion', function(event) {
+        //     console.log(event.acceleration.x + ' m/s2');
+        // });
+
+
+        // absolute 方向数据
+        // alpha 绕z度数
+        // beta 绕x度数
+        // gamma 绕y度数
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener("deviceorientation", function(event) {
+                // alpha: rotation around z-axis
+                var rotateDegrees = event.alpha;
+                // gamma: left to right
+                var leftToRight = event.gamma;
+                // beta: front back motion
+                var frontToBack = event.beta;
+
+                handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+            }, true);
+        }
+
+        var handleOrientationEvent = function(frontToBack, leftToRight, rotateDegrees) {
+            // do something amazing
+            console.info(frontToBack, leftToRight, rotateDegrees);
+        };
+    </script>
+</body>
+</html>

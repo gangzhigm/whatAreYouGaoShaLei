@@ -1,0 +1,105 @@
+{
+    "parser": "babel-eslint",
+    "extends": "eslint:recommended",
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    // required to lint *.vue-plugin files
+    "plugins": [
+        "html"
+    ],
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+        "no-console": [ "error", { "allow": ["warn", "info", "error"] }],
+        "keyword-spacing": "error",
+        "space-infix-ops": "error",
+        "space-unary-ops": "error",
+        "semi": ["error","always", { "omitLastInOneLineBlock": true }],
+        "no-tabs": "error",
+        "newline-per-chained-call": [ "error", { "ignoreChainWithDepth": 2 }],
+        "no-whitespace-before-property": "error",
+        "no-duplicate-imports": "error",
+        "no-multiple-empty-lines": "error",
+        "no-var": "error",
+        "max-len": ["error", 120, {
+            "ignorePattern": "import|require",
+            "ignoreComments": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true
+        }],
+        // enUS: all rules docs https://eslint.org/docs/rules/
+        // zhCN: 所有规则文档 https://eslint.bootcss.com/docs/rules/
+
+        /**
+        * Possible Errors
+        * 这些规则与 JavaScript 代码中可能的错误或逻辑错误有关
+        *  */
+        // 强制使用 === 和 !==，除了以下这些情况外，： 1.比较两个字面量的值 2.比较 typeof 的值 3.与 null 进行比较
+        "eqeqeq": ["error", "smart"],
+        // 禁用 alert、confirm 和 prompt
+        "no-alert": "error",
+        // 禁止 if 语句中 return 语句之后有 else 块
+        "no-else-return": "error",
+        // 禁止出现空函数,可以仅包含至少一条注释。
+        "no-empty-function": "error",
+        // 禁用 eval()
+        "no-eval": "error",
+        // 禁用隐式的eval(),总是使用函数作为 setTimeout() 和 setInterval() 的第一个参数
+        "no-implied-eval": "error",
+        // 禁止在for循环中,使用循环变量定义函数
+        "no-loop-func": "error",
+        // 禁止magic number,该规则旨在确保将具体的数字声明为意义明确的常量，从而使代码更加可读并且易于重构。常用数字除外
+        // "no-magic-numbers": ["error", { "ignore": [1, 0, -1, 24, 60, 365] }],
+        // 禁止在返回语句中赋值
+        "no-return-assign": ["error", "always"],
+        // 禁止多余的 return 语句
+        "no-useless-return": "error",
+        // Promise.reject()的参数必须使用Error对象或不带参数
+        // 强制将变量声明放在它们作用域的顶部
+        "vars-on-top": "error",
+
+        /**
+         * Variables
+         * 这些规则与变量声明有关：
+         */
+        // 禁止将变量初始化为 undefined https://eslint.bootcss.com/docs/rules/no-undef-init
+        "no-undef": "off",
+        "no-undef-init": "error",
+        // 禁止将 undefined 作为标识符
+        // "no-undefined": "error",
+        // 禁止在变量定义之前使用它们，function除外
+        "no-use-before-define": ["error", "nofunc"],
+
+        /**
+         * Node.js and CommonJS
+         * 这些规则是关于Node.js 或 在浏览器中使用CommonJS 的：
+         */
+
+        // 要求 require() 出现在顶层模块作用域中
+        // 如果你需要在 try/catch 内部使用 require() 一个可选依赖，
+        // 禁止调用 require 时使用 new 操作符
+        "no-new-require": "error",
+        // 禁止未使用过的变量 default: ['error', { vars: 'local' }]
+        "no-unused-vars": ["off"],
+
+        /**
+         * Stylistic Issues
+         * 这些规则是关于风格指南的，而且是非常[主观]的
+         */
+
+        // 数组元素和方括号之间禁止空格
+        "array-bracket-spacing": ["error", "never"],
+        // 强制在代码块中使用one true brace style, 允许块的开括号和闭括号在 同一行
+        "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+        // 强制使用骆驼拼写法命名变量
+        "camelcase": ["error", { "properties": "never" }]
+    }
+}

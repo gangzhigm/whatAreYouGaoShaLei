@@ -1,0 +1,478 @@
+@charset "utf-8";
+
+@import "../base/variables";
+@import "../base/mixin";
+
+.btn {
+    display: inline-block;
+    @include box-sizing();
+    padding: 0 1em;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    @include border-radius(4px);
+    @include user-select(none);
+    @include transition(all .2s ease-in);
+    text-transform: capitalize;
+
+    $small-height: 24px;
+    $medium-height: 32px;
+    $large-height: 40px;
+
+    &.btn-theme {
+        color: white;
+        border: 1px solid $theme;
+        background-color: $theme;
+
+        &:not([disabled]):hover {
+            background-color: $light-theme;
+        }
+
+        &:not([disabled]):active {
+            background-color: $dark-theme;
+        }
+
+        &[disabled] {
+            color: $disabled;
+            border: 1px solid $form-border;
+            background-color: $disabled-bg;
+        }
+
+        svg {
+            fill: white;
+        }
+    }
+
+    &.btn-theme-border {
+        color: $color-content;
+        background-color: white;
+        border: 1px solid $form-border;
+
+        &:not([disabled]):hover {
+            color: $light-theme;
+            border-color: $light-theme;
+        }
+
+        &:not([disabled]).active,
+        &:not([disabled]):active {
+            color: white;
+            border-color: $dark-theme;
+            background-color: $dark-theme;
+        }
+
+        &[disabled] {
+            color: $disabled;
+            border: 1px solid $form-border;
+            background-color: $disabled-bg;
+        }
+
+        svg {
+            fill: $theme;
+        }
+    }
+
+    &.btn-white {
+        color: $color-content;
+        background-color: white;
+        border: 1px solid $form-border;
+
+        &:not([disabled]):hover {
+            background-color: $content-bg;
+        }
+
+        &:not([disabled]).active,
+        &:not([disabled]):active {
+            background-color: darken($content-bg, 5%);
+        }
+
+        &[disabled] {
+            color: $disabled;
+            border: 1px solid $form-border;
+            background-color: $disabled-bg;
+        }
+
+        svg {
+            fill: $color-content;
+        }
+    }
+
+    &.btn-blue-border {
+        color: $blue;
+        background-color: white;
+        border: 1px solid $blue;
+
+        &:not([disabled]):hover {
+            color: $light-blue;
+            border-color: $light-blue;
+        }
+
+        &:not([disabled]).active,
+        &:not([disabled]):active {
+            color: white;
+            border-color: $dark-blue;
+            background-color: $dark-blue;
+        }
+
+        &[disabled] {
+            color: $disabled;
+            border: 1px solid $form-border;
+            background-color: $disabled-bg;
+        }
+
+        svg {
+            fill: currentColor;
+        }
+    }
+
+    &.btn-red-border {
+        color: $red;
+        background-color: white;
+        border: 1px solid $red;
+
+        &:not([disabled]):hover {
+            color: $light-red;
+            border-color: $light-red;
+        }
+
+        &:not([disabled]).active,
+        &:not([disabled]):active {
+            color: white;
+            border-color: $dark-red;
+            background-color: $dark-red;
+        }
+
+        &[disabled] {
+            color: $disabled;
+            border: 1px solid $form-border;
+            background-color: $disabled-bg;
+        }
+
+        svg {
+            fill: currentColor;
+        }
+    }
+
+    &.btn-blue {
+        color: white;
+        border: none;
+        background-color: $blue;
+
+        &:not([disabled]):hover {
+            background-color: $light-blue;
+        }
+
+        &:not([disabled]):active {
+            background-color: $dark-blue;
+        }
+
+        &[disabled] {
+            color: rgba(white, .6);
+            background-color: $disabled;
+        }
+
+        svg {
+            fill: white;
+        }
+    }
+
+    &.btn-red {
+        color: white;
+        border: none;
+        background-color: $red;
+
+        &:not([disabled]):hover {
+            background-color: $light-red;
+        }
+
+        &:not([disabled]):active {
+            background-color: $dark-red;
+        }
+
+        &[disabled] {
+            color: rgba(white, .6);
+            background-color: $disabled;
+        }
+
+        svg {
+            fill: white;
+        }
+    }
+
+    &.btn-orange {
+        color: white;
+        border: none;
+        background-color: $orange;
+
+        &:not([disabled]):hover {
+            background-color: $light-orange;
+        }
+
+        &:not([disabled]):active {
+            background-color: $dark-orange;
+        }
+
+        &[disabled] {
+            color: rgba(white, .6);
+            background-color: $disabled;
+        }
+
+        svg {
+            fill: white;
+        }
+    }
+
+    &.btn-sm {
+        min-width: 46px;
+        height: $small-height;
+
+        &.btn-blue-border,
+        &.btn-white,
+        &.btn-red-border,
+        &.btn-theme-border {
+            line-height: $small-height - 2px;
+
+            svg {
+                margin: ($small-height - 2px - 12px)/2 4px ($small-height - 2px - 12px)/2 0;
+            }
+        }
+
+        &:not(.btn-theme-border, .btn-blue-border, .btn-white, .btn-red-border) {
+            line-height: $small-height;
+
+            svg {
+
+                margin: ($small-height - 12px)/2 4px ($small-height - 12px)/2 0;
+            }
+        }
+
+        &.btn-round {
+            @include border-radius($small-height/2);
+        }
+
+        svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    &.btn-md {
+        font-size: 14px;
+        min-width: 60px;
+        height: $medium-height;
+
+        &.btn-blue-border,
+        &.btn-white,
+        &.btn-red-border,
+        &.btn-theme-border {
+            line-height: $medium-height - 2px;
+
+            svg {
+                margin: ($medium-height - 2px - 14px)/2 4px ($medium-height - 2px - 14px)/2 0;
+            }
+        }
+
+        &:not(.btn-theme-border, .btn-blue-border, .btn-white, .btn-red-border) {
+            line-height: $medium-height;
+
+            svg {
+                margin: ($medium-height - 14px)/2 4px ($medium-height - 14px)/2 0;
+            }
+        }
+
+        &.btn-round {
+            @include border-radius($medium-height/2);
+        }
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &.btn-lg {
+        font-size: 14px;
+        min-width: 60px;
+        height: $large-height;
+
+        &.btn-blue-border,
+        &.btn-white,
+        &.btn-red-border,
+        &.btn-theme-border {
+            line-height: $large-height - 2px;
+
+            svg {
+                margin: ($large-height - 2px - 14px)/2 4px ($large-height - 2px - 14px)/2 0;
+            }
+        }
+
+        &:not(.btn-theme-border, .btn-blue-border, .btn-white, .btn-red-border) {
+            line-height: $large-height;
+
+            svg {
+                margin: ($large-height - 14px)/2 4px ($large-height - 14px)/2 0;
+            }
+        }
+
+        &.btn-round {
+            @include border-radius($large-height/2);
+        }
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &.btn-no-padding {
+        padding: 0;
+        min-width: unset;
+    }
+
+    &.btn-margin {
+        margin-right: 5px;
+    }
+
+    &.btn-round {
+        border-radius: 50%;
+    }
+    
+    + .btn {
+        margin-left: 8px;
+    }
+
+    &.overlap-left {
+        margin-left: -1px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        &:hover,
+        &:focus,
+        &.active {
+            z-index: 1;
+        }
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+
+        svg {
+            fill: $disabled;
+            &:hover {
+                color: $disabled;
+            }
+        }
+    }
+
+    &.btn-group {
+        border: none;
+        border-radius: unset;
+        margin-left: unset;
+    }
+
+    svg {
+        vertical-align: top;
+        @include transition();
+    }
+}
+
+.action-icon-trigger {
+    &:hover .action-icon {
+        display: inline-block;
+        visibility: visible;
+    }
+
+    .action-icon {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+// 图标按钮
+.action-icon {
+    line-height: 20px;
+    // vertical-align: top;
+    margin: ($input-field-height - 20px)/2 0 ($input-field-height - 20px)/2 10px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    @include appearance(none);
+    cursor: pointer;
+    fill: currentColor;
+
+    &.active {
+        display: inline-block;
+        visibility: visible;
+    }
+
+    &.icon-arrow-down,
+    &.icon-menu,
+    &.icon-grid,
+    &.icon-save,
+    &.icon-share,
+    &.icon-correct,
+    &.icon-plus,
+    &.icon-reflow,
+    &.icon-round-pencil,
+    &.icon-eye,
+    &.icon-icon-test,
+    &.icon-kaishi,
+    &.icon-flask,
+    &.icon-success,
+    &.icon-download,
+    &.icon-pencil {
+        color: $theme;
+
+        &:not([disabled]):hover {
+            color: $dark-theme;
+        }
+    }
+
+    &.icon-copy,
+    &.icon-log,
+    &.icon-refresh,
+    &.icon-search,
+    &.icon-pie,
+    &.icon-shuju {
+        color: $blue;
+
+        &:not([disabled]):hover {
+            color: $dark-blue;
+        }
+    }
+
+    &.icon-round-close,
+    &.icon-help {
+        color: $color-content;
+
+        &:not([disabled]):hover {
+            color: $color-title;
+        }
+    }
+
+    &.icon-close,
+    &.icon-pause,
+    &.icon-delete {
+        color: $light-red;
+
+        &:not([disabled]):hover {
+            color: $red;
+        }
+    }
+
+    &[disabled] {
+        color: $disabled;
+        cursor: not-allowed;
+    }
+}
+
+svg,
+li,
+a,
+i,
+input {
+    &.icon-disable {
+        pointer-events: none;
+        fill: $disabled;
+    }
+}

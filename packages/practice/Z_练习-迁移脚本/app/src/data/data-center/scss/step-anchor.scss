@@ -1,0 +1,89 @@
+@import "../../../common/scss/base/variables";
+@import "../../../common/scss/base/mixin";
+
+.steps {
+    display: table;
+    margin: 32px auto;
+    text-align: center;
+    @include user-select(none);
+    @include clearfix();
+
+    $size: 26px;
+    li {
+        position: relative;
+        float: left;
+        width: $size;
+        height: $size;
+        border: 1px solid #ccd1d8;
+        line-height: $size - 2px;
+        text-align: center;
+        background-color: #ccd1d8;
+        color: #fff;
+        margin-right: 78px;
+        @include box-sizing();
+        @include border-radius(100%);
+        svg {
+            position: relative;
+            top: 2px;
+            fill: $green;
+            width: 13px;
+            height: 22px;
+        }
+        &.active {
+            border: 1px solid #fff;
+            background-color: #fff;
+            @include box-shadow(0 5px 0 #e5e8ec);
+            &:before {
+                background-color: $green;
+            }
+            &:after {
+                background-color: $green;
+            }
+        }
+        &.edit {
+            cursor: pointer;
+            &:hover {
+                color: $green;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 11px;
+            left: -40px;
+            width: 39px;
+            height: 2px;
+            border: none;
+            background-color: #ccd1d8;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 11px;
+            left: 25px;
+            width: 40px;
+            height: 2px;
+            border: none;
+            background-color: #ccd1d8;
+        }
+        &:first-child {
+            &:before {
+                width: 0;
+            }
+            &:after {
+                width: 40px;
+                left: $size - 2px;
+                background-color: $green;
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+            &:before {
+                width: 40px;
+            }
+            &:after {
+                width: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,131 @@
+@import "../../../../../common/scss/base/variables";
+@import "../../../../../common/scss/base/mixin";
+
+.task-controller-view {
+
+    .target-box {
+        display: flex;
+        height: 180px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $border-color;
+        overflow: hidden;
+        padding: 0 56px;
+
+        .side {
+            flex: 1;
+
+            .unit-text,
+            .main-text {
+                color: $color-light-content;
+            }
+
+            .number {
+                display: inline-block;
+                height: 65px;
+                line-height: 65px;
+                font-size: 26px;
+            }
+
+            .unit-text {
+                vertical-align: text-bottom;
+            }
+
+            .main-text {
+                display: block;
+                text-align: left;
+
+                .icon-help {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .middle {
+            flex: 1;
+
+            img {
+                display: block;
+            }
+        }
+
+    }
+
+    .summary-wrapper {
+        display: inline-block;
+        vertical-align: top;
+        border: 1px solid $border-color;
+        height: 180px;
+        width: calc(100% - 64px);
+
+        .summary-box {
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 26px 100px;
+            height: 100%;
+            text-align: center;
+            li {
+                display: inline-block;
+                box-sizing: border-box;
+                padding: 32px 0;
+                width: calc(100% / 5);
+                height: 100%;
+
+                p {
+                    line-height: 1.5em;
+                    &:nth-of-type(1) {
+                        font-size: 26px;
+                    }
+                    &:nth-of-type(2) {
+                        font-size: 14px;
+                        color: $color-light-content;
+                    }
+
+                    &.arrive {
+                        color: #10a474;
+                    }
+                    &.open {
+                        color: #6a50da;
+                    }
+                    &.click {
+                        color: #eb8003;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .btn-wrapper {
+        width: 40px;
+        background-color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $border-color;
+
+        button {
+            flex: 1;
+            padding: 0;
+            border: none;
+            font-size: 22px;
+            line-height: 40px;
+            color: $color-light-content;
+            flex-basis: auto;   // Fix IE flex: 1时的flex-basis值为0px, button会叠在一起。
+
+            + button {
+                border-top: 1px solid $border-color;
+            }
+
+            &:not([disabled]):hover {
+                color: $color-title;
+                background: $content-bg;
+                cursor: pointer;
+            }
+
+            &.icon-disable:hover {
+                cursor: not-allowed;
+            }
+        }
+    }
+}
