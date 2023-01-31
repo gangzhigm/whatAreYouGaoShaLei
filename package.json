@@ -22,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/gangzhigm/whatAreYouGaoShaLei/issues"
   },
-  "homepage": "https://github.com/gangzhigm/whatAreYouGaoShaLei#readme"
+  "homepage": "https://github.com/gangzhigm/whatAreYouGaoShaLei#readme",
+  "dependencies": {
+    "@types/koa-cors": "^0.0.2",
+    "@types/koa-router": "^7.4.4",
+    "@types/request": "^2.48.8",
+    "koa-cors": "^0.0.16",
+    "koa-request": "^1.0.0",
+    "koa-router": "^12.0.0"
+  }
 }
