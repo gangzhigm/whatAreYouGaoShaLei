@@ -2,7 +2,7 @@
  * @Author: gangzhigm 864853934@qq.com
  * @Date: 2023-01-30 15:00:03
  * @LastEditors: gangzhigm 864853934@qq.com
- * @LastEditTime: 2023-01-31 14:22:58
+ * @LastEditTime: 2023-02-03 18:30:39
  * @FilePath: \whatAreYouGaoShaLei\packages\psnDB\back\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -163,32 +163,44 @@ const cookie = 's_ecid=MCMID|79672558761901653070950768434632526053; AMCV_BD260C
 
 
   
-// 获取单个游戏图床
-const productId = "UP1001-CUSA03979_00-ASIAPLACEHOLDER0";
-const optionsC = {
-  method: 'GET',
-  url: 'https://web.np.playstation.com/api/graphql/v1/op',
-  qs: {
-    operationName: 'productRetrieveForUpsellWithCtas',
-    variables: `{"productId":"UP1001-CUSA03979_00-ASIAPLACEHOLDER0"}`,
-    // variables: `{"productId":${productId}}`,
-    extensions: '{"persistedQuery":{"version":1,"sha256Hash":"d5b5cd4bdbff9886a426c25df39513e4bf3325b3e0612fbf4a905382123fff56"}}'
-  },
-  headers: {
-    cookie: cookie
-  }
-};
+// // 获取单个游戏图床
+// const productId = "UP1001-CUSA03979_00-ASIAPLACEHOLDER0";
+// const optionsC = {
+//   method: 'GET',
+//   url: 'https://web.np.playstation.com/api/graphql/v1/op',
+//   qs: {
+//     operationName: 'productRetrieveForUpsellWithCtas',
+//     variables: `{"productId":"UP1001-CUSA03979_00-ASIAPLACEHOLDER0"}`,
+//     // variables: `{"productId":${productId}}`,
+//     extensions: '{"persistedQuery":{"version":1,"sha256Hash":"d5b5cd4bdbff9886a426c25df39513e4bf3325b3e0612fbf4a905382123fff56"}}'
+//   },
+//   headers: {
+//     cookie: cookie
+//   }
+// };
 
-request(optionsC, function (error, response, body) {
-  fs.writeFile("./UP1001-CUSA03979_00-ASIAPLACEHOLDER0.json",body,function(error){
-        if(error){
-            console.info("write error")
-        }
-        else{
-            console.info("write success")
-        }
-    })
-});
+// request(optionsC, function (error, response, body) {
+//   fs.writeFile("./UP1001-CUSA03979_00-ASIAPLACEHOLDER0.json",body,function(error){
+//         if(error){
+//             console.info("write error")
+//         }
+//         else{
+//             console.info("write success")
+//         }
+//     })
+// });
+fs.readFile(path.join(__dirname, '/gamelist.json'), function(err, data){
+  if(err){
+    console.info(err)
+  }
+  let jsondata = data.toString();
+  jsondata = JSON.parse(jsondata)
+  console.info(jsondata)
+  console.info(jsondata.data.purchasedTitlesRetrieve.games)
+  console.info(jsondata.data.purchasedTitlesRetrieve['__typename'])
+  console.info(Object.keys(jsondata.data.purchasedTitlesRetrieve))
+
+})
 
 
 // app.listen(3001)
